@@ -7,22 +7,17 @@
     display: none;
 }
 
-.main, .content, header {
+.main {
     width: 90%;
-    padding: 0;
+    margin: auto;
 }
 
-/* leave some nice space above and below */
-header {
-    padding-top: 5%;
-    padding-bottom: 1%;
-}
-
-/* fixed wrong float value that's no longer required since there's no sidebar */
-.content {
-    float: none;
+.content, .header {
+	width: 90%;
+	margin: auto;
+	float: left;
 }
 
 #lite-switcher {
-    background-image: url("img/plus.gif");
+    background-image: url("/img/plus.gif");
 }
