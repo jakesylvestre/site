@@ -1,0 +1,12 @@
+source :rubygems
+source :rubyforge
+source :gemcutter
+gem "binpress"
+gem "jekyll"
+gem "nokogiri"
+gem "jekyll-press"
+gem "execjs"
+gem "therubyracer"
+gem "liquid"
+gem "closure-compiler"
+gem "yui-compressor"

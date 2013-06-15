@@ -1,0 +1,4 @@
+title: NixTuts
+permalink: /:categories/:title.html
+
+exclude: ["todo", "readme.md", "CNAME", "Gemfile"]

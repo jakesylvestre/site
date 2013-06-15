@@ -1,0 +1,85 @@
+* {
+    border-style: none !important;
+    background: transparent !important;
+    box-shadow:none !important;
+    color: #000000 !important; /* Black prints faster: h5bp.com/s */
+    text-shadow: none !important;
+}
+
+a[href]:after {
+    content: " (" attr(href) ")";
+}
+
+abbr[title]:after {
+    content: " (" attr(title) ")";
+}
+
+/*
+* Don't show links for images, or javascript/internal links
+*/
+
+.ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after {
+    content: "";
+}
+
+pre, blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+}
+
+thead {
+    display: table-header-group; /* h5bp.com/t */
+}
+
+tr, img {
+    page-break-inside: avoid;
+}
+
+@page {
+    margin: 0.5cm;
+}
+
+p, h2, h3 {
+    orphans: 3;
+    widows: 3;
+}
+
+h2, h3 {
+    page-break-after: avoid;
+}
+
+/* Links are in black - prints fast */
+a, a:visited {
+    color: #000000;
+    text-decoration: underline;
+}
+
+@page {
+    margin: 0.5cm;
+}
+
+p, h2, h3 {
+    orphans: 3;
+    widows: 3;
+}
+
+h2, h3 {
+    page-break-after: avoid;
+}
+
+/* reset buttons styles */
+.button, .button-noclick {
+	margin: 0;
+	padding: 0;
+} 
+
+/* Hide stuff! */
+nav, .sidebar, #search, .post_tags, .post_banner, .related_posts, .postg, .postg.expand, #announcements, .book_return, .addthis_toolbox, #disqus_thread  {
+    display: none;
+}
+
+/* Links are in black - prints fast */
+a, a:visited {
+    color: #000000;
+    text-decoration: underline;
+}

@@ -1,0 +1,127 @@
+/* TEAM */
+
+/* OWNERS https://github.com/organizations/linuxtuts/teams/247622 */
+    
+    Owner: wei2912
+    Account: https://github.com/wei2912
+    Site: http://linuxtuts.github.com
+    Email: wei2912.supp0rt@gmail.com
+
+    Co-owner: EyeR
+    Account: https://github.com/EyeR
+    Site: http://eyer.armed.me.uk
+
+    Co-owner: truexfan81
+    Account: https://github.com/truexfan81
+
+    Co-owner: hwkiller
+    Account: https://github.com/hwkiller
+
+    Co-owner: manu 
+    Account: https://github.com/manu-27993
+    Site: http://tsurge.wordpress.com
+
+/* SITE MAINTENANCE https://github.com/organizations/linuxtuts/teams/286503 */
+
+    Script Writer: d10
+    Account: https://github.com/d10
+    Site: http://d10.github.com
+
+    Maintaining forked Jekyll: diabolist
+    Account: https://github.com/diabolist
+
+    Script Writer: Miezel
+    Account: https://github.com/Mimieam
+
+    Collaborator: Odd0002
+    Account: https://github.com/Odd0002
+
+    Hoster: Subsentient/bendib
+    Account: https://github.com/Subsentient
+
+/* WRITING TUTS https://github.com/organizations/linuxtuts/teams/247623 */
+
+    Collaborator: ajhcasual
+    Account: https://github.com/ajhcasual
+
+    Collaborator: amcollie
+    Account: https://github.com/amcollie
+
+    Collaborator: b3nto
+    Account: https://github.com/b3nto
+
+    Collaborator: d10
+    Account: https://github.com/d10
+    Site: http://d10.github.com
+
+    Collaborator: d4rkkn16ht
+    Account: https://github.com/d4rkkn16ht
+    
+    Collaborator: diabolist
+    Account: https://github.com/diabolist
+
+    Collaborator: Digit
+    Account: https://github.com/Digit
+    
+    Collaborator: impiza
+    Account: https://github.com/impiza
+    Site: http://juz4fun.com
+    
+    Collaborator: jony123
+    Account: https://github.com/jony123
+    
+    Collaborator: lahirdenganselamat
+    Account: https://github.com/lahirdenganselamat
+
+    Collaborator: Miezel
+    Account: https://github.com/Mimieam
+    
+    Collaborator: MJ-meo-dmt
+    Account: https://github.com/MJ-meo-dmt
+
+    Collaborator: morfeus77
+    Account: https://github.com/morfeus77
+
+    Collaborator: Odd0002
+    Account: https://github.com/Odd0002
+    
+    Collaborator: dams
+    Account: https://github.com/programmerdams
+    
+    Collaborator: rstrcogburn
+    Account: https://github.com/rstrcogburn
+    
+    Collaborator: sanbor
+    Account: https://github.com/sanbor
+
+    Collaborator: Subsentient/bendib
+    Account: https://github.com/Subsentient
+
+    Collaborator: TheRedMood
+    Account: https://github.com/TheRedMood
+
+    Collaborator: harski
+    Account: https://github.com/harski
+
+    Collaborator: tsunami
+    Account: https://github.com/tsunami666
+    
+    Collaborator: wgreenhouse
+    Account: https://github.com/wgreenhouse
+
+/* THANKS */
+
+/* SITE */
+    Title: NixTuts
+    Slogan: Sharing tutorials about *nix
+    Description: NixTuts is a site filled with tutorials. We aim to help *nix users, spread knowledge of *nix and help the Open Source/Free Software community!
+    Language: English
+    Doctype: HTML5
+    License: CC BY-SA 3.0
+
+    Operating System: *nix
+    
+    Source URL: https://github.com/linuxtuts/linuxtuts.github.com
+    Organization URL: https://github.com/linuxtuts
+    
+    Email: linuxtuts.supp0rt@gmail.com

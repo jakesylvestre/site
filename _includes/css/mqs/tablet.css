@@ -1,0 +1,62 @@
+/* Mobile interface fixes */
+body {
+    font-size: medium;
+    max-width: 100%;
+}
+
+.sidebar, .content, header {
+    clear: both;
+    position: static;
+    width: 90%;
+    margin: auto 5%;
+}
+
+.posts {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navigation fixes */
+
+nav {   
+    position: static; 
+}  
+
+nav a {
+    font-size: 120%;
+}
+
+nav ul {  
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    float: left;
+    height: auto;
+}  
+
+nav li {  
+    width: 40%;
+    display: inline-block; 
+    padding: 1%;
+    margin: 3%;
+    
+    /* reset top and bottom */
+    padding-top: 0; padding-bottom: 0;
+    margin-top: 0; margin-bottom: 0;
+}  
+
+nav a#pull {  
+    text-align: left;  
+    width: 100%;  
+    text-indent: 25px;  
+}  
+
+/* ultra squeeze removed */
+
+.postg.clearfix {
+    width: 100%;
+    clear: both;
+    margin: 10px 0 !important;
+    float: right !important;
+}

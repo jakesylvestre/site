@@ -1,0 +1,73 @@
+/* Mobile interface fixes */
+body {
+    font-size: medium;
+    max-width: 100%;
+}
+
+.sidebar, .content, header {
+    clear: both;
+    position: static;
+    width: 90%;
+    margin: auto 5%;
+}
+
+.posts {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navigation fixes */
+
+nav {
+    position: static;
+}
+
+/* larger text */
+nav a {
+    font-size: 120%;
+}
+
+nav ul {  
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    float: left;
+    height: auto;
+    
+    /* centered text looks better */
+    text-align: center;
+}  
+
+nav li {  
+    width: 100%;
+    padding: 0; margin: 0;
+    
+    /* put space to make tapping easier */
+    margin-bottom: 10px;
+}  
+
+nav a {
+    padding: 0 10px; /* put space to make tapping easier */
+}
+
+nav a#pull {
+    float: right;
+    padding: 0;
+    margin: 0;
+    margin-right: 10px; /* leave some spacing */
+}  
+
+/* ultra squeeze removed */
+
+.postg, .postg.expand {
+    width: 100%;
+    clear: both;
+    margin: 10px 0 !important;
+    float: right !important;
+}
+
+/* to prevent covering the footer */
+footer {
+	margin-bottom: 30px;
+}

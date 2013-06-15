@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        {% include snippets/head.html %}
+        
+        <!-- site verifications -->
+        <meta name="google-site-verification" content="tIKYlqXiYdste3OCdWdRb-Z8y7G6jLEa3yy5XAmh5M4" />
+        <meta name="wot-verification" content="918bd559834ad18a88b3"/> 
+        
+        <!-- site description -->
+        <meta name="description" content="NixTuts is a site filled with tutorials. We aim to help *nix users, spread knowledge of *nix and help the Open Source/Free Software community!">
+        
+        <title>NixTuts</title>
+    </head>
+
+    <body>    
+        <nav class="clearfix" role="navigation">
+            {% include snippets/nav.html %}
+        </nav>
+
+        <div class="main clearfix" role="main">
+            <header class="clearfix" role="banner">
+                 {% include snippets/header.html %}
+                 {% include snippets/searchbar.html %}
+            </header>
+     
+            <div class="content clearfix" role="article">
+            	<div class="class clearfix">
+            		<div class="postg expand clearfix">
+            			<h1>Classes</h1>
+						<div class="post clearfix">
+							<p>This web IRC client is powered by <a href="https://kiwiirc.com/">kiwiiirc.com</a> and connects to <a href="irc://irc.spotchat.org">irc.spotchat.org</a>, #linux-tutorials, the main channel of NixTuts. If you have a desktop IRC client, you can access <a href="/about.html">About</a> for the full list of IRC channels available.</p>
+							<br />
+            				<iframe src="https://kiwiirc.com/client/irc.spotchat.org/?nick=kiwi_guest|?#linux-tutorials" style="border:0; width:100%; height:450px;"></iframe>
+            			</div>
+            		</div>
+            	</div> 
+            
+				<div class="posts clearfix">					
+			        {% for category in site.categories %}
+			        <div class="postg clearfix"> 
+			        <h1>{{ category | first | replace: "-", " "}}</h1>
+			
+			        {% for post in category.last limit:2 %}
+			        <div class="post clearfix">
+			            {% if post.status == "draft" %}
+			                <a href="{{post.url}}">[Draft] {{post.title}}</a>
+			            {% else %}
+			                <a href="{{post.url}}">{{post.title}}</a>
+			            {% endif %}
+			
+			            {% if post.summary != null %}
+			                <p>{{ post.summary }}</p>
+			            {% endif %}
+			        </div>
+			        {% endfor %}
+			
+			        <p>More at: <a href="/search.html?category={{ category | first }}">{{ category | first }}</a></p>
+			        </div>
+			        {% endfor %}
+					
+					{% for post in site.posts limit:10 %}
+					{% if post.status != 'book' %}
+						<h1 class="post_title"><a href="{{post.url}}">{{post.title}}</a></h1>
+						
+						{% if post.status == 'post' or post.status == 'draft' %}
+							<h3 class="post_date">Posted on {{ post.date | date: "%d %B %y" }}</h3>
+						{% endif %}
+						
+						{% if post.author != null %} 
+							<h3 class="post_author">By: {% for author in post.author %}<a class="button icon tag pill" href="/search.html?authors={{author}}">{{author}}</a> {% endfor %} </h3> 
+						{% endif %}
+						
+						{% if post.sources != null %}
+							<h3 class="post_sources">Sources: {% for source in post.sources %} <a class="button pill" href="{{source}}">{{source | truncate: 25}}</a> {% endfor %} </h3>
+						{% endif %}    
+						
+						{% if post.tags != null and post.status != 'book' %}
+							<h3 class="post_tags">Tags: {% for tag in post.tags %}<a class="button icon tag pill" href="/search.html?tags={{tag}}">{{tag}}</a> {% endfor %} </h3>
+						{% endif %}    
+						
+						{% if post.status == 'draft' %}
+							<h3 class="warn post_banner">This tutorial is a draft and pending validation. You may see weird formatting/incomplete content.</h3>
+						{% endif %}
+						
+						{% if post.summary != null %} 
+							<strong style="font-size: 150%; font-weight: normal;">{{ post.summary }}</strong>
+						{% endif %}
+						
+						{{ post.content | more: "excerpt" }}
+						
+						<p class="highlight book_return">Read more at <a href="{{post.url}}">{{post.title}}</a></p>
+					{% endif %}
+					{% endfor %}
+				</div>
+            </div>
+
+            <div class="sidebar clearfix">
+                {% include snippets/sidebar.html %}
+            </div> 
+        </div> 
+
+        <footer>
+            {% include snippets/footer.html %}
+        </footer>
+
+        {% include snippets/after.html %}
+    </body>
+</html>

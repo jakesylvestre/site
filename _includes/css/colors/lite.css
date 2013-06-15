@@ -1,0 +1,28 @@
+/*****************
+ * This is a special color theme.
+ * It serves as the theme of the page when the lite button is clicked on.
+ * */
+
+.sidebar, .addthis_toolbox, #disqus_thread, #theme-switcher, .class {
+    display: none;
+}
+
+.main, .content, header {
+    width: 90%;
+    padding: 0;
+}
+
+/* leave some nice space above and below */
+header {
+    padding-top: 5%;
+    padding-bottom: 1%;
+}
+
+/* fixed wrong float value that's no longer required since there's no sidebar */
+.content {
+    float: none;
+}
+
+#lite-switcher {
+    background-image: url("img/plus.gif");
+}

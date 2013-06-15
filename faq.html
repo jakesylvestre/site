@@ -1,0 +1,61 @@
+---
+layout: post
+title: FAQ
+
+status: page
+
+location: faq.html
+---
+<section>
+
+<h2>NixTuts stuff</h2>
+
+<p>Q: What does "NixTuts" mean?</p>
+<p>A: *nix Tutorias in full form :D We refer to tutorials as "tuts" too. *nix is commonly used in IRC channels as a reference to Unix-like systems.</p>
+
+<p>Q: Why do you have tutorials (CSS, JS etc.) that aren't related to *nix?</p>
+<p>A: Many *nix users want to learn those too so we included them. :)</p>
+
+<p>Q: What's your ultimate goal?</p>
+<p>A: To help out the *nix community through providing knowledge to those who are eager for it, and help out poor develoeprs working tirelessly if possible.</p>
+
+<h2>IRC</h2>
+
+<p>Q: Sooooo many channels? Which one?</p>
+<p>A: Choose the channel that is in a server that you use. If no such server exists, join the main channel.</p>
+
+<p>Q: I've been banned from the channels! What should I do?</p>
+<p>A: We usually ban people with a reason and thus if you are banned you should see a reason. Any ban without a reason is considered invalid and will be removed. If you still have a reason... try entering other channels and explaining your reason. But keep it civil, else we'll ban you. If we really don't want you to enter, look for 1) an abnormal ban that causes auto kick 2) widespread ban. In most cases this will not happen.</p>
+
+<h2>Color themes</h2>
+
+<p>Q: I dislike the current color theme! Is there anyway I could change it?</p>
+<p>A: We're currently working on a color theme changer... it should be ready soon, provided more people join in and help out.</p>
+
+<h2>Contributing to NixTuts</h2>
+
+<p>Q: How could I contribute to NixTuts?</p>
+<p>A: For starters, look at our tutorial at <a href="/NixTuts/NixTutsContrib.html">Contributing to NixTuts</a>.</p>
+
+<p>Q: I've edited the site with the link specified at the bottom of the page. When will they be added?</p>
+<p>A: A collaborator already part of the team will review your pull request and decide accordingly. We might also add you into the team (and humans.txt file).</p>
+
+<p>Q: How does the link below work?</p>
+<p>A: The link below is a link to <a href="prose.io">prose.io</a>, an online GitHub site editor. Depending on your GitHub account, if you're not part of the team it'll send a pull request when you update the page. How pull requests work is sort of creating your own repository, editing it, then requesting the official team to accept your change. If we do accept your change, you might be added to the team :)</p>
+<p>If you're already part of the team, the commit will be pushed straight away and changes should show within 5 minutes.</p>
+
+<h2>Misc.</h2>
+
+<p>Q: Why not use a CMS?</p>
+<p>A: We *used* to use a CMS, but we've changed to a static convertor, or <a href="https://github.com/linuxtuts/BinPress">BinPress</a> (our version of <a href="http://jekyllrb.com/">Jekyll</a> that has slight changes). Static convertors require no PHP, thus improving speed of website, being less buggy, less exploitable, and more maintanable :) We also have much more control over how our site looks like etc.</p>
+
+<p>Q: What host are you using?</p>
+<p>A: We're using Subsentient's server, <a href="http://universe2.us">universe2.us</a>, and use <a href="http://cloudflare.com/">CloudFlare</a> too to speed up our site and provide security, as well as reduce load.</p>
+
+<p>Q: How did you make the site auto-updating?</p>
+<p>A: We use bash scripts to make our life easy. First, we have two sections: one is the Git repository, hosting text files; the other one is other files to be included in the site. The script first checks if the Git repository is up-to-date and if the binary files have changed with a checksum. Then, if something has changed, the script updates the site. It builds the Git repository with Jekyll, and copies the built site + binary files over. The script runs periodically every minute, ensuring the site is always up to date.</p>
+
+<br />
+
+<p>Feel free to contact us and ask us any questions. We'll add it to this page :D</p>
+</section>
