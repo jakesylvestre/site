@@ -1,5 +1,4 @@
-/***** Color Glossary - DarkGrey *****
-Greys
+/***** Color Glossary - DeadCream *****
 * #151515 - extreme dark grey (main color)
 * #525252 - medium grey
 * #D4D4D4 - light grey
@@ -20,14 +19,14 @@ Greys
 h1, h2 { color: #000; }
 h3, h4, h5, h6 { color: #626262; }
 a { color: #0DA4D3; }
-p { color: ##57676E; }
+p, strong, em { color: ##57676E; }
 pre { color: #464547; border-color: rgba(62, 62, 62, 1); background-color: rgba(62, 62, 62, 0.4); }
 blockquote { border-color: #000; background-color: #FFB3B3; } blockquote:before, blockquote:after { color: #FF006E; }
 th { border-color: #000; }
 hr { border-color: #000; } /* horizontal line */
 ul, ol { color: #000; } /* bullets and color */
 
-body { background: #000; }
+body { background: #000000; }
 .main { background: #E7EEF2; border-color: #E7EEF2; }
     
 header { border-color: #C3CCD0 ; }

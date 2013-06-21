@@ -1,40 +1,35 @@
 ---
 ---
-( function () {
-"use strict";
+{% include js/functions/cookie.js %}
 
-var ThemeSwitcher,
-	LiteSwitcher,
-	firstScript = document.getElementsByTagName( 'script' )[ 0 ],
-    parent = firstScript.parentNode;
+// ThemeSwitcher and LiteSwitcher
+(function() {
+    "use strict";
 
-// Cache createElement for convenience
-function createElem ( elem ) {
-    return document.createElement( elem );
-}
+    var ThemeSwitcher,
+        LiteSwitcher,
+        firstScript = document.getElementsByTagName('script')[0],
+        parent = firstScript.parentNode;
 
-function getStylesheet( id ){
-	var url = '/css/colors/' + id + '.css',
-		styleSheet;
+    // Cache createElement for convenience
+    function createElem(elem) {
+        return document.createElement(elem);
+    }
 
-	if ( !( styleSheet = $( 'link[href="' + url + '"]' )[ 0 ] ) ) {
-		styleSheet = createElem( 'link' );
-		styleSheet.rel = 'stylesheet';
-		styleSheet.href = url;
-        parent.insertBefore( styleSheet, firstScript )
-	}
+    function getStylesheet(id) {
+        var url = '/css/colors/' + id + '.css',
+            styleSheet;
 
-	return styleSheet;
-}
-      
-try {
-{% include js/theme-switcher.js %}
-} catch( e ) {
-	console.log( String( e ) );
-}
-try {
-{% include js/lite-switcher.js %}
-} catch( e ) {
-	console.log( String( e ) );
-}
-} )();
+        if (!(styleSheet = $('link[href="' + url + '"]')[0])) {
+            styleSheet = createElem('link');
+            styleSheet.rel = 'stylesheet';
+            styleSheet.href = url;
+            parent.insertBefore(styleSheet, firstScript)
+        }
+
+        return styleSheet;
+    }
+
+    {% include js/theme-switcher.js %}
+    {% include js/lite-switcher.js %}
+})();

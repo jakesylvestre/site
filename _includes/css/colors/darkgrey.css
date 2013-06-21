@@ -20,7 +20,7 @@ Greys
 h1, h2 { color: #B5E85E; }
 h3, h4, h5, h6 { color: #999999; }
 a { color: #63C0F5; }
-p { color: #EAEAEA; }
+p, strong, em { color: #EAEAEA; }
 pre { color: #B5E853; border-color: rgba(255, 255, 255, 0.15); background-color: rgba(0, 0, 0, 0.9); }
 blockquote { border-color: #CCCCCC; background-color: #000000; } blockquote:before, blockquote:after { color: #CCCCCC; }
 th { border-color: #B5E853; }
@@ -31,7 +31,6 @@ body { background: #D4D4D4; }
 .main { background: #474747; border-color: #878787; }
     
 header { border-color: #B5E853; }
-nav li { color: #FFFFFF; }
 footer, nav { background-color: #D4D4D4; }
 footer a, nav a { color: #227799; }
 footer p, nav p { color: #000000; }
