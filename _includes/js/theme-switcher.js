@@ -1,12 +1,12 @@
-$(document).ready(function() {
+$(document).ready(function () {
     var selected = readCookie('theme-switcher');
 
-if (selected == "") {
-	createCookie('theme-switcher', 'deadcream');
-} else {
-    getStylesheet('deadcream').disabled = true;
-	getStylesheet(selected).disabled = false;
-}
+    if (selected == null) {
+        createCookie('theme-switcher', 'deadcream');
+    } else {
+        getStylesheet('deadcream').disabled = true;
+        getStylesheet(selected).disabled = false;
+    }
     var ul = $('nav ul'),
         themes = [{
             id: 'darkgrey',
@@ -27,19 +27,19 @@ if (selected == "") {
                 .css('background-color', themes[i].color)
                 .appendTo(li);
             li.appendTo(ul);
-            
-            a.click(function(e) {
-        		e.preventDefault();
-            	
-            	getStylesheet(selected).disabled = true; // disable current selected
-           		
-            	selected = e.target.id;
-            	console.log(selected);
-            	getStylesheet(selected).disabled = false; // load lite styles
-	
-            	eraseCookie('theme-switcher');
-		        createCookie('theme-switcher', selected, 7);
-       		});
+
+            a.click(function (e) {
+                e.preventDefault();
+
+                getStylesheet(selected).disabled = true; // disable current selected
+
+                selected = e.target.id;
+                console.log(selected);
+                getStylesheet(selected).disabled = false; // load lite styles
+
+                eraseCookie('theme-switcher');
+                createCookie('theme-switcher', selected, 7);
+            });
         }
     }
 });
