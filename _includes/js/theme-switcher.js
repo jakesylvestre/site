@@ -3,6 +3,7 @@ $(document).ready(function () {
 
     if (selected == null) {
         createCookie('theme-switcher', 'deadcream');
+        selected = 'deadcream';
     } else {
         getStylesheet('deadcream').disabled = true;
         getStylesheet(selected).disabled = false;
@@ -38,7 +39,7 @@ $(document).ready(function () {
                 getStylesheet(selected).disabled = false; // load lite styles
 
                 eraseCookie('theme-switcher');
-                createCookie('theme-switcher', selected, 7);
+                createCookie('theme-switcher', selected, 0);
             });
         }
     }
