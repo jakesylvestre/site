@@ -29,13 +29,15 @@ If you do not find Wireshark for your distribution, then you may be able to loca
 
 <!--more-->
 
-It requires root permissions to function, so go ahead and make yourself a root user, or add “sudo”.
+The recommended way would be to follow instructions available at [CapturePrivileges](http://wiki.wireshark.org/CaptureSetup/CapturePrivileges) so that you would be able to run Wireshark on a non-root account. This way, Wireshark exploits will not cause as much damage.
+
+If you feel lazy, make yourself a root user, or add “sudo”.
 
 As a Wireshark user, you can also get a free [ebook](http://www.riverbed.com/us/media/documents/deployment_guides/network_monitoring_and_troubleshooting_for_dummies.php) from Riverbed, although it requires you to fill up a form. It is part of the ‘For Dummies’ series of books, “Network Monitoring and Troubleshooting for Dummies”. It should provide valuable reference for both the novice and experienced computer user alike.
 
 ##After installation
 
-Once wireshark is installed and loaded, you’ll need tell it what to do.
+Once Wireshark is installed and loaded, you’ll need tell it what to do.
 
 In the toolbar, you should find a little icon, picture of a network card and a spanner – Capture Options. It's at the top left hand corner of the window.
 
