@@ -2,7 +2,7 @@
 layout: post
 title: Cowsay Fortunes
 category: games
-tags: [games, linux, cowsay, fortunes]
+tags: [games, cowsay, fortunes]
 author: [wei2912]
 
 status: draft

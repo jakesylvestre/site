@@ -2,7 +2,7 @@
 layout: post
 title: Mobile Development
 category: programming
-tags: [linux, mobile, android, tablet, programming, development, sl4a]
+tags: [mobile, android, tablet, programming, sl4a]
 author: [diabolist, wei2912]
 
 summary: Get started on developing from your Tablet!
