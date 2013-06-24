@@ -237,6 +237,8 @@ And if you want to know everything in the directory:
 
     ls -r
     
+This enables recursive mode and shows all files & directories.
+    
 Example:
 
 	wei2912@wei2912-desktop[~/Temporary]$ ls -R files
@@ -297,7 +299,17 @@ This command was originally intended to update timestamps, but many users have m
 
 ### Removing
 
-Removing files may come up with a lot of prompts, such as:
+
+
+To remove a file, it's simple:
+
+    rm ./file
+
+To remove a directory, use:
+
+    rm -r ./files
+
+Sometimes, many prompts might appear, like in this case:
 
 	wei2912@wei2912-desktop[~/Temporary]$ rm -r ./files
 	rm: remove write-protected regular empty file `./files/test'?
@@ -385,10 +397,6 @@ Here, you can see the complex hierachy. Now, let's see how rm goes through these
 	rm: remove directory `./files/test2'? y
 	rm: remove directory `./files/test3'? y
 	rm: remove directory `./files'? y
-
-Finally, as demonstrated above, to remove a directory:
-
-    rm -r $DIR
     
 ### Copying
 
