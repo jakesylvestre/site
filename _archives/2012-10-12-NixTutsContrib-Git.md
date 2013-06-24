@@ -2,14 +2,14 @@
 layout: post
 title: Using Git to Contribute
 status: book
-category: NixTuts
+category: nixtuts
 
-bookurl: /NixTuts/NixTutsContrib.html
+bookurl: /nixtuts/NixTutsContrib.html
 book: Contributing to NixTuts
 
 summary: In this tutorial we'll teach you how to grab the source repository of NixTuts. This applies to many Git repositories hosted on GitHub.
 
-location: _posts/NixTuts/2012-10-12-NixTutsContrib-Git.md
+location: _posts/nixtuts/2012-10-12-NixTutsContrib-Git.md
 ---
 
 This tutorial will show you the basics of using Git and will teach you how to obtain and modify the source code of NixTuts. The main concepts, ideas and commands shown here are alo applicable to many other Git projects on GitHub and around the Internet. This tutorial will also introduce to you other tools for editing Git repositories.

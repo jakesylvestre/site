@@ -2,14 +2,14 @@
 layout: post
 title: Writing Posts in NixTuts
 status: book
-category: NixTuts
+category: nixtuts
 
-bookurl: /NixTuts/NixTutsContrib.html
+bookurl: /nixtuts/NixTutsContrib.html
 book: Contributing to NixTuts
 
 summary: In this tutorial, we're going to teach you how to write tutorials for NixTuts.
 
-location: _posts/NixTuts/2012-10-12-NixTutsContrib-Posts.md
+location: _posts/nixtuts/2012-10-12-NixTutsContrib-Posts.md
 ---
 
 Before I start to talk about writing tutorials, I advise you to have a tab open to our [GitHub repository](https://github.com/linuxtuts/linuxtuts.github.com).
