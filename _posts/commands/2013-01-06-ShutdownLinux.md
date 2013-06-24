@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Shutting Down Linux
-category: generic-linux
-tags: [shutdown, reboot, poweroff, sysrq]
+category: commands
+tags: [shutdown, reboot, poweroff, sysrq, commands]
 author: [programmerdams, wei2912, diabolist]
 summary: Shutting down Linux isn't as simple as pushing a switch. Learn how to shutdown Linux properly.
 status: draft

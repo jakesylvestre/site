@@ -3,15 +3,15 @@ layout: post
 status: post
 
 title: Useful Tiny Commands
-category: tiny-commands
-tags: [bash, tiny-command]
+category: commands
+tags: [bash, commands]
 author: [wei2912, manu-27993]
 
 status: draft
 
-summary: Learn how to execute a command in bash without it being stored in history, how to list hidden files and many more with those pesky tiny commands!
+summary: Learn how to list hidden files, look at a calender and many more with those pesky tiny commands!
 
-location: _posts/tiny-commands/UsefulTinyCommands.md
+location: _posts/commands/UsefulTinyCommands.md
 ---
 
 Here's a couple of useful commands that we feel are helpful to sysadmins specializing in Linux/Unix/BSD :)
@@ -27,6 +27,12 @@ or simply:
 	clear
 
 This clears off everything on your terminal screen. However, if you scroll back, notice the large amount of empty space. In truth, all the clear command does is print out empty lines.
+
+### Reset your screen
+
+    reset
+    
+This resets everything on your terminal screen. Unlike *clear* it actually *clears off everything* from your terminal screen.
 
 ## Time and Date
 
