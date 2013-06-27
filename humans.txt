@@ -67,6 +67,9 @@
     Account: https://github.com/impiza
     Site: http://juz4fun.com
     
+    Collaborator: jaffer1979
+    Account: https://github.com/jaffer1979
+    
     Collaborator: jony123
     Account: https://github.com/jony123
     
