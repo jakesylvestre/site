@@ -5,15 +5,15 @@ status: post
 title: Using chmod and chown
 category: commands
 tags: [bash, commands, chmod, chown]
-author: [wei2912]
+author: [wei2912, jaffer1979]
 
-status: draft
+status: post
 
-summary: Learn how to master the two commands that're often associated with file permissions manipulation - chmod and chown.
+summary: Learn how to master the two commands that are often associated with file permissions manipulation - chmod and chown.
 location: _posts/commands/Chmod&Chown.md
 ---
 
-This was originally a class at [http://piratepad.net/NixTuts-LinuxCmdLine-9psZK](http://piratepad.net/NixTuts-LinuxCmdLine-9psZK), so feel free to visit it if you want to see something more interactive.
+This was originally a class at [http://piratepad.net/NixTuts-LinuxCmdLine-9psZK](http://piratepad.net/NixTuts-LinuxCmdLine-9psZK), so feel free to visit it if you want to experience something more interactive.
 
 # Chmod
 
@@ -23,19 +23,19 @@ Looking at the manpage of chmod, as quoted:
 
 > chmod - change file mode bits
 
-These "file modes" will be covered later, as well as common options.
+These "file modes" will be covered later.
 
-Firstly, let's create a file in your home directory.
+First, let's create a file in your home directory.
 
     wei2912@wei-lm-desktop ~ $ touch file
     wei2912@wei-lm-desktop ~ $ ls -l file
     -rw-r--r-- 1 wei2912 wei2912 0 Jun 24 15:26 file
 
-Under here, you can see that we've created a file with the command [touch](/commands/UsefulTinyCommands.html#touch). Afterwards, we used the [ls -l](/commands/UsefulTinyCommands.html#listing_files) command to list out the file's details.
+This file was created with the command [touch](/commands/UsefulTinyCommands.html#touch). Following the touch command is the [ls -l](/commands/UsefulTinyCommands.html#listing_files) command which lists out the file's details.
 
-## Read, write, execute
+## Read, write, execute, symbolic notation "rwx"
 
-Firstly, let's zoom into this:
+First, let's zoom into this:
 
     -rw-r--r--
 
@@ -43,15 +43,23 @@ Breaking it into parts:
 
     - rw- r-- r--
 
-This is known as a **symbolic notation**.
+This is known as a "symbolic notation".
 
 ## Symbolic Notation
 
-In Linux, there're three types of modes applicable: Read, Write and eXecute. The common term "rwx" refers to read, write, execute.
+In Linux, there are three types of modes that apply to permissions manipulation: Read, Write and eXecute. The common term "rwx" refers to read, write, execute.
 
-Also, in Linux, there's a user, a group and others.
+In addition to the three modes there are a "user", a "group" and "others".
 
-In this case, the first section, rw-, refers to the user being able to read and write. The second section, r--, refers to the user's group being able to read only. The third section, r-- as well, applies to others. It means that for others, the file is read only.
+Dashes mean the user, group, or others do not have the corresponding permission. A full permissions would look like this:
+ 
+    rwx
+    
+However, if for example, a user, group or others has only read and write, the x section would be replaced with -, resulting in this:
+
+    rw-
+
+In this case, the first section, rw-, refers to the user being able to read and write. The second section, r--, refers to the user's group being able to read only. The third section, r-- as well, applies to others. It means that for others, the file is read only. 
 
 Here's a view of what it looks like:
 
@@ -68,7 +76,7 @@ Using 'rwxrwxrwx' is known as symbolic notation. Later, we'll cover an alternati
 
 ## User, group, others
 
-Let's zoom into the second section now.
+Let's dive into the second section now.
 
     wei2912 wei2912
 
@@ -84,13 +92,13 @@ What are the permissions of this directory and who owns it?
 
 **Answer:**
 
-wei2912 owns the directory, only he can read write and execute. It is owned by the group wei2912.
+User wei2912 from group wei2912 owns the directory. Only the user can read, write and execute.
 
 ## Numeric Notation
 
 Sometimes, you might see someone state that a file has permissions "0777". What exactly does this mean?
 
-Let's break it up into smaller parts agian.
+Let's break it up into smaller parts again.
 
     0777 -> 0 7 7 7
 
@@ -106,9 +114,9 @@ As from https://en.wikipedia.org/wiki/Filesystem_permissions under "Numeric Nota
 
 In this case, 1 + 2 + 4 = 7. This 7 thus represents read, write and execute.
 
-This is known as numeric notation.
+This is known as **numeric notation**.
 
-As you've seen previously, the first parameter represented user, the second parameter represented group and the third, others. In this case, 0777 translates to -rwxrwxrwx.
+As you've seen previously, the first parameter represented user, the second parameter represented group, and the third, others. In this case, 0777 translates to -rwxrwxrwx.
 
 ## Exercises (again)
 
@@ -128,21 +136,17 @@ So, here's the basic syntax for chmod (according to manpages + some of what I ad
 
     chmod [All/User/Group/Others][+/-][Read/Write/Execute] [file]
 
-In chmod, there's an extra flag, "All". This flag includes user, group and others.
+In chmod, there's an extra flag, "All". This flag includes user, group, and others.
 
-So, let's give you a look at what chmod commands typically look like.
+So, let's take a look at what chmod commands typically look like.
 
     chmod a+rwx file
 
-What does this mean?
-
-This means, grant *rwx* permissions to all. *a* represents All, which includes User, Group and Others.
+This basically means grant *rwx* permissions to all. *a* represents All, which includes User, Group, and Others.
 
 Now, take a look at this:
 
     chmod go-rwx file
-
-What does this mean?
 
 This means remove *rwx* permissions from *group and others*. This prevents others from looking at files and is typically used to store private data from non-root users.
 
@@ -188,7 +192,7 @@ Also, if file qwerty had permissions --- --- ---, what'd be the final file permi
 
     --- --- r-x
 
-**As you notice, using symbolic notation is relative to the file's permissions.**
+**Using symbolic notation is relative to the file's permissions.**
 
 Now, let's try with numeric notation.
 
@@ -205,8 +209,6 @@ Now, what happens if qwerty had file permissions "--- --- ---" instead?
 **Answer:**
 
     rwx rwx r-x 
-
-So, now, you can see the difference.
 
 **Using numeric notation is absolute and does not depend on the original file's permissions.**
 
