@@ -1,16 +1,20 @@
 ---
+published: true
 layout: post
 status: post
-
 title: Using chmod and chown
 category: commands
-tags: [bash, commands, chmod, chown]
-author: [wei2912, jaffer1979]
-
-status: post
-
-summary: Learn how to master the two commands that are often associated with file permissions manipulation - chmod and chown.
-location: _posts/commands/Chmod&Chown.md
+tags: 
+  - bash
+  - commands
+  - chmod
+  - chown
+author: 
+  - wei2912
+  - jaffer1979
+  - "manu-27993"
+summary: "Learn how to master the two commands that are often associated with file permissions manipulation - chmod and chown."
+location: "_posts/commands/Chmod&Chown.md"
 ---
 
 This was originally a class at [http://piratepad.net/NixTuts-LinuxCmdLine-9psZK](http://piratepad.net/NixTuts-LinuxCmdLine-9psZK), so feel free to visit it if you want to experience something more interactive.
@@ -23,17 +27,80 @@ Looking at the manpage of chmod, as quoted:
 
 > chmod - change file mode bits
 
-These "file modes" will be covered later.
+These "file modes" will be covered later. In short, it lets you change the file permissions. You can change a file permission only if you match any of these criteria:
 
+1. You are the owner of the file.
+
+2. You are a root user.
+
+3. You are already given permission to modify file permissions by the owner or a root user.
+
+## Syntax of chmod
+The simplified syntax of chmod is:
+	
+	chmod <option> <filename>
+
+## Methods of using chmod
+There are two ways of changing the File Permissions:
+
+1. Relative method
+
+2. Absolute method
+
+The difference lies only in the "option" part of the command.  
+
+## Getting Started
 First, let's create a file in your home directory.
 
-    wei2912@wei-lm-desktop ~ $ touch file
+	wei2912@wei-lm-desktop ~ $ touch file
     wei2912@wei-lm-desktop ~ $ ls -l file
-    -rw-r--r-- 1 wei2912 wei2912 0 Jun 24 15:26 file
+    -rw-r--r-- 1 wei2912 weigrp 0 Jun 24 15:26 file
 
-This file was created with the command [touch](/commands/UsefulTinyCommands.html#touch). Following the touch command is the [ls -l](/commands/UsefulTinyCommands.html#listing_files) command which lists out the file's details.
+This file was created with the command [touch](/commands/UsefulTinyCommands.html#touch). Following the touch command is the [ls -l](/commands/UsefulTinyCommands.html#listing_files) command which lists out the file attributes.
 
-## Read, write, execute, symbolic notation "rwx"
+The File attributes, as shown by ls -l command, gives you these information:
+
+1. File type and Permissions
+
+2. Links (total no. of links created to this file)
+
+3. File Owner (who created the file? / who owns it now?)
+
+4. Group Ownership (what group the Owner belongs to?)
+
+5. Size in bytes (no. of characters in its source)
+
+6. Last Modification Date and Time (if the file was modified more than a year ago, the year is shown instead of the time)
+
+7. Filename
+
+## Changing the File Permission using Relative method
+The "option" part in this method can be divided into three parts:
+
+	<to_whom> <action> <modes>
+
+so that we can write the syntax for this method as:
+
+	chmod <to_whom><action><modes> <filename>
+
+### Understanding the "to_whom" part
+It means what users are affected by the change in permission.
+
+>u --> affects the current user.     
+g --> affects the group of current user.      
+o --> affects all other users. 
+a --> affects all users (equivalent of ugo).
+
+The to_whom modes can also be combined together. For example, ug affects current user and the group but not others.
+
+### Understanding the "action" part
+It means what action to be taken:
+
+>= --> assign permission		
++ --> grant permission 			
+- --> withdraw permission
+
+### Understanding the "modes" part
 
 First, let's zoom into this:
 
@@ -41,17 +108,8 @@ First, let's zoom into this:
 
 Breaking it into parts:
 
-    - rw- r-- r--
-
-This is known as a "symbolic notation".
-
-## Symbolic Notation
-
-In Linux, there are three types of modes that apply to permissions manipulation: Read, Write and eXecute. The common term "rwx" refers to read, write, execute.
-
-In addition to the three modes there are a "user", a "group" and "others".
-
-Dashes mean the user, group, or others do not have the corresponding permission. A full permissions would look like this:
+    - rw- r-- r-- 
+The first character tells a user which type of file this is. (d means a directory file, - means a normal file). In Linux, there are three types of modes that apply to permissions manipulation: read(r), write(w) and execute(x). A full permissions would look like this:
  
     rwx
     
@@ -70,17 +128,16 @@ Here's a view of what it looks like:
       read    read    read
       write
 
-The first character tells a user which type of file this is. (d means a directory, - means a normal file).
+#### Examples
+	chmod u+x file  //grants the current user execute permission for the file
+    chmod go-wx file //withdraws write and execute permissions from the group and others
+    chmod a=rw file  //assigns read and write permissions for all users
 
-Using 'rwxrwxrwx' is known as symbolic notation. Later, we'll cover an alternative way.
+Remember the output we showed previously using "ls -l"? The 3rd and 4th columns are shown below:
 
-## User, group, others
+    wei2912 weigrp
 
-Let's dive into the second section now.
-
-    wei2912 wei2912
-
-This section means this belongs to user **wei2912** of group **wei2912**. To change this, [chown](/commands/Chmod&Chown.html#chown) is used. This will be covered later.
+This section means this belongs to user **wei2912** of group **weigrp**. To change this, [chown](/commands/Chmod&Chown.html#chown) is used. This will be covered later.
 
 ## Exercises
 
@@ -94,7 +151,7 @@ What are the permissions of this directory and who owns it?
 
 User wei2912 from group wei2912 owns the directory. Only the user can read, write and execute.
 
-## Numeric Notation
+## Changing the File Permission using Absolute method
 
 Sometimes, you might see someone state that a file has permissions "0777". What exactly does this mean?
 
@@ -102,22 +159,34 @@ Let's break it up into smaller parts again.
 
     0777 -> 0 7 7 7
 
-That doesn't seem to look like much, but each number signifies something. Let's ignore the first number for now.
+That doesn't seem to look like much, but each digit signifies something. Let's ignore the first digit for now. The 2nd digit represents the current user, 3rd the group and 4th other users.  
 
-Looking at the number 7, what do you think it means?
+Looking at the last three digits, what do you think it means? This can be interpreted using the following table:
+>Digit | rwx    | What it does?
 
-As from https://en.wikipedia.org/wiki/Filesystem_permissions under "Numeric Notation":
+>0    | 000    | Assigns no permissions
 
-1. read is 4.
-2. write is 2.
-3. execute is 1.
+>1    | 001    | Assigns execute permission
 
-In this case, 1 + 2 + 4 = 7. This 7 thus represents read, write and execute.
+>2    | 010    | Assigns write permission
 
-This is known as **numeric notation**.
+>3    | 011    | Assigns write and execute permissions
 
-As you've seen previously, the first parameter represented user, the second parameter represented group, and the third, others. In this case, 0777 translates to -rwxrwxrwx.
+>4    | 100    | Assigns read permission
 
+>5    | 101    | Assigns read and execute permissions
+
+>6    | 110    | Assigns read and write permissions
+
+>7    | 111    | Assigns all read, write and execute permissions
+
+The first column indicates what number to use. The second column indicates its binary value of 3 bits, with the bits representing modes r, w and x respectively. The third column tells you what it does.
+
+This is known as **numeric notation**. In this case, 0777 translates to -rwxrwxrwx.
+## Examples
+	chmod 664 file  //Assigns read and write permissions for current user and group, but only read for others
+    chmod 0764 file //Assigns all permissions for current user read and write for group, but only read for others
+    
 ## Exercises (again)
 
 Translate these codes into symbolic notation:
@@ -130,34 +199,14 @@ Translate these codes into symbolic notation:
 1. rwx rwx rwx
 2. rwx rw- rw-
 
-Now, on to the command chmod itself.
-
-So, here's the basic syntax for chmod (according to manpages + some of what I add in):
-
-    chmod [All/User/Group/Others][+/-][Read/Write/Execute] [file]
-
-In chmod, there's an extra flag, "All". This flag includes user, group, and others.
-
-So, let's take a look at what chmod commands typically look like.
-
-    chmod a+rwx file
-
-This basically means grant *rwx* permissions to all. *a* represents All, which includes User, Group, and Others.
-
-Now, take a look at this:
-
-    chmod go-rwx file
-
-This means remove *rwx* permissions from *group and others*. This prevents others from looking at files and is typically used to store private data from non-root users.
-
 ## Here's another exercise!
 
 A directory, bin/, has permissions 0777. You wish to remove write permissions from group and others. How'd you do this?
 
 For this question, you need to supply two ways:
 
-1. Using symbolic notation with chmod
-2. Using numeric notation
+1. Using Relative method
+2. Using Absolute method
 
 Also, please note that in chmoding a whole directory, you should use the recursive flag.
 
