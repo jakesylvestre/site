@@ -12,9 +12,9 @@ tags:
 author: 
   - wei2912
   - jaffer1979
-  - "manu-27993"
-summary: "Learn how to master the two commands that are often associated with file permissions manipulation - chmod and chown."
-location: "_posts/commands/Chmod&Chown.md"
+  - manu-27993
+summary: Learn how to master the two commands that are often associated with file permissions manipulation - chmod and chown.
+location: _posts/commands/Chmod&Chown.md
 ---
 
 This was originally a class at [http://piratepad.net/NixTuts-LinuxCmdLine-9psZK](http://piratepad.net/NixTuts-LinuxCmdLine-9psZK), so feel free to visit it if you want to experience something more interactive.
@@ -31,25 +31,28 @@ These "file modes" will be covered later. In short, it lets you change the file 
 
 1. You are the owner of the file.
 
-2. You are a root user.
+2. You are the root user.
 
 3. You are already given permission to modify file permissions by the owner or a root user.
 
 ## Syntax of chmod
+
 The simplified syntax of chmod is:
 	
 	chmod <option> <filename>
 
 ## Methods of using chmod
+
 There are two ways of changing the File Permissions:
 
-1. Relative method
+1. Symbolic notation
 
-2. Absolute method
+2. Numeric notation
 
 The difference lies only in the "option" part of the command.  
 
 ## Getting Started
+
 First, let's create a file in your home directory.
 
 	wei2912@wei-lm-desktop ~ $ touch file
@@ -74,33 +77,38 @@ The File attributes, as shown by ls -l command, gives you these information:
 
 7. Filename
 
-## Changing the File Permission using Relative method
+## Changing the File Permission using symbolic notation
+
 The "option" part in this method can be divided into three parts:
 
-	<to_whom> <action> <modes>
+	<user/group/others> <action> <modes>
 
 so that we can write the syntax for this method as:
 
-	chmod <to_whom><action><modes> <filename>
+	chmod <user/group/others><action><modes> <filename>
 
-### Understanding the "to_whom" part
+### user/group/others
+
 It means what users are affected by the change in permission.
 
->u --> affects the current user.     
-g --> affects the group of current user.      
-o --> affects all other users. 
-a --> affects all users (equivalent of ugo).
+    u --> affects the current user  
+    g --> affects the group of current user     
+    o --> affects all other users
+    a --> affects all users (equivalent of ugo)
 
-The to_whom modes can also be combined together. For example, ug affects current user and the group but not others.
+These modes can be combined together. For example, ug affects the current user and the group but not others.
 
-### Understanding the "action" part
+### action
+
 It means what action to be taken:
 
->= --> assign permission		
-+ --> grant permission 			
-- --> withdraw permission
+    = --> assign permission
+    + --> grant permission
+    - --> withdraw permission
 
-### Understanding the "modes" part
+Assigning permissions is absolute (if your file has rwx at the start and you assign r to it, it'll have r-- permissions). Granting and withdrawing permissions is relative (if your file has rwx at the start and you withdraw r from it, it'll have -wx permissions).
+
+### modes
 
 First, let's zoom into this:
 
@@ -109,7 +117,8 @@ First, let's zoom into this:
 Breaking it into parts:
 
     - rw- r-- r-- 
-The first character tells a user which type of file this is. (d means a directory file, - means a normal file). In Linux, there are three types of modes that apply to permissions manipulation: read(r), write(w) and execute(x). A full permissions would look like this:
+
+The first character tells a user which type of file this is. (d means a directory file, - means a normal file). In Linux, there are three types of modes that apply to permissions manipulation: Read, Write and eXecute. A full permissions would look like this:
  
     rwx
     
@@ -129,9 +138,12 @@ Here's a view of what it looks like:
       write
 
 #### Examples
-	chmod u+x file  //grants the current user execute permission for the file
-    chmod go-wx file //withdraws write and execute permissions from the group and others
-    chmod a=rw file  //assigns read and write permissions for all users
+
+	chmod u+x file  # grants the current user execute permission for the file
+	
+    chmod go-wx file #withdraws write and execute permissions from the group and others
+    
+    chmod a=rw file  #assigns read and write permissions for all users
 
 Remember the output we showed previously using "ls -l"? The 3rd and 4th columns are shown below:
 
@@ -139,19 +151,19 @@ Remember the output we showed previously using "ls -l"? The 3rd and 4th columns 
 
 This section means this belongs to user **wei2912** of group **weigrp**. To change this, [chown](/commands/Chmod&Chown.html#chown) is used. This will be covered later.
 
-## Exercises
+### Exercises
 
 A directory's "ls -l" shows this output:
 
-    drwx------  2 wei2912 wei2912  4096 Jun 17 18:19 bin
+    drwx------  2 wei2912 weigrp  4096 Jun 17 18:19 bin
     
 What are the permissions of this directory and who owns it?
 
 **Answer:**
 
-User wei2912 from group wei2912 owns the directory. Only the user can read, write and execute.
+User **wei2912** from group **weigrp** owns the directory. Only the user can read, write and execute.
 
-## Changing the File Permission using Absolute method
+## Changing file permissions using numeric notation
 
 Sometimes, you might see someone state that a file has permissions "0777". What exactly does this mean?
 
@@ -162,37 +174,33 @@ Let's break it up into smaller parts again.
 That doesn't seem to look like much, but each digit signifies something. Let's ignore the first digit for now. The 2nd digit represents the current user, 3rd the group and 4th other users.  
 
 Looking at the last three digits, what do you think it means? This can be interpreted using the following table:
->Digit | rwx    | What it does?
 
->0    | 000    | Assigns no permissions
+    Digit | XXX | rwx | What it does?
+    0     | 000 | --- | Assigns no permissions
+    1     | 001 | --x | Assigns execute permission
+    2     | 010 | -w- | Assigns write permission
+    3     | 011 | -wx | Assigns write and execute permissions
+    4     | 100 | r-- | Assigns read permission
+    5     | 101 | r-x | Assigns read and execute permissions
+    6     | 110 | rw- | Assigns read and write permissions
+    7     | 111 | rwx | Assigns all read, write and execute permissions
 
->1    | 001    | Assigns execute permission
+The first column indicates what number to use. The second column indicates its binary value of 3 bits, with the bits representing modes r, w and x respectively. The third column tells you what it is in symbolic notation, and the fourth tells you what it does.
 
->2    | 010    | Assigns write permission
+This is known as **numeric notation**. In this case, 0777 translates to rwxrwxrwx.
 
->3    | 011    | Assigns write and execute permissions
-
->4    | 100    | Assigns read permission
-
->5    | 101    | Assigns read and execute permissions
-
->6    | 110    | Assigns read and write permissions
-
->7    | 111    | Assigns all read, write and execute permissions
-
-The first column indicates what number to use. The second column indicates its binary value of 3 bits, with the bits representing modes r, w and x respectively. The third column tells you what it does.
-
-This is known as **numeric notation**. In this case, 0777 translates to -rwxrwxrwx.
 ## Examples
-	chmod 664 file  //Assigns read and write permissions for current user and group, but only read for others
-    chmod 0764 file //Assigns all permissions for current user read and write for group, but only read for others
+
+	chmod 664 file # rw-rw-r--
+
+    chmod 764 file # rwxrw-r--
     
 ## Exercises (again)
 
 Translate these codes into symbolic notation:
 
-1. 0777
-2. 0755
+1. 777
+2. 755
 
 **Answer:**
 
@@ -201,12 +209,12 @@ Translate these codes into symbolic notation:
 
 ## Here's another exercise!
 
-A directory, bin/, has permissions 0777. You wish to remove write permissions from group and others. How'd you do this?
+A directory, bin/, has permissions 777. You wish to remove write permissions from group and others. How'd you do this?
 
 For this question, you need to supply two ways:
 
-1. Using Relative method
-2. Using Absolute method
+1. Using symbolic notation
+2. Using numeric notation
 
 Also, please note that in chmoding a whole directory, you should use the recursive flag.
 
@@ -217,7 +225,7 @@ This means that changes apply to all directories and files contained within. To 
 **Answer:**
 
 1. chmod -R go-w bin/
-2. chmod -R 0755 bin/
+2. chmod -R 755 bin/
 
 While doing the exercise, did you notice something between numeric and symbolic notation?
 
@@ -225,7 +233,7 @@ Let's try another exercise to find out.
 
 ## Again, an exercise!
 
-File qwerty has permissions rwx rwx ---
+File qwerty has permissions `rwxrwx---`
 
 What's the final file permissions after doing:
 
@@ -233,13 +241,13 @@ What's the final file permissions after doing:
 
 **Answer:**
 
-    rwx rwx r-x
+    rwxrwxr-x
 
-Also, if file qwerty had permissions --- --- ---, what'd be the final file permissions?
+Also, if file qwerty had permissions `---------`, what'd be the final file permissions?
 
 **Answer:**
 
-    --- --- r-x
+    ------r-x
 
 **Using symbolic notation is relative to the file's permissions.**
 
@@ -247,21 +255,21 @@ Now, let's try with numeric notation.
 
     chmod 775 qwerty
 
-What happens to the file permissions if qwerty had file permissions "rwx rwx ---" originally?
+What happens to the file permissions if qwerty had file permissions `rwxrwx---` originally?
 
 **Answer:**
 
-    rwx rwx r-x
+    rwxrwxr-x
 
-Now, what happens if qwerty had file permissions "--- --- ---" instead?
+Now, what happens if qwerty had file permissions `---------` instead?
 
 **Answer:**
 
-    rwx rwx r-x 
+    rwxrwxr-x 
 
 **Using numeric notation is absolute and does not depend on the original file's permissions.**
 
-Thus, by using numeric notation, you could save a lot of typing required for symbolic notation.
+Thus, by using numeric notation, you could save a lot of typing required for symbolic notation. If you wish to assign absolute permissions using symbolic notation, you can use '=', as mentioned above.
 
 # chown
 
