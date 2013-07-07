@@ -32,7 +32,7 @@ body { background: #000000; }
 header { border-color: #C3CCD0 ; }
 footer, nav { background-color: #000; }
 footer a, nav a { color: #9ACAD9; }
-footer p, nav p { color: #37C400; }
+footer span, nav p { color: #37C400; }
 
 .postg { background-color: #FFF; }
 .postg a { color: #0DA4D3; }
