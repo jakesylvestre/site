@@ -1,13 +1,19 @@
 ---
 layout: post
-title: Shell Shortcuts
-category: shells
-tags: [bash, shortcuts, shells]
-author: [wei2912]
-summary: Shells have many useful features and shortcuts. Learn some of them in this tutorial!
 status: draft
 
-location: _posts/programming/2012-12-29-ShellShortcuts.md
+title: Bash Shortcuts
+category: shells
+tags: 
+  - bash
+  - shortcuts
+  - shells
+author: 
+  - wei2912
+
+summary: BASH has many useful features and shortcuts. Learn some of them in this tutorial!
+
+location: _posts/programming/2012-12-29-BashShortcuts.md
 ---
 
 Let's take a look at a couple of case scenarios.

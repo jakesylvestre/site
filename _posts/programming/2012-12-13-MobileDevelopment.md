@@ -1,32 +1,37 @@
 ---
 layout: post
+status: draft
+
 title: Mobile Development
 category: programming
-tags: [mobile, android, tablet, programming, sl4a]
-author: [diabolist, wei2912]
+tags: 
+  - mobile
+  - android
+  - tablet
+  - programming
+  - sl4a
+author: 
+  - diabolist
+  - wei2912
 
-summary: Get started on developing from your Tablet!
-
-status: draft
+summary: Get started on developing from your tablet, using nothing more then a Tablet (Asus TF700T Transformer).
 
 location: _posts/programming/2012-12-13-MobileDevelopment.md
 ---
 
-#Using nothing more then a Tablet (Asus TF700T Transformer)
+I (diabolist) bought a Transformer Tablet and its keyboard attachment, as a cool product and hopefully a nice tool. The idea is to be able to development, modify, even test code in a mobile environment. It is far from perfect, but with patience you can get tools needed to begin development.
 
-I bought a Transformer Tablet and its keyboard attachment, as a cool product and hopefully a nice tool. The idea is to be able to development, modify, even test code in a mobile environment. It is far from perfect, but with patience you can get tools needed to begin development.
-
-First off... I rooted my tablet. You don't _need_ to, but I find it necessary for some tasks. _However_, this is _NOT_ needed for the setup that I have. There are not many apps that have the flexibility or give you back the power of your terminal like [Terminal IDE](http://www.spartacusrex.com/terminalide.htm). You can install this app through Google's Play Store. Terminal IDE uses [Busybox](http://www.busybox.net/about.html), [bash (bourne again shell)](http://www.gnu.org/software/bash/), [ssh](http://www.openssh.org/), a few Java development tools, editors (nano, vim), even [git](http://git-scm.com/) (a little tricky to setup, but works), and you don't have to be root to use them.
+First off... I rooted my tablet. You don't *need* to, but I find it necessary for some tasks. *However*, this is *NOT* needed for the setup that I have. There are not many apps that have the flexibility or give you back the power of your terminal like [Terminal IDE](http://www.spartacusrex.com/terminalide.htm). You can install this app through Google's Play Store. Terminal IDE uses [Busybox](http://www.busybox.net/about.html), [bash (bourne again shell)](http://www.gnu.org/software/bash/), [ssh](http://www.openssh.org/), a few Java development tools, editors (nano, vim), even [git](http://git-scm.com/) (a little tricky to setup, but works), and you don't have to be root to use them.
 
 <!--more-->
 
-##Prototyping
+## Prototyping
 
 Sometimes you'll be away from your laptop/desktop somewhere, over a friends house, at a coffee shop... All the sudden, you have this great idea for an app or just want to write a tool real quick. Instead of just writing it down somewhere and hoping to come around to it later... why not write your code on the fly?
 
-[Scripting Layer for Android](http://code.google.com/p/android-scripting/), allows you to install your favorite scripting languages, like Python, Perl, Ruby(JRuby), JavaScript... which have access to most of the APIs your Android app would normally use. With this the sky is the limit, and it is even possible to run the interpreters in Terminal IDE without using the SL4A app. This is useful when you are running a script that uses arguments, because you can not give scripts arguments in SL4A. For a good example, I am writing this post in Markdown. Even though it is dead simple to write in, you still make mistakes and it would be nice to view it how others will see it, right? (as a note from a reviewer, you did make a lot of mistakes, especially on this line :P)
+[Scripting Layer for Android](http://code.google.com/p/android-scripting/), allows you to install your favorite scripting languages, like Python, Perl, Ruby (JRuby), JavaScript... which have access to most of the APIs your Android app would normally use. With this the sky is the limit, and it is even possible to run the interpreters in Terminal IDE without using the SL4A app. This is useful when you are running a script that uses arguments, because you can not give scripts arguments in SL4A. For a good example, I am writing this post in Markdown. Even though it is dead simple to write in, you still make mistakes and it would be nice to view it how others will see it, right?
 
-###Using Perl(or any interrupter) from SL4A in Terminal IDE
+### Using Perl(or any interrupter) from SL4A in Terminal IDE
 
 We are going to use the Markdown.pl script, used to convert your markdown files into HTML, as an example of what can be done.
 
@@ -56,13 +61,13 @@ Now you can find your file in your filemanager and open it with HTMLViewer  :-)
 
 This method has also been done for Python, and I'm sure can be used for others. Now you can run most of your scripts on your Android device.
 
-##Git
+## Git
 
 One thing you'll want is a way to easily manage your software. Git does this, and is widely used, for good reason. We have it with Terminal IDE and we can set it up to do what we need.
 
 [This guide](lox-o-drome.blogspot.com/2012/08/damgit-how-to-painfully-set-up-git-on.html) is what I used to setup git, and I am just going to summarize it here.
 
-###SSH public key
+### SSH public key
 
 We will need to use SSH to connect to Git repositories because Terminal IDE doesn't seem to like __https://__. That means creating a public ssh token. We will use 'dropbearkey' to create a password-less pair for our servers. In Terminal IDE run:
 
@@ -100,7 +105,7 @@ Now make it executable:
 
     export GIT_SSH=~/bin/ssh-git
 
-###Configuring Git
+### Configuring Git
 
 OK, now that we are finished playing with that, don't forget to configure Git! Unfortunately, doing this the conventional way will not work due to config issues. However we can still get it to display the correct information. Once again, open up '~/bashrc' in our text editor and add these to it:
 

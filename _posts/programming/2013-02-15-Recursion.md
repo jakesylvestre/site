@@ -1,12 +1,15 @@
 ---
 layout: post
+status: draft
+
 title: Basics of Recursion
 category: programming
-tags: [programming, recursion]
-author: [wei2912, manu--27993]
-sources: ["http://www.cob.sfasu.edu/rball/342/Luke_Divide-and-conquer.html"]
-
-status: draft
+tags: 
+  - programming
+  - recursion
+author: 
+  - wei2912
+  - manu-27993
 
 summary: Recursion, while in theory, can be very easy to master, in practice it can be extremely difficult to implement if not learnt well. In this tutorial, we'll try to get you to understand recursion!
 
@@ -118,7 +121,7 @@ That said... let's get into some ways you can conquer recursion.
 
 [Divide and Conquer](https://en.wikipedia.org/wiki/Divide_and_conquer_algorithm) is taking a large problem and dividing it into smaller subproblems. These subproblems can be divided even further. This allows 1) problems to be solved more efficiently 2) problems to be solved easily. Code is actually *cleaner* and *more efficient* when you apply this.
 
-Let's take a look at the [Merge sort](https://en.wikipedia.org/wiki/Mergesort). The function takes in a list that contains *n* objects.
+Let's take a look at the [Merge sort](https://en.wikipedia.org/wiki/Mergesort). The function takes in a list that contains *n* objects. This example was taken from [a page describing Divide and Conquer](http://www.cob.sfasu.edu/rball/342/Luke_Divide-and-conquer.html).
 
 First, the list is split in half. And half. Repeatedly (that's the nature of recursion) till it reaches 1, since a list that contains only 1 object is somewhat *already* sorted, since the original result and the result after sorting is the same.
 

@@ -1,17 +1,19 @@
 ---
 layout: post
-title: Building a Minimalist system
-category: generic-linux
-tags: [minimal, kernel, building, system]
-author: [wei2912, Subsentient]
-
 status: draft
 
-sources: ["http://www.linuxfromscratch.org/", "https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard", "https://en.wikipedia.org/wiki/GNU_package#Base_system.5Bcitation_needed.5D"]
+title: Building a Minimalist system
+category: generic-linux
+tags: 
+  - minimal
+  - kernel
+  - building
+  - system
+author: 
+  - wei2912
+  - Subsentient
 
 summary: A minimalist system is a tiny system which can be used for servers. Usually many people use a pre-built system like Debian, Red Hat and many others. Today, we're going to teach you how to build a much tinier system!
-
-COMMENTS: EXPLAIN THE PACKAGES USED AND ADD IN COMPILATION OF SYSVINIT.
 
 location: _posts/generic-linux/YYYY-MM-DD-BuildingAMinimalistSystem.md
 ---

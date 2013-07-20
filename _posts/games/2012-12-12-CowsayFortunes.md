@@ -1,17 +1,22 @@
 ---
 layout: post
+status: draft
+
 title: Cowsay Fortunes
 category: games
-tags: [games, cowsay, fortunes]
-author: [wei2912]
+tags: 
+  - games
+  - cowsay
+  - fortunes
+author: 
+  - wei2912
 
-status: draft
 summary: Many geeks are bored with staring at a blank terminal screen, trying to remember the commands they need to use. Here's a nice little way to add some fun to your terminal life.
-
-sources: ["https://sites.google.com/site/debininja/tutorials/fun-fortunes"]
 
 location: _posts/games/2012-12-12-CowsayFortunes.md
 ---
+
+The original tutorial was published at [https://sites.google.com/site/debininja/tutorials/fun-fortunes](https://sites.google.com/site/debininja/tutorials/fun-fortunes). We've been given permission to replicate the tutorial and add onto our own edits :)
 
 ## Basics
 So, what's fortune? And what's cowsay?

@@ -1,11 +1,16 @@
 ---
 layout: post
+status: post
+
 title: Packaging deb files
 category: debian
-tags: [debian, deb, package]
-author: [Mimieam, wei2912]
-
-status: post
+tags: 
+  - debian
+  - deb
+  - package
+author: 
+  - Mimieam
+  - wei2912
 
 summary: Deb files are great. They don’t include all the dependencies, they download from repositories. This makes them rather appealing as lightweight. Another strong point is the ease which anyone can install them with. That’s not all though – deb files are incredibly simple to package. With just a bit of work, you can package one in a matter of minutes!
 

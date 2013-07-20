@@ -1,11 +1,15 @@
 ---
 layout: post
+status: draft
+
 title: Starting a Launchpad PPA
 category: ubuntu
-tags: [launchpad, ppa, ubuntu]
-author: [wei2912]
-
-status: draft
+tags: 
+  - launchpad
+  - ppa
+  - ubuntu
+author: 
+  - wei2912
 
 summary: Launchpad PPAs are one of the ways Ubuntu uses to make life easier for common users, who don't want to copy whole lines of text into their /etc/apt/sources.list.
 

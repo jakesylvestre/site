@@ -1,13 +1,15 @@
 ---
 layout: post
-status: post
+status: draft
 
 title: Useful Tiny Commands
 category: commands
-tags: [bash, commands]
-author: [wei2912, manu-27993]
-
-status: draft
+tags: 
+  - bash
+  - commands
+author: 
+  - wei2912
+  - manu-27993
 
 summary: Learn how to list hidden files, look at a calender and many more with those pesky tiny commands!
 
@@ -59,7 +61,9 @@ Here's some example output:
 
 	date
 
-Self explanatory.
+Self explanatory - shows the date.
+
+<!--more-->
 
 ## Users
 

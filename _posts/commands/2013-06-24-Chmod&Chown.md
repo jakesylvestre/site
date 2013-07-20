@@ -1,7 +1,7 @@
 ---
-published: true
 layout: post
 status: post
+
 title: Using chmod and chown
 category: commands
 tags: 
@@ -13,7 +13,9 @@ author:
   - wei2912
   - jaffer1979
   - manu-27993
+
 summary: Learn how to master the two commands that are often associated with file permissions manipulation - chmod and chown.
+
 location: _posts/commands/Chmod&Chown.md
 ---
 
@@ -34,6 +36,8 @@ These "file modes" will be covered later. In short, it lets you change the file 
 2. You are the root user.
 
 3. You are already given permission to modify file permissions by the owner or a root user.
+
+<!--more-->
 
 ## Syntax of chmod
 

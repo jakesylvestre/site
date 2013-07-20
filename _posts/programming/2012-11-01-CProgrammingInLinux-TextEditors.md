@@ -1,11 +1,14 @@
 ---
 layout: post
+status: draft
+
 title: C/C++ Programming in Linux - Text Editors
 category: programming
-tags: [programming]
-author: [manu-27993, wei2912]
-
-status: draft
+tags: 
+  - programming
+author: 
+  - manu-27993
+  - wei2912
 
 summary: Many C/C++ Programming IDEs are not available for download on Linux. Here, we cover the solutions in Linux.
 

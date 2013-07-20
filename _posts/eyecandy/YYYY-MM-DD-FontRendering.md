@@ -1,11 +1,14 @@
 ---
 layout: post
+status: draft
+
 title: Font Rendering in Linux
 category: eyecandy
-tags: [eyecandy]
-author: [manu-27993, wei2912]
-
-status: draft
+tags: 
+  - eyecandy
+author: 
+  - manu-27993
+  - wei2912
 
 summary: Did you ever say "OMG! My fonts look ugly everywhere" while using Linux? Let's put an end to it!
 

@@ -1,11 +1,21 @@
 ---
 layout: post
+status: draft
+
 title: Shutting Down Linux
 category: commands
-tags: [shutdown, reboot, poweroff, sysrq, commands]
-author: [programmerdams, wei2912, diabolist]
+tags: 
+  - shutdown
+  - reboot
+  - poweroff
+  - sysrq
+  - commands
+author: 
+  - programmerdams
+  - wei2912
+  - diabolist
+
 summary: Shutting down Linux isn't as simple as pushing a switch. Learn how to shutdown Linux properly.
-status: draft
 
 location: _posts/generic-linux/2013-01-06-ShutdownLinux.md
 ---
@@ -16,7 +26,7 @@ The "shutdown" command should suit most of your needs.
 
 Here's how to use it:
 
-###To bring the system down and so with a complete poweroff
+## To bring the system down and so with a complete poweroff
 
     shutdown -hP now
 
@@ -31,13 +41,13 @@ Please note: You need the "now" in the command in order to shutdown immediately.
 
 <!--more-->
 
-###Why Can't I just use halt? It does the same thing, doesn't it?
+## Why Can't I just use halt? It does the same thing, doesn't it?
 
 Shooting a sedated person in the heart is much better than shooting him when he's fully conscious.
 
 The shutdown command is gentler in exiting processes.
 
-###Oh wait. I need something done, but I've run the shutdown command! HELP!!
+## Oh wait. I need something done, but I've run the shutdown command! HELP!!
 
 Don't panic.
 
@@ -49,7 +59,7 @@ C) "killall shutdown"
 
 NOTE: This works best if you've set a decent time interval before the shutdown. If you set it to "now", don't bother.
 
-###So, what exactly happens during the shutdown?
+## So, what exactly happens during the shutdown?
 
 I won't bore the reader with technicalities, but here are a few things that happen:
 
@@ -59,7 +69,7 @@ I won't bore the reader with technicalities, but here are a few things that happ
 
 Let's just say that a proper shutdown will improve your systems reliability and prevent unnecessary loss of data (these include your son's 1st birthday photos).
 
-###Uh, my computer isn't responsive. Can I safely poweroff my computer?
+## Uh, my computer isn't responsive. Can I safely poweroff my computer?
 
 Yes. There is a method in-which is more hands-on but will ensure that your data is safe...
 
