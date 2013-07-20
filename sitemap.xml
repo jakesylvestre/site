@@ -5,14 +5,14 @@
 <url>
 <loc>http://nixtuts.info/</loc>
 <lastmod>{{ site.time | date: '%Y-%m-%d' }}</lastmod>
-<changefreq>weekly</changefreq>
+<changefreq>daily</changefreq>
 <priority>1</priority>
 </url>
 
 <url>
 <loc>http://nixtuts.info/index.html</loc>
 <lastmod>{{ site.time | date: '%Y-%m-%d' }}</lastmod>
-<changefreq>weekly</changefreq>
+<changefreq>daily</changefreq>
 <priority>1</priority>
 </url>
 
@@ -21,7 +21,7 @@
 <url>
 <loc>http://nixtuts.info{{ page.url }}</loc>
 <lastmod>{{ site.time | date: '%Y-%m-%d' }}</lastmod>
-<changefreq>weekly</changefreq>
+<changefreq>daily</changefreq>
 <priority>0.8</priority>
 </url>
 {% endunless %}
@@ -30,7 +30,7 @@
 <url>
 <loc>http://nixtuts.info{{ post.url }}</loc>
 <lastmod>{{ site.time | date: '%Y-%m-%d' }}</lastmod>
-<changefreq>weekly</changefreq>
+<changefreq>daily</changefreq>
 <priority>0.6</priority>
 </url>
 {% endfor %}
