@@ -18,31 +18,19 @@
 
             <div class="content clearfix" role="article">
                 <h1 class="post_title">{{page.title}}</h1>
-
-                {% if page.status == 'program' %}
-                    <h3 class="launch_date">Launch date: {{ page.launch }}</h3>
-                    <h3 class="close_date">Closing date: {{ page.close }}</h3>
-                {% endif%}
-
-                {% if page.status == 'book' %}
-                    <h3 class="post_partof">Part of <a href="{{page.bookurl}}">{{page.book}}</a>.</h3>
-                {% endif%}
-
                 {% if page.status == 'post' or page.status == 'draft' %}
                     <h3 class="post_date">Posted on {{ page.date | date: "%d %B %Y" }}</h3>
                 {% endif %}
+                
+                <h3 class="post_readingtime">Reading Time: {{ page.content | reading_time }}</h3>
 
                 {% if page.author != null %} 
                     <h3 class="post_author">By: {% for author in page.author %}<a class="button icon tag pill" href="/search.html?authors={{author}}">{{author}}</a> {% endfor %} </h3> 
                 {% endif %}
 
-                {% if page.sources != null %}
-                    <h3 class="post_sources">Sources: {% for source in page.sources %} <a class="button pill" href="{{source}}">{{source | truncate: 25}}</a> {% endfor %} </h3>
-                {% endif %}    
-
-                {% if page.tags != null and page.status != 'book' %}
+                {% if page.tags != null %}
                     <h3 class="post_tags">Tags: {% for tag in page.tags %}<a class="button icon tag pill" href="/search.html?tags={{tag}}">{{tag}}</a> {% endfor %} </h3>
-                {% endif %}    
+                {% endif %}
 
                 {% if page.status == 'draft' %}
                     <h3 class="warn post_banner">This tutorial is a draft and pending validation. You may see weird formatting/incomplete content.</h3>
@@ -79,10 +67,6 @@
                 {% if page.status != 'page' %}
 					{% include snippets/sharebuttons.html %}
                     {% include snippets/after-post.html %}
-                {% endif %}
-
-                {% if page.status == 'book' %}
-                    <p class="highlight book_return">Return to <a href="{{ page.bookurl }}">{{ page.book }}</a>.</p>
                 {% endif %}
             </div>
 
