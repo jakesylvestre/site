@@ -1,3 +1,86 @@
 ---
 ---
-{% include post.html %}
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        {% include snippets/head.html %}
+        <title>{{page.title}} - NixTuts</title>
+    </head>
+
+    <body>
+		<nav class="clearfix" role="navigation">
+			{% include snippets/nav.html %} 
+        </nav>
+
+        <div class="main clearfix" role="main">
+            <header class="clearfix" role="banner">
+                {% include snippets/header.html %}
+                {% include snippets/searchbar.html %}
+            </header>
+
+            <div class="content clearfix" role="article">
+                <h1 class="post_title">{{page.title}}</h1>
+                {% if page.status == 'post' or page.status == 'draft' %}
+                    <h3 class="post_date">Posted on {{ page.date | date: "%d %B %Y" }}</h3>
+                {% endif %}
+                
+                <h3 class="post_readingtime">Reading Time: {{ page.content | reading_time }}</h3>
+
+                {% if page.author != null %} 
+                    <h3 class="post_author">By: {% for author in page.author %}<a class="button icon tag pill" href="/search.html?authors={{author}}">{{author}}</a> {% endfor %} </h3> 
+                {% endif %}
+
+                {% if page.tags != null %}
+                    <h3 class="post_tags">Tags: {% for tag in page.tags %}<a class="button icon tag pill" href="/search.html?tags={{tag}}">{{tag}}</a> {% endfor %} </h3>
+                {% endif %}
+
+                {% if page.status == 'draft' %}
+                    <h3 class="warn post_banner">This tutorial is a draft and pending validation. You may see weird formatting/incomplete content.</h3>
+                {% endif %}
+
+				{% if page.status != 'page' %}
+					{% include snippets/sharebuttons.html %}
+                {% endif %}
+
+                {% if page.img != null %}
+                    <img src="{{page.img}}" alt="{{page.title}}" /><br />
+                {% endif %}
+
+
+                {% if page.summary != null %} 
+                    <strong style="font-size: 150%; font-weight: normal;">{{ page.summary }}</strong>
+                {% endif %}
+
+                {{ content }}
+
+                {% if page.status != 'program' and page.status != 'page' %}
+                    {% if site.related_posts != empty %}
+						<h2 class="related_posts">Related Posts</h2>
+                        {% for post in site.related_posts %}
+                            <a href="{{ post.url }}">{{post.title }}</a><br />
+                        {% endfor %}
+                    {% endif %}
+                {% endif %}
+                
+                {% if page.location != empty %}
+                    <p class="highlight prose_io">Spot a mistake? Edit this page at <a href="http://prose.io/#linuxtuts/linuxtuts.github.com/tree/master/{{page.location}}" target="_blank">prose.io</a>.</p>
+                {% endif %}
+                
+                {% if page.status != 'page' %}
+					{% include snippets/sharebuttons.html %}
+                    {% include snippets/after-post.html %}
+                {% endif %}
+            </div>
+
+            <div class="sidebar clearfix">
+                {% include snippets/sidebar.html %}
+            </div>  
+        </div>
+        
+        <footer>
+            {% include snippets/footer.html %}
+        </footer>
+
+        {% include snippets/after.html %}
+    </body>
+</html>
