@@ -1,4 +1,4 @@
-/* TEAM */
+﻿/* TEAM */
 
 /* OWNERS https://github.com/organizations/linuxtuts/teams/247622 */
     
@@ -23,15 +23,15 @@
 
 /* SITE MAINTENANCE https://github.com/organizations/linuxtuts/teams/286503 */
 
-    JS Writer: d10
+    JS & CSS Writer: d10
     Account: https://github.com/d10
     Site: http://d10.github.com
 
+    JS & CSS Writer: Miezel
+    Account: https://github.com/Mimieam
+
     JS Writer: diabolist
     Account: https://github.com/diabolist
-
-    JS Writer: Miezel
-    Account: https://github.com/Mimieam
 
     JS Writer: Odd0002
     Account: https://github.com/Odd0002
