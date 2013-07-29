@@ -12,11 +12,11 @@ Posts that are suspected of copyright violations are to be put in _archives. You
 
 ## Directory
 
-Put all dependencies (jquery.js, print.css etc.) in directory _includes/css/depend and add their entry in css/all.css         
+Put all CSS dependencies (print.css etc.) in directory _includes/css/depend and add their entry in css/all.css         
                
-Put the css file of a theme in _includes/css/colors/ and add the link in /css/colors/ . Check other files there for more details.
+Put the css file of a theme in /css/colors/. Check the other files there for more details.
 
-Put all layouts in _layouts and put the actual code in _includes/
+Put all layouts in _layouts.
 
 Put all posts in _posts. Make sure they have the extension ".md". Use markdown formatting.
 
