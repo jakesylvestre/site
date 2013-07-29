@@ -1,0 +1,38 @@
+---
+---
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <title>{{page.title}} - NixTuts</title>
+        {% if head %}{{ head }}{% endif %}
+        {% include snippets/head.html %}
+    </head>
+
+    <body>
+	   <nav class="clearfix" role="navigation">
+			{% include snippets/nav.html %} 
+        </nav>
+
+        <div class="main clearfix" role="main">
+            <header class="clearfix" role="banner">
+                {% include snippets/header.html %}
+                {% include snippets/searchbar.html %}
+            </header>
+
+            <div class="content clearfix" role="article">
+                {{ content }}
+            </div>
+
+            <div class="sidebar clearfix">
+                {% include snippets/sidebar.html %}
+            </div>  
+        </div>
+        
+        <footer>
+            {% include snippets/footer.html %}
+        </footer>
+
+        {% include snippets/after.html %}
+        {% if body %}{{ body }}{% endif %}
+    </body>
+</html>
