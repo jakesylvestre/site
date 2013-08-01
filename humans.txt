@@ -111,6 +111,9 @@
     
     Author: wgreenhouse
     Account: https://github.com/wgreenhouse
+	
+    Author: Paradux
+    Account: https://github.com/Paradux
 
 /* THANKS */
 
