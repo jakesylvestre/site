@@ -2,9 +2,7 @@
 
 NixTuts is a site filled with tutorials. We aim to help *nix users, spread knowledge of *nix and help the Open Source/Free Software community!
   
-We're using [BinPress](https://github.com/linuxtuts/binpress) instead of Jekyll now.
 
-Please read [http://nixtuts.info/NixTuts/NixTutsContrib.html](http://nixtuts.info/NixTuts/NixTutsContrib.html) first.
 
 ## Archives
 
