@@ -236,6 +236,10 @@ footer span, nav a {
 	z-index: 998;
 }
 
+#home-link:hover {
+	text-decoration: none;
+}
+
 .ss-share {
     padding-left: 0;
     list-style: none; 
