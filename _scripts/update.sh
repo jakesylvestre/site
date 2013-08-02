@@ -1,6 +1,6 @@
 noGenerate="True" # set to true
 # updating repo
-cd /var/otherusers/wei2912/linuxtuts.github.com/
+cd /var/otherusers/wei2912/site/
 touch /var/otherusers/wei2912/temp.txt
 /usr/bin/git pull > /var/otherusers/wei2912/temp.txt || exit 1
 
@@ -39,9 +39,9 @@ if [ "$generate" == "True" ]
 then
 	echo "True"
 	# copying the files over to mysite folder!
-	/var/otherusers/wei2912/.gem/ruby/1.9.1/gems/jekyll-*/bin/jekyll build  /var/otherusers/wei2912/linuxtuts.github.com/_site/ || exit 1
+	/var/otherusers/wei2912/.gem/ruby/1.9.1/gems/jekyll-*/bin/jekyll build  /var/otherusers/wei2912/site/_site/ || exit 1
 	rm -rf /var/otherusers/wei2912/mysite/*
-    cp -r /var/otherusers/wei2912/linuxtuts.github.com/_site/* /var/otherusers/wei2912/mysite/
+    cp -r /var/otherusers/wei2912/site/_site/* /var/otherusers/wei2912/mysite/
 else
 	echo "False"
 fi
