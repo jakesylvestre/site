@@ -1,4 +1,4 @@
 title: NixTuts
 permalink: /:categories/:title.html
 
-exclude: ["todo", "readme.md", "CNAME", "Gemfile"]
+exclude: [".gitignore", "README.md", "Gemfile", "_scripts/update.sh"]
