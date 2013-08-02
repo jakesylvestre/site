@@ -4,18 +4,12 @@
     
     Owner: wei2912
     Account: https://github.com/wei2912
-    Site: http://linuxtuts.github.com
+    Site: http://wei2912.github.io
     Email: wei2912.supp0rt@gmail.com
 
     Co-owner: EyeR
     Account: https://github.com/EyeR
     Site: http://eyer.armed.me.uk
-
-    Co-owner: truexfan81
-    Account: https://github.com/truexfan81
-
-    Co-owner: hwkiller
-    Account: https://github.com/hwkiller
 
     Co-owner: manu 
     Account: https://github.com/manu-27993
@@ -36,8 +30,9 @@
     JS Writer: Odd0002
     Account: https://github.com/Odd0002
 
-    Hoster: Subsentient/bendib
+    Hoster: Subsentient
     Account: https://github.com/Subsentient
+    Site: http://universe2.us
 
 /* WRITING TUTS https://github.com/organizations/linuxtuts/teams/247623 */
 
