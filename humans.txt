@@ -36,15 +36,6 @@
 
 /* WRITING TUTS https://github.com/organizations/linuxtuts/teams/247623 */
 
-    Author: ajhcasual
-    Account: https://github.com/ajhcasual
-
-    Author: amcollie
-    Account: https://github.com/amcollie
-
-    Author: b3nto
-    Account: https://github.com/b3nto
-
     Author: d10
     Account: https://github.com/d10
     Site: http://d10.github.com
@@ -62,47 +53,22 @@
     Account: https://github.com/impiza
     Site: http://juz4fun.com
     
-    Author: jaffer1979
-    Account: https://github.com/jaffer1979
-    
-    Author: jony123
-    Account: https://github.com/jony123
-    
-    Author: lahirdenganselamat
-    Account: https://github.com/lahirdenganselamat
-
     Author: Miezel
     Account: https://github.com/Mimieam
     
     Author: MJ-meo-dmt
     Account: https://github.com/MJ-meo-dmt
 
-    Author: morfeus77
-    Account: https://github.com/morfeus77
-
     Author: Odd0002
     Account: https://github.com/Odd0002
     
     Author: dams
     Account: https://github.com/programmerdams
-    
-    Author: rstrcogburn
-    Account: https://github.com/rstrcogburn
-    
-    Author: sanbor
-    Account: https://github.com/sanbor
+    Site: http://dams.insomnia247.nl
 
-    Author: Subsentient/bendib
+    Author: Subsentient
     Account: https://github.com/Subsentient
-
-    Author: TheRedMood
-    Account: https://github.com/TheRedMood
-
-    Author: harski
-    Account: https://github.com/harski
-
-    Author: tsunami
-    Account: https://github.com/tsunami666
+    Site: http://universe2.us
     
     Author: wgreenhouse
     Account: https://github.com/wgreenhouse
@@ -120,8 +86,6 @@
     Doctype: HTML5
     License: CC BY-SA 3.0
 
-    Operating System: *nix
-    
     Source URL: https://github.com/linuxtuts/linuxtuts.github.com
     Organization URL: https://github.com/linuxtuts
     
