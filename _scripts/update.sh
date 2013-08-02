@@ -2,7 +2,7 @@ noGenerate="True" # set to true
 HOME="/var/otherusers/wei2912"
 # updating repo
 cd $HOME/site
-touch $HOME/temp.txta
+touch $HOME/temp.txt
 /usr/bin/git pull > $HOME/temp.txt || exit 1
 
 echo $1
