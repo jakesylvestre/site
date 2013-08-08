@@ -1,8 +1,8 @@
 # [NixTuts](http://nixtuts.info)
 
 NixTuts is a site filled with tutorials. We aim to help *nix users, spread knowledge of *nix and help the Open Source/Free Software community!
-  
 
+[![Visit our IRC channel](https://kiwiirc.com/buttons/irc.spotchat.org/NixTuts.png)](https://kiwiirc.com/client/irc.spotchat.org/?nick=kiwi_guest|?#NixTuts)
 
 ## Archives
 
@@ -42,7 +42,3 @@ Once you're done, install the plugins required. Check the Gemfile file (lol) for
 - writing bash scripts
 - Python tutorial
 - Arduino tutorial (i have a couple of videos)
-
-## Contributing
-
-Before contributing, please make sure you read our (currently screwed) [Guidelines](https://github.com/linuxtuts/linuxtuts.github.com/wiki/Guidelines)
