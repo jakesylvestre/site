@@ -14,12 +14,12 @@
     Co-owner: manu 
     Account: https://github.com/manu-27993
     Site: http://tsurge.wordpress.com
+    
+    Co-owner: d10
+    Account: https://github.com/d10
+    Site: http://d10.github.io
 
 /* SITE MAINTENANCE https://github.com/organizations/linuxtuts/teams/286503 */
-
-    JS & CSS Writer: d10
-    Account: https://github.com/d10
-    Site: http://d10.github.com
 
     JS & CSS Writer: Miezel
     Account: https://github.com/Mimieam
@@ -35,10 +35,6 @@
     Site: http://universe2.us
 
 /* WRITING TUTS https://github.com/organizations/linuxtuts/teams/247623 */
-
-    Author: d10
-    Account: https://github.com/d10
-    Site: http://d10.github.com
 
     Author: d4rkkn16ht
     Account: https://github.com/d4rkkn16ht
