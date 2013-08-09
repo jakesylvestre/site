@@ -69,8 +69,6 @@
                         <h3 class="post_date">Posted on {{ post.date | date: "%d %B %Y" }}</h3>
 						{% endif %}
 						
-						<h3 class="post_readingtime">Reading Time: {{ post.content | reading_time }}</h3>
-						
 						{% if post.author != null %} 
 							<h3 class="post_author">By: {% for author in post.author %}<a class="button icon tag pill" href="/search.html?authors={{author}}">{{author}}</a> {% endfor %} </h3> 
 						{% endif %}

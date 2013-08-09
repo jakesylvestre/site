@@ -23,8 +23,6 @@
                 {% if page.status == 'post' or page.status == 'draft' %}
                     <h3 class="post_date">Posted on {{ page.date | date: "%d %B %Y" }}</h3>
                 {% endif %}
-                
-                <h3 class="post_readingtime">Reading Time: {{ page.content | reading_time }}</h3>
 
                 {% if page.author != null %} 
                     <h3 class="post_author">By: {% for author in page.author %}<a class="button icon tag pill" href="/search.html?authors={{author}}">{{author}}</a> {% endfor %} </h3> 
