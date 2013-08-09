@@ -13,7 +13,7 @@ author:
 
 summary: Learn how to list hidden files, look at a calender and many more with those pesky tiny commands!
 
-location: _posts/commands/UsefulTinyCommands.md
+location: _posts/commands/2012-10-12-UsefulTinyCommands.md
 ---
 
 Here's a couple of useful commands that we feel are helpful to sysadmins specializing in Linux/Unix/BSD :)
