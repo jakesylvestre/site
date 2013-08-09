@@ -20,9 +20,9 @@ Put all posts in _posts. Make sure they have the extension ".md". Use markdown f
 
 Put all archived posts in _archives.
 
-Binary files or files that are meant to be downloaded are to be sent to linuxtuts.supp0rt@gmail.com . I'll inform you when the image has been accepted. Please state your reason or tell us the commit you're going to make. If you forked the repository and made your commit there, please link to it.
+Binary files or files that are meant to be downloaded are to be sent to nixtuts.supp0rt@gmail.com . I'll inform you when the image has been accepted. Please state your reason or tell us the commit you're going to make. If you forked the repository and made your commit there, please link to it.
 
-For more information contact wei2912 at wei2912.supp0rt@gmail.com or contact the NixTuts support email at linuxtuts.supp0rt@gmail.com.
+For more information contact wei2912 at wei2912.supp0rt@gmail.com or contact the NixTuts support email at nixtuts.supp0rt@gmail.com.
 
 ## Dependencies to build
 

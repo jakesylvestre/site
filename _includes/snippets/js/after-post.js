@@ -1,6 +1,6 @@
 // DISQUS \\
 // CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE
-var disqus_shortname = 'linuxtuts'; // required: replace example with your forum shortname
+var disqus_shortname = 'nixtuts'; // required: replace example with your forum shortname
 
 // DON'T EDIT BELOW THIS LINE
 var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
