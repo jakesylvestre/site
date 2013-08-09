@@ -31,7 +31,7 @@
             		<div class="postg expand clearfix">
             			<h1>IRC Client</h1>
 						<div class="post clearfix">
-							<p>This web IRC client is powered by <a href="https://kiwiirc.com/">kiwiiirc.com</a> and connects to <a href="irc://irc.spotchat.org">irc.spotchat.org</a>, #linux-tutorials, the main channel of NixTuts. If you have a desktop IRC client, you can access <a href="/about">About</a> for the full list of IRC channels available.</p>
+							<p>This web IRC client is powered by <a href="https://kiwiirc.com/">kiwiiirc.com</a> and connects to <a href="irc://irc.spotchat.org/NixTuts">irc.spotchat.org</a>, #NixTuts, the main channel of NixTuts. If you have a desktop IRC client, you can access <a href="/about">About</a> for the full list of IRC channels available and select one already on an IRC network which you use.</p>
 							<a id="kiwiirc-button" class="button arrowdown">Click to display KiwiIRC</a>
 							<br />
 							<div id="kiwiirc-iframe"></div>
@@ -112,7 +112,7 @@
                 return
             }
         	iframe = $(document.createElement('iframe'));
-            iframe.attr('src', 'https://kiwiirc.com/client/irc.spotchat.org/?nick=kiwi_guest|?#linux-tutorials')
+            iframe.attr('src', 'https://kiwiirc.com/client/irc.spotchat.org/?nick=kiwi_guest|?#NixTuts')
                 .css('border', '0')
                 .css('width', '100%')
                 .css('height', '450px')

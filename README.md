@@ -1,8 +1,8 @@
 # [NixTuts](http://nixtuts.info)
 
 NixTuts is a site filled with tutorials. We aim to help *nix users, spread knowledge of *nix and help the Open Source/Free Software community!
-  
 
+[![Visit our IRC channel](https://kiwiirc.com/buttons/irc.spotchat.org/NixTuts.png)](https://kiwiirc.com/client/irc.spotchat.org/?nick=kiwi_guest|?#NixTuts)
 
 ## Archives
 
@@ -20,9 +20,9 @@ Put all posts in _posts. Make sure they have the extension ".md". Use markdown f
 
 Put all archived posts in _archives.
 
-Binary files or files that are meant to be downloaded are to be sent to linuxtuts.supp0rt@gmail.com . I'll inform you when the image has been accepted. Please state your reason or tell us the commit you're going to make. If you forked the repository and made your commit there, please link to it.
+Binary files or files that are meant to be downloaded are to be sent to nixtuts.supp0rt@gmail.com . I'll inform you when the image has been accepted. Please state your reason or tell us the commit you're going to make. If you forked the repository and made your commit there, please link to it.
 
-For more information contact wei2912 at wei2912.supp0rt@gmail.com or contact the NixTuts support email at linuxtuts.supp0rt@gmail.com.
+For more information contact wei2912 at wei2912.supp0rt@gmail.com or contact the NixTuts support email at nixtuts.supp0rt@gmail.com.
 
 ## Dependencies to build
 
@@ -42,7 +42,3 @@ Once you're done, install the plugins required. Check the Gemfile file (lol) for
 - writing bash scripts
 - Python tutorial
 - Arduino tutorial (i have a couple of videos)
-
-## Contributing
-
-Before contributing, please make sure you read our (currently screwed) [Guidelines](https://github.com/linuxtuts/linuxtuts.github.com/wiki/Guidelines)
