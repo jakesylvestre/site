@@ -1,23 +1,22 @@
 ---
-layout: draft
+layout: post
 status: draft
 
 title: Ncurses Tutorial
-category: Programming
+category: programming
 tags: 
-  - Programming
-  - C++
-  - Ncurses
+  - programming
+  - c++
+  - ncurses
   - console
-  - Application
-  - CodeBlocks
-  - Library
+  - codeblocks
 author: 
   - Paradux
 
 summary: Have you ever wanted to make a console application or game on C++? Well, Ncurses is the solution! This tutorial will teach you how to setup this library on CodeBlocks and will teach you some basic features.
 
 location: _posts/programming/2013-08-09-NcursesTutorial
+---
 
 This tutorial will consist of 2 parts:
 
@@ -32,13 +31,16 @@ After this tutorial, you will be able to create your own console application usi
 # Installing Ncurses on CodeBlocks
 
 First of all, you will need the CodeBlocks IDE (Integrated Development Enviroment). To install, simply go to your package manager and search for the latest version of CodeBlocks. Or you can open up a terminal and use aptitude:
+
     sudo apt-get install codeblocks
 
 Next up is getting Ncurses. The latest version is available on: [http://ftp.gnu.org/gnu/ncurses](http://ftp.gnu.org/gnu/ncurses) (At the time of writing it is ncurses-5.9.tar.gz), put it in your Home folder.
 When you have downloaded the tarball extract it with tar:
+
     tar -xzvf ncurses-5.9.tar.gz
 
 Now is the time to configure and make the file, go to the extracted ncurses-5.9 folder in the terminal and run these commands:
+
     ./configure
     make
     sudo make install
