@@ -1,0 +1,105 @@
+/***** Color Glossary *****/
+
+@black: #000;
+@white: #FFF;
+
+@very-dark-grey: #151515;
+@dark-grey: #878787;
+@light-grey: #D4D4D4;
+
+@plain-text: #EAEAEA;
+
+@bright-green: #B5E85E;
+
+@link: #63C0F5;
+@link-dark: #227799;
+
+/***** End of Color Glossary *****/
+
+h1, h2 { 
+	color: @bright-green; 
+}
+h3, h4, h5, h6 { 
+	color: @light-grey; 
+}
+
+a { 
+	color: @link; 
+}
+p, strong, em { 
+	color: @plain-text; 
+}
+
+pre { 
+	color:@bright-green; 
+	border-color: rgba(255, 255, 255, 0.15); 
+	background-color: rgba(0, 0, 0, 0.9); 
+}
+blockquote { 
+	border-color: @light-grey; 
+	background-color: @black;
+} 
+
+th { 
+	border-color: @bright-green; 
+}
+hr { 
+	border-color: @bright-green; 
+}
+ul, ol {
+	color: @white; 
+}
+
+body { 
+	background-color: @light-grey; 
+}
+.main { 
+	background-color: @very-dark-grey; 
+	border-color: @dark-grey;
+}
+    
+header {
+	border-color: @bright-green;
+}
+
+nav, footer {
+	background-color: @light-grey;
+	 
+	a, #home-link_text {
+		color: @link-dark;
+	}
+	p {
+		color: @black;
+	}
+}
+
+.postg { 
+	background-color: #B5E853;
+	a { 
+		color: @link-dark; 
+	} 
+	
+	h1, h2, h3, h4, h5, h6, p {
+		color: @black;
+	}
+}
+.post { 
+	border-color: @black; 
+}
+
+/* buttons */
+.button, .button-noclick { 
+	color: @very-dark-grey;
+}
+
+/* rows */
+.row_box { 
+	border-color: @black; 
+}
+.row:nth-child(odd) { 
+	background-color: @black; 
+}
+
+#lite-switcher { 
+	border-color: @dark-grey;
+}
