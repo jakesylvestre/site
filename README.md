@@ -29,16 +29,3 @@ For more information contact wei2912 at wei2912.supp0rt@gmail.com or contact the
 Follow instructions at: http://nokogiri.org/tutorials/installing_nokogiri.html
 
 Once you're done, install the plugins required. Check the Gemfile file (lol) for the gems you need to install with "sudo gem install blahblahblah"
-
-## Tutorials Needed
-
-- JavaScript tutorial
-- HTML and CSS tutorial
-- Virtualbox
-- Unisen File Synchronizer
-- rsync
-- dd
-- cp, rm, mv
-- writing bash scripts
-- Python tutorial
-- Arduino tutorial (i have a couple of videos)
