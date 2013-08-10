@@ -13,7 +13,7 @@ tags:
 author: 
   - Paradux
 
-summary: Have you ever wanted to make a console application or game on C++? Well, Ncurses is the solution! This short tutorial will teach you how to setup this library on CodeBlocks and will teach you some basic features.
+summary: Have you ever wanted to make a console application or game in C++? Well, Ncurses is the solution! This short tutorial will teach you how to setup this library on CodeBlocks and will teach you some basic features.
 
 location: _posts/programming/2013-08-10-NcursesTutorial.md
 ---
@@ -45,7 +45,15 @@ Now is the time to configure and make the file, go to the extracted ncurses-5.9 
     make
     sudo make install
 
-Now comes the last part, configuring CodeBlocks to look for Ncurses. Start up CodeBlocks and go to Settings > Compiler and debugger, then go to the tab named ' Linker settings' and add /home/[yourname]/ncurses-5.9/lib/libncurses_g.a and /home/jeroen/ncurses-5.9/lib/libncurses.a (Image here). Go to the next tab called ' Search Directories' and add /home/jeroen/ncurses-5.9/ to Compiler, Linker and Resource compiler (Images here). You are now done with part 1!
+Now comes the last part, configuring CodeBlocks to look for Ncurses. Start up CodeBlocks and go to Settings > Compiler and debugger, then go to the tab named ' Linker settings' and add /home/yourname/ncurses-5.9/lib/libncurses_g.a and /home/jeroen/ncurses-5.9/lib/libncurses.a 
+
+(Image here). 
+
+Go to the next tab called 'Search Directories' and add */home/jeroen/ncurses-5.9/* to Compiler, Linker and Resource compiler.
+
+(Images here)
+
+You are now done with part 1!
 
 # Ncurses' basic features
 
@@ -54,17 +62,23 @@ To test if it all works, we will compile the mandatory Hello World program.
     #include <ncurses.h>
     int main()
     {	
-    	initscr();			/* Start curses mode 		  */
-    	curs_set(0)        /* Makes the cursor invisible */
-		printw("Hello World !!!");	/* Print Hello World		  */
-    	refresh();			/* Print it on to the real screen */
-    	getch();			/* Wait for user input */
-    	endwin();			/* End curses mode		  */
+    	initscr(); /* Start curses mode  */
+    	curs_set(0); /* Makes the cursor invisible */
+		printw("Hello World !!!"); /* Print Hello World */
+    	refresh(); /* Print it on to the real screen */
+    	getch(); /* Wait for user input */
+    	endwin(); /* End curses mode */
     
     	return 0;
     }
 
-So let's go through this short piece of code, the first function initscr() is to initiate Ncurses, you will need to put this function in every source code that uses the Ncurses library. The function initializes the curses system and allocates memory for our present window (called stdscr) and some other data-structures. printw(string) will output a string to an imaginary window. This brings us to refresh(). When we called printw the data is actually written to an imaginary window, which is not updated on the screen yet. The job of printw is to update a few flags and data structures and write the data to a buffer corresponding to stdscr. In order to show it on the screen, we need to call refresh() and tell the curses system to dump the contents on the screen. This function gives you the ability to make multiple changes to the output and display it whenever you want. endwin() will terminate Ncurses mode and frees the memory used.
+So let's go through this short piece of code. 
+
+The first function *initscr()* is to initiate Ncurses, you will need to put this function in every source code that uses the Ncurses library. This function initializes the curses system and allocates memory for our present window (called stdscr) and some other data-structures. 
+
+*printw(string)* will output a string to an imaginary window. This brings us to *refresh()*. When we called *printw()* the data is actually written to an imaginary window, which is not updated on the screen yet. The job of printw is to update a few flags and data structures and write the data to a buffer corresponding to stdscr. In order to show it on the screen, we need to call *refresh()* and tell the curses system to dump the contents on the screen. This function gives you the ability to make multiple changes to the output and display it whenever you want. 
+
+*endwin()* will terminate Ncurses mode and frees the memory used.
 
 Now, there are more functions that output plain-text to the screen: 
 
@@ -74,7 +88,7 @@ Now, there are more functions that output plain-text to the screen:
     mvwprintw(win, y, x, string); /* Move to (y, x) relative to window co-ordinates and then print*/
     mvaddch(row,col,ch); /* Move to (y,x) relative to window co-ordinates and then print a character */
 
-As you might have noticed the function wprintw(win, string) can print at present cursor position in a window, you can define your own windows. You can do some pretty cool stuff with windows and panels, but I will go deeper into that in some other tutorial (If you are that desperate to learn how windows work, try the Ncurses [HOWTO guide](http://tldp.org/HOWTO/NCURSES-Programming-HOWTO/windows.html).
+As you might have noticed, the function *wprintw(win, string)* can print at the present cursor position in a window. You can do some pretty cool stuff with windows and panels, but I will go deeper into that in some other tutorial (If you are that desperate to learn how windows work, try the [Ncurses HOWTO guide](http://tldp.org/HOWTO/NCURSES-Programming-HOWTO/windows.html).
 
 Moving on from this, it is also possible to give text a foreground and background colour, underline it and to make it bold. Take a look at the next code:
 
@@ -93,7 +107,7 @@ Moving on from this, it is also possible to give text a foreground and backgroun
     attroff(A_BOLD | COLOR_PAIR(2));
     refresh();			
     getch();			
-    endwin();			
+    endwin();		
     return 0;
     }
     
