@@ -40,6 +40,7 @@ if [ "$generate" == "True" ]
 then
 	echo "True"
 	# copying the files over to mysite folder!
+	cd $HOME/site
 	$HOME/.gem/ruby/1.9.1/gems/jekyll-*/bin/jekyll build  $HOME/site/_site/ || exit 1
 	rm -rf $HOME/mysite/*
     cp -r $HOME/site/_site/* $HOME/mysite/
