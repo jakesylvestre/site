@@ -1,9 +1,9 @@
-noGenerate="True" # set to true
+generate="True"
 HOME="/var/otherusers/wei2912"
 # updating repo
 cd $HOME/site
 touch $HOME/temp.txt
-/usr/bin/git pull > $HOME/temp.txt || exit 1
+/usr/bin/git pull > $HOME/temp.txt
 
 echo $1
 if [ "$1" == "--force" ]
@@ -11,8 +11,7 @@ then
 	generate="True"
 else
 	# detect any changes
-    changes=$(grep -Fx 'Already up-to-date.' $HOME/temp.txt)
-	if [ -z "$changes" ]
+	if [ -z "$(grep 'Already up-to-date.' $HOME/temp.txt)" ]
 	then
 		echo "Grep result shows that site is not up to date."
 		generate="True"
@@ -25,11 +24,12 @@ else
 	then
 		# checking for binaries
 		echo "$(tar c $HOME/mysite_files | md5sum)" > $HOME/temp_checksum.txt
-		if [ "$(sed '$!d' $HOME/temp_checksum.txt)" == "$(sed -n '1p' $HOME/files_checksum.txt)" ]
+		n_checksum="$(sed '$!d' $HOME/temp_checksum.txt)"
+		if [ "$n_checksum" == "$(sed -n '1p' $HOME/files_checksum.txt)" ]
 		then
 			echo "Checksum shows that site is up to date."
 		else
-			echo "$(sed '$!d' $HOME/temp_checksum.txt)" > $HOME/files_checksum.txt
+			echo "$n_checksum" > $HOME/files_checksum.txt
 			echo "Checksum shows that site is not up to date."
 			generate="True"
 		fi
@@ -38,14 +38,14 @@ fi
 
 if [ "$generate" == "True" ]
 then
-	echo "True"
+	echo "Generating files..."
 	# copying the files over to mysite folder!
 	cd $HOME/site
-	$HOME/.gem/ruby/1.9.1/gems/jekyll-*/bin/jekyll build  $HOME/site/_site/ || exit 1
+	$HOME/.gem/ruby/1.9.1/gems/jekyll-*/bin/jekyll build $HOME/site/_site/ || exit 1
 	rm -rf $HOME/mysite/*
     cp -r $HOME/site/_site/* $HOME/mysite/
 else
-	echo "False"
+	echo "Not generating files..."
 fi
 
 cp -r $HOME/mysite_files/* $HOME/mysite
