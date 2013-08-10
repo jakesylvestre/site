@@ -51,5 +51,4 @@ fi
 cp -r $HOME/mysite_files/* $HOME/mysite
 
 # clean up
-rm $HOME/temp.txt
 cd $HOME/
