@@ -82,12 +82,12 @@
 						{% endif %}
 						
 						{% if post.summary != null %} 
-							<strong style="font-size: 150%; font-weight: normal;">{{ post.summary }}</strong>
+							<p class="larger">{{ post.summary }}</p>
 						{% endif %}
 						
 						{{ post.content | more: "excerpt" }}
 						
-						<p class="highlight">Read more at <a href="{{post.url}}">{{post.title}}</a></p>
+						<p class="larger">Read more at <a href="{{post.url}}">{{post.title}}</a></p>
 					{% endfor %}
 				</div>
             </div>
