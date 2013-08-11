@@ -32,3 +32,11 @@ Once you're done, install the plugins required.
 
     jekyll
     jekyll-less
+    
+## Modernizr
+
+We use a customized version of Modernizr. The current features are selected in the [customized builder](http://modernizr.com/download/):
+
+* Modernizr.load (yepnope.js)
+
+If you need any more features, consult nixtuts.supp0rt@gmail.com
