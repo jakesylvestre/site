@@ -46,13 +46,17 @@ Now is the time to configure and make the file, go to the extracted ncurses-5.9 
     make
     sudo make install
 
-Now comes the last part, configuring CodeBlocks to look for Ncurses. Start up CodeBlocks and go to Settings > Compiler and debugger, then go to the tab named ' Linker settings' and add /home/yourname/ncurses-5.9/lib/libncurses_g.a and /home/jeroen/ncurses-5.9/lib/libncurses.a 
+Now comes the last part, configuring CodeBlocks to look for Ncurses. Start up CodeBlocks and go to Settings > Compiler and debugger, then go to the tab named ' Linker settings' and add /home/*yourname*/ncurses-5.9/lib/libncurses_g.a and /home/*yourname*/ncurses-5.9/lib/libncurses.a 
 
-(Image here). 
+![Linker Settings](/img/programming/NcursesTutorial/images/snapshot2.png)
 
-Go to the next tab called 'Search Directories' and add */home/jeroen/ncurses-5.9/* to Compiler, Linker and Resource compiler.
+Go to the next tab called 'Search Directories' and add /home/*yourname*/ncurses-5.9/ to Compiler, Linker and Resource compiler.
 
-(Images here)
+![Compiler](/img/programming/NcursesTutorial/images/snapshot3.png)
+
+![Linker](/img/programming/NcursesTutorial/images/snapshot4.png)
+
+![Resource](/img/programming/NcursesTutorial/images/snapshot5.png)
 
 You are now done with part 1!
 
@@ -96,20 +100,20 @@ Moving on from this, it is also possible to give text a foreground and backgroun
     #include <ncurses.h>
     int main()
     {	
-    initscr();
-    start_color(); /* Be sure not to forget this, it will enable colors */
-    init_pair(1, COLOR_RED, COLOR_CYAN); /* You can make as much color pairs as you want, be sure to change the ID number */
-    init_pair(2, COLOR_YELLOW, COLOR_GREEN);
-    attron(A_UNDERLINE | COLOR_PAIR(1)); /* This turns on the underlined text and color pair 1 */
-    printw("This is underlined red text with cyan background\n");
-    attroff(A_UNDERLINE | COLOR_PAIR(1));
-    attron(A_BOLD | COLOR_PAIR(2));
-    printw("This is bold yellow text with green background");
-    attroff(A_BOLD | COLOR_PAIR(2));
-    refresh();			
-    getch();			
-    endwin();		
-    return 0;
+		initscr();
+		start_color(); /* Be sure not to forget this, it will enable colors */
+		init_pair(1, COLOR_RED, COLOR_CYAN); /* You can make as much color pairs as you want, be sure to change the ID number */
+		init_pair(2, COLOR_YELLOW, COLOR_GREEN);
+		attron(A_UNDERLINE | COLOR_PAIR(1)); /* This turns on the underlined text and color pair 1 */
+			printw("This is underlined red text with cyan background\n");
+		attroff(A_UNDERLINE | COLOR_PAIR(1));
+		attron(A_BOLD | COLOR_PAIR(2));
+			printw("This is bold yellow text with green background");
+		attroff(A_BOLD | COLOR_PAIR(2));
+		refresh();			
+		getch();			
+		endwin();		
+		return 0;
     }
     
 In this last part of the tutorial I will show you how to interface with the keyboard. This next application I wrote is self-explanatory:
