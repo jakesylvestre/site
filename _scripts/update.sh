@@ -44,7 +44,7 @@ then
 	$HOME/.gem/ruby/1.9.1/gems/jekyll-*/bin/jekyll build $HOME/site/_site/ || exit 1
 	rm -rf $HOME/mysite/*
     cp -r $HOME/site/_site/* $HOME/mysite/
-    chmod -R 755 $HOME/mysite
+    chmod -R 755 $HOME/mysite/*
 else
 	echo "Not generating files..."
 fi
