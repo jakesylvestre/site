@@ -9,13 +9,6 @@
 <priority>1</priority>
 </url>
 
-<url>
-<loc>http://nixtuts.info/index.html</loc>
-<lastmod>{{ site.time | date: '%Y-%m-%d' }}</lastmod>
-<changefreq>daily</changefreq>
-<priority>1</priority>
-</url>
-
 {% for page in site.pages %}
 {% unless page.url == '/index.html' or page.url == '/404.html' or page.url == '/search.html' or page.url contains '.js' or page.url contains '.css' %}
 <url>
