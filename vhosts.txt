@@ -1,0 +1,6 @@
+These vhosts have been approved by wei2912 to be requested (on irc.spotchat.org):
+
+wei2912/nixtuts.info
+Paradux/nixtuts.info
+
+All who wish to obtain extra vhosts and are part of the NixTuts organization may contact wei2912 at #NixTuts.
