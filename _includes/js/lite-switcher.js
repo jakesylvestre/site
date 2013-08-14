@@ -11,12 +11,12 @@ if (cookie == null) {
     state = true
 }
 
-getStylesheet('lite').disabled = !state; // load lite styles
+$('html').toggleClass('lite', state);
 
 button.click(function () {
     state = !state; // reverse state
-    getStylesheet('lite').disabled = !state; // load lite styles
-
+    $('html').toggleClass('lite', state);
+    
     eraseCookie('lite-switcher');
     createCookie('lite-switcher', state, 0);
 });

@@ -1,11 +1,9 @@
 var selected = readCookie('theme-switcher');
 
 if (selected == null) {
-    createCookie('theme-switcher', 'deadcream');
     selected = 'deadcream';
 } else {
-    getStylesheet('deadcream').disabled = true;
-    getStylesheet(selected).disabled = false;
+    $('html').toggleClass(selected, true);
 }
 var ul = $('nav ul'),
     themes = [{
@@ -31,12 +29,12 @@ for (var i = 0; i < themes.length; i++) {
         a.click(function (e) {
             e.preventDefault();
 
-            getStylesheet(selected).disabled = true; // disable current selected
+            $('html').toggleClass(selected, false);
 
             selected = e.target.id;
             console.log(selected);
-            getStylesheet(selected).disabled = false; // load lite styles
-
+            $('html').toggleClass(selected, true);
+            
             eraseCookie('theme-switcher');
             createCookie('theme-switcher', selected, 0);
         });

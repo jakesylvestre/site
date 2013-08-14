@@ -16,20 +16,6 @@
         return document.createElement(elem);
     }
 
-    function getStylesheet(id) {
-        var url = '/css/colors/' + id + '.css',
-            styleSheet;
-
-        if (!(styleSheet = $('link[href="' + url + '"]')[0])) {
-            styleSheet = createElem('link');
-            styleSheet.rel = 'stylesheet';
-            styleSheet.href = url;
-            parent.insertBefore(styleSheet, firstScript)
-        }
-
-        return styleSheet;
-    }
-
     {% include js/theme-switcher.js %}
     {% include js/lite-switcher.js %}
 })();
