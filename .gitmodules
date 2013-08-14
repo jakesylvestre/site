@@ -1,0 +1,4 @@
+
+[submodule "binaries"]
+	path = binaries
+	url = https://github.com/nixtuts/binaries
