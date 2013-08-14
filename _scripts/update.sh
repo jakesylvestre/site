@@ -19,37 +19,26 @@ else
 		echo "Grep result shows that site is up to date."
 		generate="False"
 	fi
-	
-	if [ "$generate" == "False" ] # if it's not going to generate, try to get the script to generate the site again.
-	then
-		# checking for binaries
-		echo "$(tar c $HOME/mysite_files | md5sum)" > $HOME/temp_checksum.txt
-		n_checksum="$(sed '$!d' $HOME/temp_checksum.txt)"
-		if [ "$n_checksum" == "$(sed -n '1p' $HOME/files_checksum.txt)" ]
-		then
-			echo "Checksum shows that site is up to date."
-		else
-			echo "$n_checksum" > $HOME/files_checksum.txt
-			echo "Checksum shows that site is not up to date."
-			generate="True"
-		fi
-	fi
 fi
 
 if [ "$generate" == "True" ]
 then
 	echo "Generating files..."
-	# copying the files over to mysite folder!
+	
+	# building the files
 	cd $HOME/site
 	$HOME/.gem/ruby/1.9.1/gems/jekyll-*/bin/jekyll build $HOME/site/_site/ || exit 1
+	
+	# shift the contents of the binaries folder
+	mv $HOME/site/binaries/* $HOME/site/_site
+	
+	# copying the files over to mysite folder
 	rm -rf $HOME/mysite/*
     cp -r $HOME/site/_site/* $HOME/mysite/
-    chmod -R 755 $HOME/mysite/*
+    chmod -R 755 $HOME/mysite/
 else
 	echo "Not generating files..."
 fi
-
-cp -r $HOME/mysite_files/* $HOME/mysite
 
 # clean up
 cd $HOME/
