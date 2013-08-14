@@ -18,6 +18,10 @@
     Co-owner: d10
     Account: https://github.com/d10
     Site: http://d10.github.io
+    
+    Learnix Server Owner: dams
+    Account: https://github.com/programmerdams
+    Site: http://dams.insomnia247.nl
 
 /* SITE MAINTENANCE https://github.com/organizations/nixtuts/teams/286503 */
 
@@ -33,6 +37,7 @@
     Hoster: Subsentient
     Account: https://github.com/Subsentient
     Site: http://universe2.us
+    Email: thinkingrodent@gmail.com
 
 /* WRITING TUTS https://github.com/organizations/nixtuts/teams/247623 */
 
@@ -65,6 +70,7 @@
     Author: Subsentient
     Account: https://github.com/Subsentient
     Site: http://universe2.us
+    Email: thinkingrodent@gmail.com
     
     Author: wgreenhouse
     Account: https://github.com/wgreenhouse
@@ -74,11 +80,11 @@
 
 /* LEARNIX TEAM https://github.com/organizations/nixtuts/teams/453270 */
 
-    Server Owner: dams
-    Account: https://github.com/programmerdams
-    Site: http://dams.insomnia247.nl
+	No one as of now, all the Learnix owners are NixTuts owners.
 
 /* THANKS */
+
+	No external contributers as of now.
 
 /* SITE */
     Title: NixTuts
