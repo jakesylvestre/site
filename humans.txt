@@ -77,6 +77,7 @@
 	
     Author: Paradux
     Account: https://github.com/Paradux
+    Email: jeroen_commando@live.nl
 
 /* LEARNIX TEAM https://github.com/organizations/nixtuts/teams/453270 */
 
