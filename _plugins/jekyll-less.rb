@@ -1,4 +1,3 @@
-require "jekyll-less/version"
 require 'less'
 
 module Jekyll
