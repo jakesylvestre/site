@@ -48,15 +48,15 @@ Now is the time to configure and make the file, go to the extracted ncurses-5.9 
 
 Now comes the last part, configuring CodeBlocks to look for Ncurses. Start up CodeBlocks and go to Settings > Compiler and debugger, then go to the tab named 'Linker settings' and add /home/*yourname*/ncurses-5.9/lib/libncurses_g.a and /home/*yourname*/ncurses-5.9/lib/libncurses.a 
 
-![Linker Settings](/img/programming/NcursesTutorial/images/snapshot2.png "Adding the Ncurses linker file")
+![Linker Settings](/img/programming/NcursesTutorial/images/linker_settings.png "Adding the Ncurses linker file")
 
 Go to the next tab called 'Search Directories' and add /home/*yourname*/ncurses-5.9/ to Compiler, Linker and Resource compiler.
 
-![Compiler](/img/programming/NcursesTutorial/images/snapshot3.png "Adding the main Ncurses folder to Compiler.")
+![Compiler](/img/programming/NcursesTutorial/images/compiler.png "Adding the main Ncurses folder to Compiler.")
 
-![Linker](/img/programming/NcursesTutorial/images/snapshot4.png "Adding the main Ncurses folder to Linker.")
+![Linker](/img/programming/NcursesTutorial/images/linker.png "Adding the main Ncurses folder to Linker.")
 
-![Resource](/img/programming/NcursesTutorial/images/snapshot5.png "Adding the main Ncurses folder to Resource Compiler.")
+![Resource](/img/programming/NcursesTutorial/images/resource.png "Adding the main Ncurses folder to Resource Compiler.")
 
 You are now done with part 1!
 
