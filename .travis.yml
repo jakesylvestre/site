@@ -1,0 +1,14 @@
+language: ruby
+
+rvm:
+  - 1.9.3
+
+script: jekyll build
+
+env:
+  global:
+    - "FTP_USER=user"
+    - "FTP_PASSWORD=password"
+
+#after_success:
+#  "wget -r ftp://server.com/ --user $FTP_USER --password $FTP_PASSWORD"
