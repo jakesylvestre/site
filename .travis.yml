@@ -8,9 +8,13 @@ env:
     - "FTP_USER=user"
     - "FTP_PASSWORD=password"
 
-before_install: git submodule update --init
+before_install:
+    - git submodule update --init --recursive
+    - sudo gem install jekyll jekyll-less
 
-script: jekyll build
-
-# after_success:
+script:
+    - jekyll build
+    - mv ./binaries/* ./_site
+    
+after_succes:
 #   "wget -r ftp://server.com/ --user $FTP_USER --password $FTP_PASSWORD"
