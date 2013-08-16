@@ -52,11 +52,11 @@ Now comes the last part, configuring CodeBlocks to look for Ncurses. Start up Co
 
 Go to the next tab called 'Search Directories' and add /home/*yourname*/ncurses-5.9/ to Compiler, Linker and Resource compiler.
 
-![Compiler](/img/programming/NcursesTutorial/images/compiler.png "Adding the main Ncurses folder to Compiler.")
+![Compiler](/img/programming/NcursesTutorial/compiler.png "Adding the main Ncurses folder to Compiler.")
 
-![Linker](/img/programming/NcursesTutorial/images/linker.png "Adding the main Ncurses folder to Linker.")
+![Linker](/img/programming/NcursesTutorial/linker.png "Adding the main Ncurses folder to Linker.")
 
-![Resource](/img/programming/NcursesTutorial/images/resource.png "Adding the main Ncurses folder to Resource Compiler.")
+![Resource](/img/programming/NcursesTutorial/resource.png "Adding the main Ncurses folder to Resource Compiler.")
 
 You are now done with part 1!
 
