@@ -4,7 +4,7 @@ HOME="/var/otherusers/wei2912"
 cd $HOME/site
 touch $HOME/temp.txt
 /usr/bin/git pull > $HOME/temp.txt
-
+git submodule update
 echo $1
 if [ "$1" == "--force" ]
 then
