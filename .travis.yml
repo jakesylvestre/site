@@ -10,7 +10,7 @@ env:
 
 before_install:
     - git submodule update --init --recursive
-    - sudo gem install jekyll jekyll-less
+    - sudo gem install jekyll jekyll-less therubyracer
 
 script:
     - jekyll build
