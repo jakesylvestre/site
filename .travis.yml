@@ -15,6 +15,7 @@ before_install:
 script:
     - jekyll build
     - mv ./binaries/* ./_site
+    - ls -R ./_site/*
     
 after_succes:
 #   "wget -r ftp://server.com/ --user $FTP_USER --password $FTP_PASSWORD"
