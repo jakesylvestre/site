@@ -1,20 +1,21 @@
 language: ruby
-
 rvm:
-  - 1.9.3
-
+    - 1.9.3
 env:
-  global:
-    - "FTP_USER=user"
-    - "FTP_PASSWORD=password"
+    global:
+        - secure: "GDCbSmK6LDQxz0GUPTLjmLfCHydjeY8cQm2oSE0O6Sq03Y0rAyFs38x49T4l8QPw/u8hDnf5ghuo8OnUpitQwoa3QhgOwNkvmeeY4sdz0Vnx5z7DsGnNGX/IVYBBTZMCZ/nmUojH+muRngNSt3Te+D+/i9rQ28u/efeq9YfXTJw="
+        - secure: "aL4LQ8MqZgbtBkm8JxpYxpxz8CXvIGsqzhglW0rsdoeHZNDkNPpIaNaBnAJR56HH5tptuNDO6AKUyjpaPCkbDbsWphy18ffu+EJr2MsCrLT1oKjcbSjbQYrpH7rB8MHTe6gGjqqQ3ZhDLipmOXsMgFRZ5B3bTRVoFsUH3f+dZRE="
+        - secure: "UjItyA3f5wj/yf2B3IsauMQyTLbciwHdvH7iCYl0Ke2o8ISvOhGC2EgrllilieW7Ghu0ZmnnJdAQZMz4M8ivkLcEdf65VtVRXP+blPw5t1lIao9cHFFVrVM/x6ueHKEzTMizJVfJqkJGd4VqEP/PEFL443eyth+PIZzkY18Jzt8="
+        - secure: "TBjXEQQY9Kni0lxvwvGm+AApYUaP2TMGBvm23/tcHYPDw/mWYmSxlIUU5F/1sKI332jEUXJrplXTU9KcEAV2vXo1bG/p04dikD0VWxlxmNkos5ZRZwzI47TcGO7Pk4vtI/niWk22Oz9rFBIhkU0u7cy2zYTK/KNRE8FSb0x4JF0="
 
 before_install:
     - git submodule update --init --recursive
-    
+    - sudo apt-get install sshpass
+
 script:
     - jekyll build
     - mv ./binaries/* ./_site
     - ls -R ./_site/*
-    
-after_succes:
-#   "wget -r ftp://server.com/ --user $FTP_USER --password $FTP_PASSWORD"
+
+after_success:
+    - rsync -avz -e sshpass -p ${SSH_PASS} ssh  -p ${SSH_PORT} ./_site/* ${SSH_USER}@${SSH_HOST}:~/mysite/
