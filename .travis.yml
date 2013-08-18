@@ -30,6 +30,6 @@ after_success:
 - echo "    CheckHostIP no" >> ~/.ssh/config
 - echo "    UserKnownHostsFile=/dev/null" >> ~/.ssh/config
 
-- echo -n $id_rsa_{1..5} >> ~/.ssh/id_rsa
+- echo -n "$id_rsa_{1..5}" >> ~/.ssh/id_rsa
 - chmod 0700 ~/.ssh/id_rsa
 - rsync -avz ./_site/* deploy_server:~/mysite/
