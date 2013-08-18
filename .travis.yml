@@ -1,21 +1,31 @@
 language: ruby
 rvm:
-    - 1.9.3
+- 1.9.3
 env:
-    global:
-        - secure: "GDCbSmK6LDQxz0GUPTLjmLfCHydjeY8cQm2oSE0O6Sq03Y0rAyFs38x49T4l8QPw/u8hDnf5ghuo8OnUpitQwoa3QhgOwNkvmeeY4sdz0Vnx5z7DsGnNGX/IVYBBTZMCZ/nmUojH+muRngNSt3Te+D+/i9rQ28u/efeq9YfXTJw="
-        - secure: "aL4LQ8MqZgbtBkm8JxpYxpxz8CXvIGsqzhglW0rsdoeHZNDkNPpIaNaBnAJR56HH5tptuNDO6AKUyjpaPCkbDbsWphy18ffu+EJr2MsCrLT1oKjcbSjbQYrpH7rB8MHTe6gGjqqQ3ZhDLipmOXsMgFRZ5B3bTRVoFsUH3f+dZRE="
-        - secure: "UjItyA3f5wj/yf2B3IsauMQyTLbciwHdvH7iCYl0Ke2o8ISvOhGC2EgrllilieW7Ghu0ZmnnJdAQZMz4M8ivkLcEdf65VtVRXP+blPw5t1lIao9cHFFVrVM/x6ueHKEzTMizJVfJqkJGd4VqEP/PEFL443eyth+PIZzkY18Jzt8="
-        - secure: "TBjXEQQY9Kni0lxvwvGm+AApYUaP2TMGBvm23/tcHYPDw/mWYmSxlIUU5F/1sKI332jEUXJrplXTU9KcEAV2vXo1bG/p04dikD0VWxlxmNkos5ZRZwzI47TcGO7Pk4vtI/niWk22Oz9rFBIhkU0u7cy2zYTK/KNRE8FSb0x4JF0="
+  global:
+  - secure: RNCjMCt/irszSXGjZd/iagndvxgRSrSYuwhtJhBUc/mLnexH6iKOw6DYpNQN5i2uk6kP2xIVWx4OeyioqfO9Iz1cbGTgIv7GBbzaDLgH+QvmZwh1Gf6v5DCVI/G1OnyeCAYIGGum8wh+/945lJn/2yUSk0QmgJyEJr4Gw4hZUe8=
+  - secure: akTV2pJh75NhiyW/FIqHMy9JpYVUuUVKYcHTnKRHbyvru2I4IfhBly75+LvkEWELP7uxPt3P9AirYmwdWadeG08FoHPQszhYaZ5aydaoj2m+0b0tAWmtf0WjfNkpoSjAqkLZuetUMyGZsmC9lzfS56OzRo4q6DOv+Q5xvKv5idY=
+  - secure: PQ/nRmHIkiIUWTRrSU4yhTcJKrljYJ/MydXPWQgef8pLOUBELVUgeSg3j9I495b6UVmiwNF3QMzlvBRiBXTYAKscEMYz9fS0Y4TsrqQJEJb1s0mNjaqfKMqkWE63I3Boc+F6vCR4wAI1cNEMkDX/M8zFaXsRBQwf077nQn+apDY=
+  - secure: bZq6eMXlr4Zq8bZSNCBAup0y2b/nw7Qd3AJ1qw3Un2nthtFhThZxCnhtf6M/ayLMjN6TyYbq0J+qaxb9akZ0XnkRCWrmwtLjC2zHqfOzUDB8x/n9uxiJ1UAhuvPnN00CdkFga/3ezpgU71FQ6YBZ4zZS1O2mGBPdM9LPjD5sd1M=
+  - secure: RD/eyHDwJKGuEW+p5JsiRoJsEz1EDhaRlwiT6GJnAFfdi/ZAcyJaNNO1iulJwkd2M8lM9NcP1Q+urHc85wq7neUtNkSIMcIShgtnbhYdApZMyicRSOSeUS+rDQgbaP9p/IQ1EjqIJsPHmA139Fw/xKOGznzNM2a0UQlBjwBxBtw=
+  - secure: RA7jV6DFIvsC25ly+jm7dfJzY3MY68f26jHHMLxYM+pUKK4gQ8UXZgYnJt1vsrvdFjmfJ52+qVQvPjeCG7B2a9glIcBtfKGzatUlKYQHZlmYP9mBe78J1ZgapuyqkOtZRas8XPdDwyhCiHxiQWX5budYin+AmDRnCMkSq2JJdVI=
 
 before_install:
-    - git submodule update --init --recursive
-    - sudo apt-get install sshpass
+  - git submodule update --init --recursive
 
 script:
-    - jekyll build
-    - mv ./_binaries/* ./_site
-    - ls -R ./_site/*
+  - jekyll build
+  - mv ./_binaries/* ./_site
+  - ls -aR ./_site/*
 
 after_success:
-    - rsync -avz -e sshpass -p ${SSH_PASS} ssh  -p ${SSH_PORT} ./_site/* ${SSH_USER}@${SSH_HOST}:~/mysite/
+  - echo "Host deploy_server" >> ~/.ssh/config
+  - echo "Hostname ${SSH_HOST}" >> ~/.ssh/config
+  - echo "User ${SSH_USER}" > ~/.ssh/config
+  - echo "Port ${SSH_PORT}" > ~/.ssh/config
+  - echo "StrictHostKeyChecking no" >> ~/.ssh/config
+  - echo "CheckHostIP no" >> ~/.ssh/config
+  - echo "UserKnownHostsFile=/dev/null" >> ~/.ssh/config
+  
+  - echo -n $id_rsa_{1..5} >> ~/.ssh/id_rsa
+  - rsync -raz ./_site/* deploy_server:~/mysite/
