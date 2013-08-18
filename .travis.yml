@@ -13,19 +13,6 @@ env:
   - secure: "CAQaP+rs1knS1BmKS31MPvqXjnIqN0QzCjvV3BqnRFjkLa7QUVPTCT6xr/HO6cd7veBSOtM11UKbXkj/yCMhVChNrHcWWVB8qB8k9lPWMcp3UXEEyTBDjw0LZia9XMwAjv8rK+ujxaj0buSf5hbwuy2/DCkSBxv3UGfh+91ozkM="
   - secure: "bsgFcel/jDa/FOjST43Nv02LHWF1XwXi7pYLVxA7do5cmRSB5UbqUdLmQPEP2nF4jSYBY2ZUtZDe/wVy7prd1D1r7RnZXUyWdwpKRIxFluZWe4K9I4BYiDT3Owb+U8Mc/CdGlpP5C2iEDJPURCkGj7cEJXq+qT2S1pm8J8OA5ko="
 
-before_install: _scripts/before_install.sh
-script: _scripts/script.sh
-
-after_success:
-- echo "Host deploy_server" >> ~/.ssh/config
-- echo "    Hostname ${SSH_HOST}" >> ~/.ssh/config
-- echo "    User ${SSH_USER}" >> ~/.ssh/config
-- echo "    Port ${SSH_PORT}" >> ~/.ssh/config
-- echo "    StrictHostKeyChecking no" >> ~/.ssh/config
-- echo "    CheckHostIP no" >> ~/.ssh/config
-- echo "    UserKnownHostsFile=/dev/null" >> ~/.ssh/config
-
-- echo -n "$id_rsa_{1..5}" >> ~/.ssh/id_rsa
-- chmod 0700 ~/.ssh/id_rsa
-- yes '
-' | rsync -avz ./_site/* deploy_server:~/mysite/
+before_install: ./_scripts/before_install.sh
+script: ./_scripts/script.sh
+after_success: ./_scripts/after_success.sh
