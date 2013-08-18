@@ -30,4 +30,4 @@ after_success:
   - echo "    UserKnownHostsFile=/dev/null" >> ~/.ssh/config
   
   - echo -n $id_rsa_{1..5} >> ~/.ssh/id_rsa
-  - rsync -raz -e ssh ./_site/* deploy_server:~/mysite/
+  - rsync -avz ./_site/* deploy_server:~/mysite/
