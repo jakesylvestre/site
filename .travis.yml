@@ -14,7 +14,7 @@ before_install:
 
 script:
     - jekyll build
-    - mv ./binaries/* ./_site
+    - mv ./_binaries/* ./_site
     - ls -R ./_site/*
 
 after_success:
