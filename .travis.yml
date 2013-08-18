@@ -9,6 +9,8 @@ env:
   - secure: bZq6eMXlr4Zq8bZSNCBAup0y2b/nw7Qd3AJ1qw3Un2nthtFhThZxCnhtf6M/ayLMjN6TyYbq0J+qaxb9akZ0XnkRCWrmwtLjC2zHqfOzUDB8x/n9uxiJ1UAhuvPnN00CdkFga/3ezpgU71FQ6YBZ4zZS1O2mGBPdM9LPjD5sd1M=
   - secure: RD/eyHDwJKGuEW+p5JsiRoJsEz1EDhaRlwiT6GJnAFfdi/ZAcyJaNNO1iulJwkd2M8lM9NcP1Q+urHc85wq7neUtNkSIMcIShgtnbhYdApZMyicRSOSeUS+rDQgbaP9p/IQ1EjqIJsPHmA139Fw/xKOGznzNM2a0UQlBjwBxBtw=
   - secure: RA7jV6DFIvsC25ly+jm7dfJzY3MY68f26jHHMLxYM+pUKK4gQ8UXZgYnJt1vsrvdFjmfJ52+qVQvPjeCG7B2a9glIcBtfKGzatUlKYQHZlmYP9mBe78J1ZgapuyqkOtZRas8XPdDwyhCiHxiQWX5budYin+AmDRnCMkSq2JJdVI=
+  - secure: "jLE2xB/OQ7UiFG3kYKJJL4TteRDnL+iMjoeOCN8t4FLWfoQeZmCjKt1gZtbxNrH7VJHcK+12A49HwR1XsWFlR5NI0ASdvVYcGsW3Pn/VKMQZXOd4ABxpSX34PKPfKS2AiM7UDvHAoOEoauOq0BvnIXF8a00viVJmUw7SqHA2u30="
+  - secure: "VqGBf1maSMfUPB6jeriDT+JAf6z5QSZEMm9cObQZSAxhBAALj3hgQ0a+mjXM/dg56/1v7J+GiPhiUWEsVMAmLHDv0cLMKpBCFvHroFF0skqUrQy7Zt6LH+yhpdsGMBr4RXgg6k8Bqa52dXF++4OGw9QHRXRo/eCVhfB4QEwxrU8="
 
 before_install:
   - git submodule update --init --recursive
@@ -20,12 +22,12 @@ script:
 
 after_success:
   - echo "Host deploy_server" >> ~/.ssh/config
-  - echo "Hostname ${SSH_HOST}" >> ~/.ssh/config
-  - echo "User ${SSH_USER}" > ~/.ssh/config
-  - echo "Port ${SSH_PORT}" > ~/.ssh/config
-  - echo "StrictHostKeyChecking no" >> ~/.ssh/config
-  - echo "CheckHostIP no" >> ~/.ssh/config
-  - echo "UserKnownHostsFile=/dev/null" >> ~/.ssh/config
+  - echo "    Hostname ${SSH_HOST}" >> ~/.ssh/config
+  - echo "    User ${SSH_USER}" > ~/.ssh/config
+  - echo "    Port ${SSH_PORT}" > ~/.ssh/config
+  - echo "    StrictHostKeyChecking no" >> ~/.ssh/config
+  - echo "    CheckHostIP no" >> ~/.ssh/config
+  - echo "    UserKnownHostsFile=/dev/null" >> ~/.ssh/config
   
   - echo -n $id_rsa_{1..5} >> ~/.ssh/id_rsa
-  - rsync -raz ./_site/* deploy_server:~/mysite/
+  - rsync -raz -e ssh ./_site/* deploy_server:~/mysite/
