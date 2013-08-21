@@ -1,6 +1,8 @@
 language: ruby
+
 rvm:
 - 1.9.3
+
 env:
   global:
   - secure: "iSEhQ/1kw3RE9+t4K06uZAQRVq0p/Qdyr0Sd13pn17UjL3nVNBHWIs7Sf2lEXEmGtpLN6OyMk50LQsabl4kvrXwNxN2jeZ8GBJixwVmZLiKWRTVj6m3AIkYKgyK32Ns5AzJc5yUi3pDMO8pPTjQFeMCzf3jlbpylhwZbB+AhDXo="
@@ -12,6 +14,10 @@ env:
   - secure: "BJNqCYEwZW+GKu8i5rfjd4wC6Scf5+KLTDkmuamYvY40CaYNSINFbNYOg8nrpwUkzcCcCgH7dtE5Ir5LiEqoYCYxLZoOKrNLIAg3/snNflP+qd4yY5lh9iWyGQcCw9Vg3Kq6ubVFkuO9nKfZv8pRoQZ/Tj73BtsEBL+OeDz51no="
   - secure: "CAQaP+rs1knS1BmKS31MPvqXjnIqN0QzCjvV3BqnRFjkLa7QUVPTCT6xr/HO6cd7veBSOtM11UKbXkj/yCMhVChNrHcWWVB8qB8k9lPWMcp3UXEEyTBDjw0LZia9XMwAjv8rK+ujxaj0buSf5hbwuy2/DCkSBxv3UGfh+91ozkM="
   - secure: "bsgFcel/jDa/FOjST43Nv02LHWF1XwXi7pYLVxA7do5cmRSB5UbqUdLmQPEP2nF4jSYBY2ZUtZDe/wVy7prd1D1r7RnZXUyWdwpKRIxFluZWe4K9I4BYiDT3Owb+U8Mc/CdGlpP5C2iEDJPURCkGj7cEJXq+qT2S1pm8J8OA5ko="
+
+branches:
+  only:
+    - travis-ci
 
 before_install: ./_scripts/before_install.sh
 script: ./_scripts/script.sh
