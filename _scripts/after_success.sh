@@ -6,6 +6,7 @@ echo "    Port ${SSH_PORT}" >> ~/.ssh/config
 echo "    StrictHostKeyChecking no" >> ~/.ssh/config
 echo "    CheckHostIP no" >> ~/.ssh/config
 echo "    UserKnownHostsFile=/dev/null" >> ~/.ssh/config
+echo "    IdentityFile ~/.ssh/id_rsa" >> ~/.ssh/config
 
 ID_RSA_INFO=$(cat _scripts/id_rsa.info)
 ID_RSA_PUB_INFO=$(cat _scripts/id_rsa.pub.info)
