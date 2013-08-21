@@ -15,4 +15,5 @@ env:
 
 before_install: ./_scripts/before_install.sh
 script: ./_scripts/script.sh
+after_script: ./_scripts/after_script.sh
 after_success: ./_scripts/after_success.sh
