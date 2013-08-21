@@ -1,8 +1,16 @@
 # [NixTuts](http://nixtuts.info)
 
+[![Build Status](https://travis-ci.org/nixtuts/site.png?branch=master)](https://travis-ci.org/nixtuts/site)
+
 NixTuts is a site filled with tutorials. We aim to help *nix users, spread knowledge of *nix and help the Open Source/Free Software community!
 
 [![Visit our IRC channel](https://kiwiirc.com/buttons/irc.spotchat.org/NixTuts.png)](https://kiwiirc.com/client/irc.spotchat.org/?nick=kiwi_guest|?#NixTuts)
+
+## Build System
+
+We're going to use Travis-Ci for our build system, at [https://travis-ci.org/nixtuts/site](https://travis-ci.org/nixtuts/site).
+
+It's still in progress at the travis-ci branch.
 
 ## Cloning the repository
 

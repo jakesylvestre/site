@@ -1,0 +1,18 @@
+language: ruby
+rvm:
+- 1.9.3
+env:
+  global:
+  - secure: "CdsInLRZO0eGJJhxzTCZYs7cohuUo9qFOKR0A5mpJz33v/kI8FEXq9k4+y1uQ4n5bgl5HD+SMdOFJmiQ+K2A3X4bzuBOAKcWcNO+nXY/Xa9rot0PCV0ABfWAxh9uTlXLdSpYjh0NByR3t620xAMzi7vi9HSalqV3LGldteptjks="
+  
+  - secure: "BJNqCYEwZW+GKu8i5rfjd4wC6Scf5+KLTDkmuamYvY40CaYNSINFbNYOg8nrpwUkzcCcCgH7dtE5Ir5LiEqoYCYxLZoOKrNLIAg3/snNflP+qd4yY5lh9iWyGQcCw9Vg3Kq6ubVFkuO9nKfZv8pRoQZ/Tj73BtsEBL+OeDz51no="
+  - secure: "CAQaP+rs1knS1BmKS31MPvqXjnIqN0QzCjvV3BqnRFjkLa7QUVPTCT6xr/HO6cd7veBSOtM11UKbXkj/yCMhVChNrHcWWVB8qB8k9lPWMcp3UXEEyTBDjw0LZia9XMwAjv8rK+ujxaj0buSf5hbwuy2/DCkSBxv3UGfh+91ozkM="
+  - secure: "bsgFcel/jDa/FOjST43Nv02LHWF1XwXi7pYLVxA7do5cmRSB5UbqUdLmQPEP2nF4jSYBY2ZUtZDe/wVy7prd1D1r7RnZXUyWdwpKRIxFluZWe4K9I4BYiDT3Owb+U8Mc/CdGlpP5C2iEDJPURCkGj7cEJXq+qT2S1pm8J8OA5ko="
+
+branches:
+  only:
+  - travis-ci
+before_install: ./_scripts/before_install.sh
+script: ./_scripts/script.sh
+after_script: ./_scripts/after_script.sh
+after_success: ./_scripts/after_success.sh
