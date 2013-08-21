@@ -9,5 +9,5 @@ echo "    UserKnownHostsFile=/dev/null" >> ~/.ssh/config
 
 echo -n "$id_rsa_{1..5}" >> ~/.ssh/id_rsa
 chmod 0700 ~/.ssh/id_rsa
-rsync -avz ./_site/* deploy_server:~/mysite/
+rsync -avze ssh ./_site/* deploy_server:~/mysite/
 ssh deploy_server chmod -R 755 /var/otherusers/wei2912/mysite/
