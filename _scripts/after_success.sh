@@ -8,11 +8,8 @@ echo "    CheckHostIP no" >> ~/.ssh/config
 echo "    UserKnownHostsFile=/dev/null" >> ~/.ssh/config
 echo "    IdentityFile ~/.ssh/id_rsa" >> ~/.ssh/config
 
-ID_RSA_INFO=$(cat _scripts/id_rsa.info)
-ID_RSA_PUB_INFO=$(cat _scripts/id_rsa.pub.info)
-
-echo "$ID_RSA_{0..$ID_RSA_INFO}" >> ~/.ssh/id_rsa
-echo -n "$ID_RSA_PUB_{0..$ID_RSA_PUB_INFO}" >> ~/.ssh/id_rsa.pub
+gpg --passphrase ${ENCRYPT_PASS} --output ~/.ssh/id_rsa --decrypt ./_scripts/travis_rsa.gpg
+gpg --passphrase ${ENCRYPT_PASS} --output ~/.ssh/id_rsa.pub --decrypt ./_scripts/travis_rsa.pub.gpg
 chmod 0700 ~/.ssh/id_rsa ~/.ssh/id_rsa.pub
 
 rsync -avze ssh ./_site/* deploy_server:~/mysite/
