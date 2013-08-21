@@ -11,7 +11,7 @@ env:
 
 branches:
   only:
-  - travis-ci
+  - master
 before_install: ./_scripts/before_install.sh
 script: ./_scripts/script.sh
 after_script: ./_scripts/after_script.sh
