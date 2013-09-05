@@ -3,8 +3,8 @@
 <!DOCTYPE html>
 <html class="no-js deadcream">
     <head>
-        <title>{{page.title}} - NixTuts</title>
-        {% if head %}{{ head }}{% endif %}
+        <title>{{ page.title }} - NixTuts</title>
+        {% if page.head %}{{ page.head }}{% endif %}
         {% include snippets/head.html %}
     </head>
 
@@ -33,6 +33,6 @@
         </footer>
 
         {% include snippets/after.html %}
-        {% if body %}{{ body }}{% endif %}
+        {% if page.body %}{{ page.body }}{% endif %}
     </body>
 </html>
