@@ -1,3 +1,3 @@
 #!/bin/bash
-jekyll build
+jekyll build || exit 1
 mv ./_binaries/* ./_site
