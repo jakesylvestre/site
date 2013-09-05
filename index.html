@@ -85,7 +85,7 @@
 							<p class="larger">{{ post.summary }}</p>
 						{% endif %}
 						
-						{{ post.content | more: "excerpt" }}
+						{{ post.excerpt }}
 						
 						<p class="larger">Read more at <a href="{{post.url}}">{{post.title}}</a></p>
 					{% endfor %}
