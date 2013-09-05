@@ -1,7 +1,7 @@
 title: NixTuts
 permalink: /:categories/:title.html
 
-exclude: [".gitignore", "README.md", "Gemfile", "_scripts/update.sh"]
+exclude: [".gitignore", "README.md", "Gemfile"]
 
-excerpt_seperator: <!--more-->
+excerpt_seperator: "<!--more-->"
 
