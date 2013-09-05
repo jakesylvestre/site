@@ -1,7 +1,10 @@
+# NixTuts Jekyll configuration
 title: NixTuts
 permalink: /:categories/:title.html
 
-exclude: [".gitignore", "README.md", "Gemfile"]
+# Exclude files
+# .files are ignored by default
+exclude: ["README.md", "Gemfile"]
 
-excerpt_seperator: "<!--more-->"
-
+# Excerpts
+excerpt_separator: "<!--more-->"
