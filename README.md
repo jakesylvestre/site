@@ -41,6 +41,12 @@ If you want to be a contributor, send in a few more pull requests, then ask @wei
 
 Posts that are suspected of copyright violations or are irrelevant are to be put in _archives. You may use them for reference purposes or attempt to rewrite them.
 
+## Pulling commits from binaries
+
+If you wish to pull commits from the binaries repository, use this command:
+
+    git submodule foreach git pull origin master
+
 ## Modernizr
 
 We use a customized version of Modernizr. The current features are selected in the [customized builder](http://modernizr.com/download/):
