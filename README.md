@@ -45,7 +45,9 @@ Posts that are suspected of copyright violations or are irrelevant are to be put
 
 If you wish to pull commits from the binaries repository, use this command:
 
-    git submodule foreach git pull origin master
+```bash
+$ git submodule foreach git pull origin master
+```
 
 ## Modernizr
 
