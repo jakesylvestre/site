@@ -14,10 +14,10 @@ author:
 
 summary: Hashcat is a nifty tool for testing out passwords. In this tutorial, we'll give you a guide through the basics of Hashcat.
 
-location: _posts/security/YYYY-MM-DD_HashcatBasics.md
+location: _posts/security/2013-09-07_HashcatBasics.md
 ---
 
-***Before we start, I'd like to warn you that attempting to obtain passwords is illegal. The content provided is meant only for educational purposes.***
+***Before we start, I'd like to warn you that attempting to break into any system is illegal. The content provided is meant only for educational purposes.***
 
 Hashcat is a tool often used to test out passwords. Firstly, I'll explain how passwords are stored in a typical Linux system, then show how Hashcat is different from other password crackers.
 
@@ -69,13 +69,13 @@ The second part, *examples/A0.M0.hash*, is the hashfile and the third part, *exa
 
 # Let's try to crack a couple of passwords
 
-Download [SHA512.hash](/files/HashcatBasics/SHA512.hash) and place it in your hashcat directory.
+Download [nixtuts-passwords.txt.hash](/files/HashcatBasics/nixtuts-passwords.txt.hash) and place it in your hashcat directory, underneath *passfiles/*.
 
-This time, we won't be using a Straight attack, but a Permutation attack. This uses a rules file and a dictionary. Both are combined together to form a more extensive attack.
+This time, we will be using a rulesfile. Both the rulesfile and the dictionary are combined together to form a more extensive attack.
 
 I'll give you a challenge to crack the passwords, after handing you a command.
 
-    ./hashcat-cli64.bin -m 1800 -r ./rules/rulefile SHA512.hash ./dict/dictfile
+    ./hashcat-cli64.bin -m 0 -r ./rules/rulefile ./passfiles/nixtuts-passwords.txt.hash ./dict/dictfile
 
 There're multiple choices for a rulefile, available in *rules/*. A rulefile manipulates a string from a dictfile to provide multiple combinations. For example, "password" may be l33tify into "passw0rd".
 
@@ -85,7 +85,17 @@ For a dictfile, try these:
 * [370 Banned Twitter Passwords](http://downloads.skullsecurity.org/passwords/twitter-banned.txt.bz2)
 * [RockYou](http://downloads.skullsecurity.org/passwords/rockyou.txt.bz2)
 
-These provide text files containing strings which may be useful to you when cracking passwords.
+These provide text files containing strings which may be useful to you when cracking passwords. Remember to extract them first. I prefer placing these files in *dict/*.
+
+## Want to know what passwords are inside without cracking them?
+
+For lazy people, here's the list: [nixtuts-passwords.txt](/files/HashcatBasics/nixtuts-passwords.txt).
+
+## Want to generate your own hashes?
+
+This script generates unsalted MD5 hashes, which are insecure and should never be used to store passwords. The only reason why they are provided here is they are fast to compute.
+
+[genhash.sh](/files/HashcatBasics/genhash.sh)
 
 # Now that you've learnt how to crack passwords quickly...
 
