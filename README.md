@@ -33,13 +33,24 @@ $ ./_scripts/before_install.sh # get all git submodules
 $ ./_scripts/script.sh # build with jekyll
 $ ./_scripts/after_script.sh # list all files
 ```
+These scripts are meant for our Travis-Ci build system, but they can be used for you to test them out as well. The files are now in `_site` and you can view them. If you wish to get a webserver up instead, execute this:
+
+```bash
+$ jekyll server
+```
+
+And if you want it to automatically build everytime a change is detected:
+
+```bash
+$ jekyll server -w
+```
 
 Finally, make a commit with the new update, create a pull request, and we'll try to add it in.
-If you want to be a contributor, send in a few more pull requests, then ask @wei2912.
+If you want to be a contributor, send in a(few) pull request(s), then ask @wei2912.
 
 ## Archives
 
-Posts that are suspected of copyright violations or are irrelevant are to be put in _archives. You may use them for reference purposes or attempt to rewrite them.
+Posts that are suspected of copyright violations, are irrelevant or do not meet the guidelines are to be put in _archives. You may use them for reference purposes or attempt to rewrite them.
 
 ## Pulling commits from binaries
 
