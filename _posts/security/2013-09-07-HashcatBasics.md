@@ -55,6 +55,8 @@ You'll see a huge jumble of text pop up. The bottom part is what matters:
 
 As seen here, we've successfully cracked all hashes. But how did we do it? Let's delve in further.
 
+<!--more-->
+
 ## Flags
 
 Looking at our first command, let's break it up into pieces.
