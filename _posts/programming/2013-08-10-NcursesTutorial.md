@@ -29,7 +29,7 @@ After this tutorial, you will be able to create your own console application usi
 
 <!--more-->
 
-# Installing Ncurses on CodeBlocks
+## Installing Ncurses on CodeBlocks
 
 First of all, you will need the CodeBlocks IDE (Integrated Development Enviroment). To install, simply go to your package manager and search for the latest version of CodeBlocks. Or you can open up a terminal and use aptitude:
 
@@ -60,7 +60,7 @@ Go to the next tab called 'Search Directories' and add /home/*yourname*/ncurses-
 
 You are now done with part 1!
 
-# Ncurses' basic features
+## Ncurses' basic features
 
 To test if it all works, we will compile the mandatory Hello World program.
 

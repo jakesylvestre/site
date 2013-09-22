@@ -114,7 +114,7 @@ Dependencies are what software require to run. All packages that you add must be
 
     Provides: packages_that_your_package’s_function_provides
 
-##The final step: Compiling the package
+## The final step: Compiling the package
 
 Now, move to the directory outside of your source package. I built a script that should tell you how to use the command. This script is to be put in the directory containing the DEB file source. Feel free to use it!
 
@@ -136,7 +136,7 @@ Now, move to the directory outside of your source package. I built a script that
 
 There! package-version is just a custom in creating deb packages, they’re simply the name. You can put anything you want, including adjzoighficouazgdiuyagnifdzxagl8m, but whether it is useful to the user it’s up to you.
 
-##The end
+## The end
 
 Now, you’ve learnt how to create a deb package. One more skill for you! Use this wisely to help open source projects create deb packages. You can also use this for your own software if you have any. Upcoming soon will be... how to create your own Launchpad PPAs :D (only for Ubuntu)
 

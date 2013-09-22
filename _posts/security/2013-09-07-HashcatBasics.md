@@ -21,7 +21,7 @@ location: _posts/security/2013-09-07_HashcatBasics.md
 
 Hashcat is a tool often used to test out passwords. Firstly, I'll explain how passwords are stored in a typical Linux system, then show how Hashcat is different from other password crackers.
 
-# Downloading Hashcat
+## Downloading Hashcat
 
 Let's obtain a copy of Hashcat first. In this tutorial, we'll be using the standard *[hashcat](http://hashcat.net/hashcat/)*.
 
@@ -31,7 +31,7 @@ Hashcat uses .7z extraction, so to extract it:
 
 Once it's extracted, *cd* into the directory. That's the end of the installation!
 
-# Testing out Hashcat
+## Testing out Hashcat
 
 Let's see if Hashcat works.
 
@@ -57,7 +57,7 @@ As seen here, we've successfully cracked all hashes. But how did we do it? Let's
 
 <!--more-->
 
-## Flags
+### Flags
 
 Looking at our first command, let's break it up into pieces.
 
@@ -69,7 +69,7 @@ The first part, *-m 0*, sets the hash to MD5; what *examples/A0.M0.hash* is hash
 
 The second part, *examples/A0.M0.hash*, is the hashfile and the third part, *examples/A0.M0.word*, is our dictionary.
 
-# Let's try to crack a couple of passwords
+## Let's try to crack a couple of passwords
 
 Download [nixtuts-passwords.txt.hash](/files/HashcatBasics/nixtuts-passwords.txt.hash) and place it in your hashcat directory, underneath *passfiles/*.
 
@@ -89,16 +89,16 @@ For a dictfile, try these:
 
 These provide text files containing strings which may be useful to you when cracking passwords. Remember to extract them first. I prefer placing these files in *dict/*.
 
-## Want to know what passwords are inside without cracking them?
+### Want to know what passwords are inside without cracking them?
 
 For lazy people, here's the list: [nixtuts-passwords.txt](/files/HashcatBasics/nixtuts-passwords.txt).
 
-## Want to generate your own hashes?
+### Want to generate your own hashes?
 
 This script generates unsalted MD5 hashes, which are insecure and should never be used to store passwords. The only reason why they are provided here is they are fast to compute.
 
 [genhash.sh](/files/HashcatBasics/genhash.sh)
 
-# Now that you've learnt how to crack passwords quickly...
+## Now that you've learnt how to crack passwords quickly...
 
 Use them wisely to test passwords and enhance them/warn users, but *please do not use them in order to gain access to a system*.

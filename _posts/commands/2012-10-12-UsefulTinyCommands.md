@@ -16,7 +16,7 @@ summary: Learn how to list hidden files, look at a calender and many more with t
 location: _posts/commands/2012-10-12-UsefulTinyCommands.md
 ---
 
-Here's a couple of useful commands that we feel are helpful to sysadmins specializing in Linux/Unix/BSD :)
+Here's a couple of useful commands that we feel are helpful to sysadmins specializing in Linux/Unix/BSD.
 
 ## Terminal screens...
 
@@ -302,8 +302,6 @@ This command was originally intended to update timestamps, but many users have m
     is supplied.
 
 ### Removing
-
-
 
 To remove a file, it's simple:
 

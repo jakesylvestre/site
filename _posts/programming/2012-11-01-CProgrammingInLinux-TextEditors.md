@@ -23,10 +23,9 @@ Here are two solutions you could use:
 
 <!--more-->
 
-##C/C++ Programming using Gnome Terminal, Text Editor and gcc command:
+## C/C++ Programming using Gnome Terminal, Text Editor and gcc command:
 
-
-###Using VI Text Editor:
+### Using the VI Text Editor:
 
 (This section assumes that you have installed VI Editor, gcc and g++)
 
@@ -64,7 +63,7 @@ Advantages of this method:
 - Parallel programming can be performed which Linux and Unix based OSes are so good at doing.
 - You don’t have to leave the Terminal screen for anything once opened.
 
-###Using GUI based Text Editors like Gedit/Kate:
+### Using GUI based Text Editors like Gedit/Kate:
 
 (This section assumes that you have installed gedit or kate, gcc and g++)
 
@@ -100,9 +99,7 @@ Advantages of this method:
 
 - Parallel programming can be performed which Linux and Unix based OSes are so good at doing.
 
-
-
-##C Programming using your favorite MS-DOS based IDE in DosBox:
+## C Programming using your favorite MS-DOS based IDE in DosBox:
 
 (This section assumes that you have DosBox and the required IDE (like Turbo C/C++) installed.)
 

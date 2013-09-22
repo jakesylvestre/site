@@ -41,7 +41,7 @@ If you feel lazy, make yourself a root user, or add “sudo”.
 
 As a Wireshark user, you can also get a free [ebook](http://www.riverbed.com/us/media/documents/deployment_guides/network_monitoring_and_troubleshooting_for_dummies.php) from Riverbed, although it requires you to fill up a form. It is part of the ‘For Dummies’ series of books, “Network Monitoring and Troubleshooting for Dummies”. It should provide valuable reference for both the novice and experienced computer user alike.
 
-##After installation
+## After installation
 
 Once Wireshark is installed and loaded, you’ll need tell it what to do.
 

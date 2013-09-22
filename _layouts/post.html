@@ -20,48 +20,50 @@
 
             <div class="content clearfix" role="article">
                 <h1 class="post_title">{{page.title}}</h1>
+                
+                <div class="metadata clearfix">
                 {% if page.status == 'post' or page.status == 'draft' %}
-                    <h3 class="post_date">Posted on {{ page.date | date: "%d %B %Y" }}</h3>
+                <p class="post_date">Posted on {{ page.date | date: "%d %B %Y" }}</p>
                 {% endif %}
 
                 {% if page.author != null %} 
-                    <h3 class="post_author">By: {% for author in page.author %}<a class="button icon tag pill" href="/search.html?authors={{author}}">{{author}}</a> {% endfor %} </h3> 
+                <p class="post_author">By: {% for author in page.author %}<a class="button icon tag pill" href="/search.html?authors={{author}}">{{author}}</a> {% endfor %} </p>
                 {% endif %}
 
                 {% if page.tags != null %}
-                    <h3 class="post_tags">Tags: {% for tag in page.tags %}<a class="button icon tag pill" href="/search.html?tags={{tag}}">{{tag}}</a> {% endfor %} </h3>
+                <p class="post_tags">Tags: {% for tag in page.tags %}<a class="button icon tag pill" href="/search.html?tags={{tag}}">{{tag}}</a> {% endfor %} </p>
                 {% endif %}
 
                 {% if page.status == 'draft' %}
-                    <h3 class="warn post_banner">This tutorial is a draft and pending validation. You may see weird formatting/incomplete content.</h3>
+                <p class="warn post_banner">This tutorial is a draft and pending validation. You may see weird formatting/incomplete content.</p>
                 {% endif %}
 
 				{% if page.status != 'page' %}
-					{% include snippets/sharebuttons.html %}
+                {% include snippets/sharebuttons.html %}
                 {% endif %}
+                </div>
 
                 {% if page.img != null %}
-                    <img src="{{page.img}}" alt="{{page.title}}" /><br />
+                <img src="{{page.img}}" alt="{{page.title}}" /><br />
                 {% endif %}
 
-
                 {% if page.summary != null %} 
-                    <strong style="font-size: 150%; font-weight: normal;">{{ page.summary }}</strong>
+                <strong style="font-size: 150%; font-weight: normal;">{{ page.summary }}</strong>
                 {% endif %}
 
                 {{ content }}
 
                 {% if page.status != 'program' and page.status != 'page' %}
-                    {% if site.related_posts != empty %}
-						<h2 class="related_posts">Related Posts</h2>
-                        {% for post in site.related_posts %}
-                            <a href="{{ post.url }}">{{post.title }}</a><br />
-                        {% endfor %}
-                    {% endif %}
+                {% if site.related_posts != empty %}
+				<h2 class="related_posts">Related Posts</h2>
+                {% for post in site.related_posts %}
+                <a href="{{ post.url }}">{{post.title }}</a><br />
+                {% endfor %}
+                {% endif %}
                 {% endif %}
                 
                 {% if page.location != empty %}
-                    <p class="highlight prose_io larger">Spot a mistake? Edit this page at <a href="http://prose.io/#nixtuts/site/edit/master/{{page.location}}" target="_blank">prose.io</a>.</p>
+                <p class="prose_io larger">Spot a mistake? Edit this page at <a href="http://prose.io/#nixtuts/site/edit/master/{{page.location}}" target="_blank">prose.io</a>.</p>
                 {% endif %}
                 
                 {% if page.status != 'page' %}
