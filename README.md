@@ -60,6 +60,10 @@ If you wish to pull commits from the binaries repository, use this command:
 $ git submodule foreach git pull origin master
 ```
 
+## Headers
+
+To keep things neat, please do not use header tag `h1`, or `#`.
+
 ## Modernizr
 
 We use a customized version of Modernizr. The current features are selected in the [customized builder](http://modernizr.com/download/):
