@@ -81,7 +81,7 @@ The File attributes, as shown by ls -l command, gives you these information:
 
 7. Filename
 
-### Changing the File Permission using symbolic notation
+## Changing the File Permission using symbolic notation
 
 The "option" part in this method can be divided into three parts:
 
@@ -91,7 +91,7 @@ so that we can write the syntax for this method as:
 
 	chmod <user/group/others><action><modes> <filename>
 
-#### user/group/others
+### user/group/others
 
 It means what users are affected by the change in permission.
 
@@ -102,7 +102,7 @@ It means what users are affected by the change in permission.
 
 These modes can be combined together. For example, ug affects the current user and the group but not others.
 
-#### action
+### action
 
 It means what action to be taken:
 
@@ -112,7 +112,7 @@ It means what action to be taken:
 
 Assigning permissions is absolute (if your file has rwx at the start and you assign r to it, it'll have r-- permissions). Granting and withdrawing permissions is relative (if your file has rwx at the start and you withdraw r from it, it'll have -wx permissions).
 
-#### modes
+### modes
 
 First, let's zoom into this:
 
@@ -141,7 +141,7 @@ Here's a view of what it looks like:
       read    read    read
       write
 
-#### Examples
+### Examples
 
 	chmod u+x file  # grants the current user execute permission for the file
 	
@@ -155,7 +155,7 @@ Remember the output we showed previously using "ls -l"? The 3rd and 4th columns 
 
 This section means this belongs to user **wei2912** of group **weigrp**. To change this, [chown](/commands/Chmod&Chown.html#chown) is used. This will be covered later.
 
-#### Exercises
+### Exercises
 
 A directory's "ls -l" shows this output:
 
@@ -167,7 +167,7 @@ What are the permissions of this directory and who owns it?
 
 User **wei2912** from group **weigrp** owns the directory. Only the user can read, write and execute.
 
-### Changing file permissions using numeric notation
+## Changing file permissions using numeric notation
 
 Sometimes, you might see someone state that a file has permissions "0777". What exactly does this mean?
 
@@ -193,13 +193,13 @@ The first column indicates what number to use. The second column indicates its b
 
 This is known as **numeric notation**. In this case, 0777 translates to rwxrwxrwx.
 
-#### Examples
+### Examples
 
 	chmod 664 file # rw-rw-r--
 
     chmod 764 file # rwxrw-r--
     
-#### Exercises (again)
+### Exercises (again)
 
 Translate these codes into symbolic notation:
 
@@ -211,7 +211,7 @@ Translate these codes into symbolic notation:
 1. rwx rwx rwx
 2. rwx rw- rw-
 
-### Here's another exercise!
+## Here's another exercise!
 
 A directory, bin/, has permissions 777. You wish to remove write permissions from group and others. How'd you do this?
 
@@ -235,7 +235,7 @@ While doing the exercise, did you notice something between numeric and symbolic 
 
 Let's try another exercise to find out.
 
-### Again, an exercise!
+## Again, an exercise!
 
 File qwerty has permissions `rwxrwx---`
 
