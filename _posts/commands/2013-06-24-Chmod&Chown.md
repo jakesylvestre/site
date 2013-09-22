@@ -39,12 +39,6 @@ These "file modes" will be covered later. In short, it lets you change the file 
 
 <!--more-->
 
-## Syntax of chmod
-
-The simplified syntax of chmod is:
-	
-	chmod <option> <filename>
-
 ## Methods of using chmod
 
 There are two ways of changing the File Permissions:
@@ -59,9 +53,11 @@ The difference lies only in the "option" part of the command.
 
 First, let's create a file in your home directory.
 
-	wei2912@wei-lm-desktop ~ $ touch file
-    wei2912@wei-lm-desktop ~ $ ls -l file
-    -rw-r--r-- 1 wei2912 weigrp 0 Jun 24 15:26 file
+{% prism bash %}
+$ touch file
+$ ls -l file
+-rw-r--r-- 1 wei2912 weigrp 0 Jun 24 15:26 file
+{% endprism %}
 
 This file was created with the command [touch](/commands/UsefulTinyCommands.html#touch). Following the touch command is the [ls -l](/commands/UsefulTinyCommands.html#listing_files) command which lists out the file attributes.
 
@@ -85,11 +81,15 @@ The File attributes, as shown by ls -l command, gives you these information:
 
 The "option" part in this method can be divided into three parts:
 
-	<user/group/others> <action> <modes>
+{% prism bash %}
+user/group/others action modes
+{% endprism %}
 
 so that we can write the syntax for this method as:
 
-	chmod <user/group/others><action><modes> <filename>
+{% prism bash %}
+chmod user/group/others action modes
+{% endprism %}
 
 ### user/group/others
 
@@ -125,7 +125,7 @@ Breaking it into parts:
 The first character tells a user which type of file this is. (d means a directory file, - means a normal file). In Linux, there are three types of modes that apply to permissions manipulation: Read, Write and eXecute. A full permissions would look like this:
  
     rwx
-    
+
 However, if for example, a user, group or others has only read and write, the x section would be replaced with -, resulting in this:
 
     rw-
@@ -143,15 +143,17 @@ Here's a view of what it looks like:
 
 ### Examples
 
-	chmod u+x file  # grants the current user execute permission for the file
-	
-    chmod go-wx file #withdraws write and execute permissions from the group and others
-    
-    chmod a=rw file  #assigns read and write permissions for all users
+{% prism bash %}
+chmod u+x file  # grants the current user execute permission for the file
+chmod go-wx file # withdraws write and execute permissions from the group and others
+chmod a=rw file  # assigns read and write permissions for all users
+{% endprism %}
 
 Remember the output we showed previously using "ls -l"? The 3rd and 4th columns are shown below:
 
-    wei2912 weigrp
+{% prism bash %}
+wei2912 weigrp
+{% endprism %}
 
 This section means this belongs to user **wei2912** of group **weigrp**. To change this, [chown](/commands/Chmod&Chown.html#chown) is used. This will be covered later.
 
@@ -159,8 +161,10 @@ This section means this belongs to user **wei2912** of group **weigrp**. To chan
 
 A directory's "ls -l" shows this output:
 
-    drwx------  2 wei2912 weigrp  4096 Jun 17 18:19 bin
-    
+{% prism bash %}
+drwx------  2 wei2912 weigrp  4096 Jun 17 18:19 bin
+{% endprism %}
+
 What are the permissions of this directory and who owns it?
 
 **Answer:**
@@ -195,10 +199,11 @@ This is known as **numeric notation**. In this case, 0777 translates to rwxrwxrw
 
 ### Examples
 
-	chmod 664 file # rw-rw-r--
+{% prism bash %}
+chmod 664 file # rw-rw-r--
+chmod 764 file # rwxrw-r--
+{% endprism %}
 
-    chmod 764 file # rwxrw-r--
-    
 ### Exercises (again)
 
 Translate these codes into symbolic notation:
@@ -222,7 +227,9 @@ For this question, you need to supply two ways:
 
 Also, please note that in chmoding a whole directory, you should use the recursive flag.
 
-    chmod -R blah blah blah
+{% prism bash %}
+chmod -R blah blah blah
+{% endprism %}
 
 This means that changes apply to all directories and files contained within. To view which files will be changed, you can try "ls -R file/directory".
 
@@ -241,23 +248,31 @@ File qwerty has permissions `rwxrwx---`
 
 What's the final file permissions after doing:
 
-    chmod o+rx qwerty
+{% prism bash %}
+chmod o+rx qwerty
+{% endprism %}
 
 **Answer:**
 
-    rwxrwxr-x
+{% prism bash %}
+rwxrwxr-x
+{% endprism %}
 
 Also, if file qwerty had permissions `---------`, what'd be the final file permissions?
 
 **Answer:**
 
-    ------r-x
+{% prism bash %}
+------r-x
+{% endprism %}
 
 **Using symbolic notation is relative to the file's permissions.**
 
 Now, let's try with numeric notation.
 
-    chmod 775 qwerty
+{% prism bash %}
+chmod 775 qwerty
+{% endprism %}
 
 What happens to the file permissions if qwerty had file permissions `rwxrwx---` originally?
 
@@ -287,11 +302,15 @@ As you know from above, in Linux, there's a user and a group. chown sets a file 
 
 Here's the syntax:
 
-    chown [user]:[group] file
-    
+{% prism bash %}
+chown user:group file
+{% endprism %}
+
 Just like chmod, chown has a recursive mode used for directories. This means that changes apply to all directories and files contained within. To view which files will be changed, you can try "ls -R file/directory".
 
-    chown -R [user]:[group] directory
+{% prism bash %}
+chown -R user:group directory
+{% endprism %}
 
 That's about it. Chown is rather easy to use once you've mastered the concepts of users and groups.
 
@@ -301,7 +320,9 @@ Set folder "wireshark" to user wireshark and group wireshark. (PS: There's a Wir
 
 **Answer:**
 
-    chown -R wireshark:wireshark wireshark/
+{% prism bash %}
+chown -R wireshark:wireshark wireshark/
+{% endprism %}
 
 ## Conclusion
 

@@ -23,11 +23,17 @@ If you're lazy, you can search your distribution's repositories. However, note t
 
 For Red Hat-based systems: 
 
-    yum install wireshark
-    
+{% prism bash %}
+yum install wireshark
+{% endprism %}
+
 As for Debian-based systems:
 
-    [sudo] aptitude install wireshark
+{% prism bash %}
+sudo aptitude install wireshark
+{% endprism %}
+
+Omit the "sudo" if you are logged into the root user.
 
 Follow the standard procedure of installation. 
 

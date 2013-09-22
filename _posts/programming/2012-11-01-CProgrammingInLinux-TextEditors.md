@@ -31,32 +31,44 @@ Here are two solutions you could use:
 
 1) Press Alt+F2, type gnome-terminal (or konsole in KDE) and press enter(return key). cd to the directory to which you want to store your C Programs.
 
-    cd Documents
+{% prism bash %}
+cd Documents
+{% endprism %}
 
 2) Type the Filename of your program. Use .c extension for C Programs and .cpp for C++ Programs (applicable throughout this tutorial page)
 
-    vi filename.c
+{% prism bash %}
+vi filename.cs
+{% endprism %}
 
 3) You now enter the VI Editor. To start writing your Program, press Insert (Ins) key and start typing.
 Once you are done, Press Escape (Esc) key, type the following without quotation marks to save and exit out of the VI Editor.
 
-    :wq 
+{% prism bash %}
+:wq 
+{% endprism %}
 
 You now come back to the Terminal screen. 
 
 4) To compile your C/C++ Program, use the gcc command with -o flag between the program filename and the executable filename. 
 
-    gcc filename.c -o output_filename.out
+{% prism bash %}
+gcc filename.c -o output_filename.out
+{% endprism %}
 
 5) If there are any errors in the program, it will be displayed. You can go back to your program for editing and correct your errors by repeating steps starting from 2nd step again.
 If there are no errors, an output file by name "output_filename.out" will be created.
 To test the output, type “./output_filename.out” without the quotation marks. The output will be displayed on the terminal screen.
 
-    ./output_filename.out
+{% prism bash %}
+./output_filename.out
+{% endprism %}
 
 Note: typing "gcc filename.c" alone will result in an output file “a.out”. To test this output, type:
 
-    ./a.out
+{% prism bash %}
+./a.out
+{% endprism %}
 
 Advantages of this method:
 
@@ -79,17 +91,23 @@ Advantages of this method:
 
 6) cd to the directory in which you have stored your C Program.
 
-    cd Documents
+{% prism bash %}
+cd Documents
+{% endprism %}
 
 7) Type this to compile your C/C++ Program:
 
-    gcc filename.c -o output_filename.out
+{% prism bash %}
+gcc filename.c -o output_filename.out
+{% endprism %}
 
 8) If there are any errors in the program, it will be displayed. You can go back to your program for editing and correct your errors by repeating steps starting from 4th step again.
 If there are no errors, an output file by name "output_filename.out" will be created.
 To test the output, type “./output_filename.out” without the quotation marks. The output will be displayed on the terminal screen.
 
-    ./output_filename.out
+{% prism bash %}
+./output_filename.out
+{% endprism %}
 
 Note:
 1) Typing gcc "filename.c" alone will result in an output file “a.out”. To test this output, type ./a.out
@@ -109,8 +127,10 @@ Advantages of this method:
 
 3) Go to the last line and add these lines, save and exit.
 
-    mount C: ~/C
-    C:
+{% prism bash %}
+mount C: ~/C
+C:
+{% endprism %}
 
 4) Run DosBox again and type tc.exe (or whatever the IDE name is). This will open your favorite IDE for editing. Type, compile and test your program in it.
 

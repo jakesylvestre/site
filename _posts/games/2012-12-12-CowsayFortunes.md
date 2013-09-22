@@ -16,7 +16,7 @@ summary: Many geeks are bored with staring at a blank terminal screen, trying to
 location: _posts/games/2012-12-12-CowsayFortunes.md
 ---
 
-The original tutorial was published at [https://sites.google.com/site/debininja/tutorials/fun-fortunes](https://sites.google.com/site/debininja/tutorials/fun-fortunes). We've been given permission to replicate the tutorial and add onto our own edits :)
+*The original tutorial was published at [https://sites.google.com/site/debininja/tutorials/fun-fortunes](https://sites.google.com/site/debininja/tutorials/fun-fortunes). We've been given permission to replicate the tutorial and add onto our own edits*
 
 ## Basics
 So, what's fortune? And what's cowsay?
@@ -37,8 +37,10 @@ Before you start, you must make sure that you have installed the necessary packa
 
 Be noted that some fortunes and cows are offensive. You should remove them before-hand.
 
-    ls /usr/share/cowsay/cows/
-    
+{% prism bash %}
+ls /usr/share/cowsay/cows/
+{% endprism %}
+
 See anything disturbing? Remove it!
 
 As for fortunes... make sure not to install offensive fortunes.
@@ -53,11 +55,15 @@ They're disabled in Mint 12 or 13 by default. But it's pretty easy to get them b
 
 Then, run this in the terminal:
 
-    gconftool-2 --type boolean --set /desktop/linuxmint/terminal/show_fortunes true
+{% prism bash %}
+gconftool-2 --type boolean --set /desktop/linuxmint/terminal/show_fortunes true
+{% endprism %}
 
 If that doesn't work, try using mate's config tool:
 
-    mateconftool-2 --type boolean --set /desktop/linuxmint/terminal/show_fortunes true
+{% prism bash %}
+mateconftool-2 --type boolean --set /desktop/linuxmint/terminal/show_fortunes true
+{% endprism %}
 
 ## And if you aren't...
 
@@ -65,7 +71,9 @@ If that doesn't work, try using mate's config tool:
 
 This option will automatically display a fortune ALONG with a random cowsay creature whenever you open a terminal. Add this to  ~/.bashrc (or the global bashrc file):
 
-    cowsay -f $(ls /usr/share/cowsay/cows/ | shuf -n1) $(fortune)
+{% prism bash %}
+cowsay -f $(ls /usr/share/cowsay/cows/ | shuf -n1) $(fortune)
+{% endprism %}
 
 Reopen the terminal. You should see your fortunes!
 
@@ -78,30 +86,32 @@ The "fortune" bit is the actual fortune that is outputted via the random animal;
 ### Automatic fortunes + cowsay, with your own chosen cows
 
 Copy and paste this into ~/.bashrc (or the global bashrc file). Do not wipe out the whole file.
-     
-	# fortunes!
-	function show_fortune {
-		RANGE=3
-		number=$RANDOM
-		let "number %= $RANGE"
-		case $number in
-			0) cow="moose"; ;;
-			1) cow="tux"; ;;
-			2) cow="koala"; ;;
-		esac
-		
-		RANGE=2
-		number=$RANDOM
-		let "number %= $RANGE"
-		case $number in
-			0) command="/usr/games/cowsay"; ;;
-			1) command="/usr/games/cowthink"; ;;
-		esac
-		
-		/usr/games/fortune | $command -f $cow
-	}
+
+{% prism bash %}
+# fortunes!
+function show_fortune {
+	RANGE=3
+	number=$RANDOM
+	let "number %= $RANGE"
+	case $number in
+		0) cow="moose"; ;;
+		1) cow="tux"; ;;
+		2) cow="koala"; ;;
+	esac
 	
-	show_fortune
+	RANGE=2
+	number=$RANDOM
+	let "number %= $RANGE"
+	case $number in
+		0) command="/usr/games/cowsay"; ;;
+		1) command="/usr/games/cowthink"; ;;
+	esac
+	
+	/usr/games/fortune | $command -f $cow
+}
+
+show_fortune
+{% endprism %}
 
 The script generates a random cow, either mooose, tux or koala. Then, it generates a random command, either cowsay or cowthink. Finally, it runs the fortune command and pipes it to the cow command.
 
@@ -115,40 +125,50 @@ There are many cows avaliable. Here are some of them:
 
 There are a lot more "cows" that you can use, though. Run this command to see all of them:
 
-    cowsay -l
-    
+{% prism bash %}
+cowsay -l
+{% endprism %}
+
 And to list the files in /usr/share/cowsay/cows:
 
-    ls /usr/share/cowsay/cows
+{% prism bash %}
+ls /usr/share/cowsay/cows
+{% endprism %}
 
 Let's edit the bashrc file. Here's the section which generates the cows.
 
-    RANGE=3
-    number=$RANDOM
-    let "number %= $RANGE"
-    case $number in
-        0) cow="moose" ;;
-        1) cow="tux" ;;
-        2) cow="koala" ;;
-    esac
+{% prism bash %}
+RANGE=3
+number=$RANDOM
+let "number %= $RANGE"
+case $number in
+    0) cow="moose" ;;
+    1) cow="tux" ;;
+    2) cow="koala" ;;
+esac
+{% endprism %}
 
 Lets say you want to add the cow, "dragon", to it. Add a new entry under the last one and increase the value of RANGE by 1:
 
-    RANGE=4
-    number=$RANDOM
-    let "number %= $RANGE"
-    case $number in
-        0) cow="moose" ;;
-        1) cow="tux" ;;
-        2) cow="koala" ;;
-        3) cow="dragon" ;;
-    esac
-    
+{% prism bash %}
+RANGE=4
+number=$RANDOM
+let "number %= $RANGE"
+case $number in
+    0) cow="moose" ;;
+    1) cow="tux" ;;
+    2) cow="koala" ;;
+    3) cow="dragon" ;;
+esac
+{% endprism %}
+  
 ### Automatic fortunes ONLY
 
 Paste this line into ~/.bashrc
 
-    fortune
+{% prism bash %}
+fortune
+{% endprism %}
 
 ### On-demand fortunes + cowsay
 
@@ -156,7 +176,9 @@ This is a good idea if you're not bored all the time, but when you are bored, yo
 
 Paste the following line into ~/.bashrc or the global bashrc file. (Note: for the alias, the command should NOT be "fortune" as it is already used).
 
-    alias fortunes='cowsay -f $(ls /usr/share/cowsay/cows/ | shuf -n1) $(fortune)'
+{% prism bash %}
+alias fortunes='cowsay -f $(ls /usr/share/cowsay/cows/ | shuf -n1) $(fortune)'
+{% endprism %}
 
 The "alias" acts like a placeholder so when you issue your custom command, it will execute whatever you set that alias to.
 
@@ -164,23 +186,25 @@ Now whenever you want to call on the animals and fortunes, type in "fortunes" in
 
 Wikipedia can explain more: [http://en.wikipedia.org/wiki/Alias_(command)](http://en.wikipedia.org/wiki/Alias_(command))
 
-##Adding your own cows
+## Adding your own cows
 
 Now, to add your own cows - grab a picture. Any picture will do. And now put it through the magic of ASCII art generators (http://www.glassgiant.com/ascii) to get some ASCII art. You could create yours manually too.
 
 For example, I have a ASCII version of the ledgenary floppy disk:
 
-	.-----------------------------.          
-	|  .-----------------------.  |          
-	|  |                       |  |          
-	|  |                       |  |                 
-	|  |                       |  |          
-	|  `-----------------------'  |          
-	|      _________________ __   |          
-	|    |   ___         |     |  |          
-	|    |  |   |        |     |  |                
-	|    |  |___|        |     |  |          
-	|____|_______________|_____|__|
+{% prism bash %}
+.-----------------------------.          
+|  .-----------------------.  |          
+|  |                       |  |          
+|  |                       |  |                 
+|  |                       |  |          
+|  `-----------------------'  |          
+|      _________________ __   |          
+|    |   ___         |     |  |          
+|    |  |   |        |     |  |                
+|    |  |___|        |     |  |          
+|____|_______________|_____|__|
+{% endprism %}
 
 Now that you have one, it's time to make your cow file.
 
@@ -188,7 +212,9 @@ Go to __/usr/share/cowsay/cows__ and create a new file, titled "namehere.cow". I
 
 Then, start off your file with:
 
-    $the_cow = <<"EOC";
+{% prism bash %}
+$the_cow = <<"EOC";
+{% endprism %}
 
 Paste the contents of the ASCII art into the rest of the file. To choose where for the thoughts to be displayed, use $thoughts. Usually it's displayed as an indent of 2 spaces every line, 4 lines.
 
@@ -196,29 +222,33 @@ End off your file with EOC.
 
 Here's an example:
 
-    ## Floppy disk
-    ## for geeks!
-    $the_cow = <<"EOC";
+{% prism bash %}
+## Floppy disk
+## for geeks!
+$the_cow = <<"EOC";
+$thoughts
+  $thoughts
     $thoughts
       $thoughts
-        $thoughts
-          $thoughts
-	.-----------------------------.          
-	|  .-----------------------.  |          
-	|  |                       |  |          
-	|  |                       |  |                 
-	|  |                       |  |          
-	|  `-----------------------'  |          
-	|      _________________ __   |          
-	|    |   ___         |     |  |          
-	|    |  |   |        |     |  |                
-	|    |  |___|        |     |  |          
-	|____|_______________|_____|__|
-    EOC
+.-----------------------------.          
+|  .-----------------------.  |          
+|  |                       |  |          
+|  |                       |  |                 
+|  |                       |  |          
+|  `-----------------------'  |          
+|      _________________ __   |          
+|    |   ___         |     |  |          
+|    |  |   |        |     |  |                
+|    |  |___|        |     |  |          
+|____|_______________|_____|__|
+EOC
+{% endprism %}
 
 Now, test it out with a fortune!
 
-    cowsay -f floppy-disk $(fortune)
+{% prism bash %}
+cowsay -f floppy-disk $(fortune)
+{% endprism %}
 
 Check for any defects.
 
@@ -228,19 +258,23 @@ We've had a lot of fun with cowsay - back to fortunes, the basis of all of this.
 
 Let's take a look at the fortunes I have.
 
-    wei2912@wei2912-server[~]$ fortune -f
-	100.00% /usr/share/games/fortunes
-	     4.87% husse-moderating
-	    57.96% literature
-	     3.76% husse-funny
-	    30.53% husse-helping
-	     2.88% husse-self
+{% prism bash %}
+$ fortune -f
+100.00% /usr/share/games/fortunes
+     4.87% husse-moderating
+    57.96% literature
+     3.76% husse-funny
+    30.53% husse-helping
+     2.88% husse-self
+{% endprism %}
 
 Here you can see the composition of the fortunes I have.
 
 Here's the complete list:
 
-    ls /usr/share/games/fortunes
+{% prism bash %}
+ls /usr/share/games/fortunes
+{% endprism %}
 
 Look at the files without extension ".dat". They are fortunes, seperated by %.
 
@@ -252,30 +286,31 @@ To create your own, start off with a couple of quotes. Name the file appropirate
 
 For example, I created the file "stackoverflow", referring to the programming website. Here's some of what I put:
 
-	## Don't close questions where the user has requested that it not be closed [closed] ##
-	The system should search posts for the word "please" in proximity to the phrase "don't close" or "do not close", and if found together disable the close link for the following reasons:
+{% prism bash %}
+## Don't close questions where the user has requested that it not be closed [closed] ##
+The system should search posts for the word "please" in proximity to the phrase "don't close" or "do not close", and if found together disable the close link for the following reasons:
 	
-	    They asked nicely
-	    They knew enough about the system to understand that posts can be closed, and thus are experienced enough to know when their own question is perfectly valid and reasonable
+* They asked nicely
+* They knew enough about the system to understand that posts can be closed, and thus are experienced enough to know when their own question is perfectly valid and reasonable
 	
-	Please consider this question an opportunity to consider the issue carefully. I'll convert it to a feature request when abs(votes) > 100, until then it'll merely be a discussion.
+Please consider this question an opportunity to consider the issue carefully. I'll convert it to a feature request when abs(votes) > 100, until then it'll merely be a discussion.
+
+-- Adam Davis
+-- http://meta.stackoverflow.com/questions/99062/dont-close-questions-where-the-user-has-requested-that-it-not-be-closed
+%
+Q: What's the difference between JavaScript and Java?
 	
-	-- Adam Davis
-	-- http://meta.stackoverflow.com/questions/99062/dont-close-questions-where-the-user-has-requested-that-it-not-be-closed
-	%
-	Q: What's the difference between JavaScript and Java?
+-- Guy
+-- http://stackoverflow.com/questions/245062/whats-the-difference-between-javascript-and-java
 	
-	-- Guy
-	-- http://stackoverflow.com/questions/245062/whats-the-difference-between-javascript-and-java
+A: Java and Javascript are similar like Car and Carpet are similar.
 	
-	A: Java and Javascript are similar like Car and Carpet are similar.
+-- Greg Hewgill
+-- http://stackoverflow.com/questions/245062/whats-the-difference-between-javascript-and-java#245068
+%
+Q: What is the best comment in source code you have ever encountered? By Tim Post at http://stackoverflow.com/questions/184618/what-is-the-best-comment-in-source-code-you-have-ever-encountered/482129
 	
-	-- Greg Hewgill
-	-- http://stackoverflow.com/questions/245062/whats-the-difference-between-javascript-and-java#245068
-	%
-	Q: What is the best comment in source code you have ever encountered? By Tim Post at http://stackoverflow.com/questions/184618/what-is-the-best-comment-in-source-code-you-have-ever-encountered/482129
-	
-	I am particularly guilty of this, embedding non-constructive comments, code poetry and little jokes into most of my projects (although I usually have enough sense to remove anything directly offensive before releasing the code). Here's one I'm particulary fond of, placed far, far down a poorly-designed 'God Object':
+I am particularly guilty of this, embedding non-constructive comments, code poetry and little jokes into most of my projects (although I usually have enough sense to remove anything directly offensive before releasing the code). Here's one I'm particulary fond of, placed far, far down a poorly-designed 'God Object':
 	
 	/**
 	* For the brave souls who get this far: You are the chosen ones,
@@ -288,7 +323,7 @@ For example, I created the file "stackoverflow", referring to the programming we
 	
 	I'M SORRY!!!! I just couldn't help myself.....!
 	
-	And another, which I'll admit I haven't actually released into the wild, even though I am very tempted to do so in one of my less intuitive classes:
+And another, which I'll admit I haven't actually released into the wild, even though I am very tempted to do so in one of my less intuitive classes:
 	
 	// 
 	// Dear maintainer:
@@ -301,40 +336,49 @@ For example, I created the file "stackoverflow", referring to the programming we
 	// total_hours_wasted_here = 42
 	// 
 	
-	-- Jens Roland 
-	-- http://stackoverflow.com/questions/184618/what-is-the-best-comment-in-source-code-you-have-ever-encountered/482129#482129
-	%
-	
+-- Jens Roland 
+-- http://stackoverflow.com/questions/184618/what-is-the-best-comment-in-source-code-you-have-ever-encountered/482129#482129
+%
+{% endprism %}
+
 By the way, the complete fortune is downloadable at [stackoverflow (a file)](/files/CowsayFortunes/stackoverflow) if you want to examine it.
 
 Now, we're going to convert it into a .dat file.
 
-    strfile -c % stackoverflow stackoverflow.dat
+{% prism bash %}
+strfile -c % stackoverflow stackoverflow.dat
+{% endprism %}
 
 Example output:
 
-    "stackoverflow.dat" created
-    There were 24 strings
-    Longest string: 6020 bytes
-    Shortest string: 343 bytes
+{% prism bash %}
+"stackoverflow.dat" created
+There were 24 strings
+Longest string: 6020 bytes
+Shortest string: 343 bytes
+{% endprism %}
 
 This gives you somewhat important data. At least, the second line "There were 24 strings". You now have 24 fortunes.
 
 Copy the files over to our directory:
 
-    cp ./stackoverflow* /usr/share/games/fortunes/
-    
+{% prism bash %}
+cp ./stackoverflow* /usr/share/games/fortunes/
+{% endprism %}
+
 The usage of the wildcard causes [stackoverflow](/files/CowsayFortunes/stackoverflow) (the list) and [stackoverflow.dat](/files/CowsayFortunes/stackoverflow.dat) (the data file) to be copied. Now, check if it was successful:
 
-    wei2912@wei2912-server[~]$ fortune -f
-    100.00% /usr/share/games/fortunes
-	    21.81% sharp-perl
-	     3.43% husse-moderating
-	     3.74% stackoverflow
-	    40.81% literature
-	     4.05% sharp-programming
-	     2.65% husse-funny
-	    21.50% husse-helping
-	     2.02% husse-self
+{% prism bash %}
+$ fortune -f
+100.00% /usr/share/games/fortunes
+	21.81% sharp-perl
+	 3.43% husse-moderating
+	 3.74% stackoverflow
+	40.81% literature
+	 4.05% sharp-programming
+	 2.65% husse-funny
+	21.50% husse-helping
+	 2.02% husse-self
+{% endprism %}
 
 Now, 3.74% of our fortunes are from stackoverflow!

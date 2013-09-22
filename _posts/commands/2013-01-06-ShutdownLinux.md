@@ -28,14 +28,18 @@ Here's how to use it:
 
 ## To bring the system down and so with a complete poweroff
 
-    shutdown -hP now
+{% prism bash %}
+shutdown -hP now
+{% endprism %}
 
 If you're inquisitive, you may like to ask why I've added the -P. it seems redundant when the -h will power the system down for you, right?
 Well.. The -h gives the system the option to just "halt" or do a complete poweroff. So, on some systems, the machine may NOT poweroff completely.
 
 So, how do I do a reboot?
 
-    shutdown -hr now
+{% prism bash %}
+shutdown -hr now
+{% endprism %}
 
 Please note: You need the "now" in the command in order to shutdown immediately. Read the man page for more info.
 
@@ -73,7 +77,7 @@ Let's just say that a proper shutdown will improve your systems reliability and 
 
 Yes. There is a method in-which is more hands-on but will ensure that your data is safe...
 
-<p class="notice">Note that this is not safer than using the "shutdown" command. It is more risky than using the "shutdown" command and is generally not advised to be used unless in conditions such as the above.</p>
+***Note that this is not safer than using the "shutdown" command. It is more risky than using the "shutdown" command and is generally not advised to be used unless in conditions such as the above.***
 
 Have you ever seen that 'Sys Rq' button on your keyboard (it might be the Print Screen button)? In the Linux kernel, in combination with Alt, it is used to allow the user to perform low-level tasks no matter what state the system is in. It is mostly used to bring a system down without corrupting the filesystem. Heres how we do it.
 
@@ -90,27 +94,39 @@ Huh?
 
 Ok. The first think we want to do is to take back control from Xorg.
 
-    Alt + SysRq + R
+{% prism bash %}
+Alt + SysRq + R
+{% endprism %}
 
 You wont notice any changes, but wait a second before hitting the next combination of keys to ensure it executed. Now, we want to stop all running tasks... This will send SIGTERM or Terminate to *all* processes currently running.
 
-    Alt + SysRq + E
+{% prism bash %}
+Alt + SysRq + E
+{% endprism %}
 
 Wait about 5-10 seconds. Now we make sure there are no left over processes by sending SIGKILL or simply Kill _all_ remaining processes.
 
-    Alt + SysRq + I
+{% prism bash %}
+Alt + SysRq + I
+{% endprism %}
 
 Now it is time to Sync our disks to prevent data loss.
 
-    Alt + SysRq + S
+{% prism bash %}
+Alt + SysRq + S
+{% endprism %}
 
 It is now time to prepare our File systems for the reboot by mounting them all to Read-only.
 
-    Alt + SysRq + U
+{% prism bash %}
+Alt + SysRq + U
+{% endprism %}
 
 And finally! Time to shutdown, or reboot.
 
-    (shutdown)Alt + SysRq + O  (reboot)Alt + SysRq + B
+{% prism bash %}
+(shutdown)Alt + SysRq + O  (reboot)Alt + SysRq + B
+{% endprism %}
 
 Now, you can press that power on button with confidence and coming back to a error-less boot :-)
 

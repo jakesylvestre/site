@@ -18,19 +18,25 @@ If you do not already have SSHFS installed, then search your distribution’s re
 
 To use this, simply type:
 
-    sshfs (user)@(system):(remote mountpoint) (local mountpoint)
+{% prism bash %}
+sshfs user@system:remote_mountpoint local_mountpoint
+{% endprism %}
 
 For example, we have a VPS, and would like to mount the contents of __/var/www/html__ to a folder in __~/Projects__. As with mounting in folders, it must be empty and created before the procedure.
 
 Assuming it doesn’t already exist, we will call the folder ‘VPS’:
 
-    mkdir ~/Projects/VPS
-    
+{% prism bash %}
+mkdir ~/Projects/VPS
+{% endprism %}
+
 That should result in the creation of the required folder, then:
 
-    sshfs root@randomdns.com:/var/www/html ~/Projects/VPS
-    
-That should prompt for pass, unless you use a passless key, or a key with a passphrase. The remote system should now be part of the local system.
+{% prism bash %}
+sshfs root@randomdns.com:/var/www/html ~/Projects/VPS
+{% endprism %}
+
+That should prompt for a password/passphrase unless you use a passphrase-less key. The remote system should now be part of the local system.
 
 ### SFTP
 

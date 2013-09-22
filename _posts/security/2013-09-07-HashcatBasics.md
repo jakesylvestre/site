@@ -27,7 +27,9 @@ Let's obtain a copy of Hashcat first. In this tutorial, we'll be using the stand
 
 Hashcat uses .7z extraction, so to extract it:
 
-    7z x file.7z
+{% prism bash %}
+7z x file.7z
+{% endprism %}
 
 Once it's extracted, *cd* into the directory. That's the end of the installation!
 
@@ -37,21 +39,27 @@ Let's see if Hashcat works.
 
 Once you're inside the Hashcat directory, execute the following command:
 
-    ./hashcat-cli64.bin -m 0 examples/A0.M0.hash examples/A0.M0.word
+{% prism bash %}
+./hashcat-cli64.bin -m 0 examples/A0.M0.hash examples/A0.M0.word
+{% endprism %}
 
 If using 32 bit:
 
-    ./hashcat-cli32.bin -m 0 examples/A0.M0.hash examples/A0.M0.word
+{% prism bash %}
+./hashcat-cli32.bin -m 0 examples/A0.M0.hash examples/A0.M0.word
+{% endprism %}
 
 You'll see a huge jumble of text pop up. The bottom part is what matters:
 
-    Input.Mode: Dict (examples/A0.M0.word)
-    Index.....: 1/1 (segment), 102 (words), 2769 (bytes)
-    Recovered.: 102/102 hashes, 1/1 salts
-    Speed/sec.: - plains, - words
-    Progress..: 102/102 (100.00%)
-    Running...: --:--:--:--
-    Estimated.: --:--:--:--
+{% prism bash %}
+Input.Mode: Dict (examples/A0.M0.word)
+Index.....: 1/1 (segment), 102 (words), 2769 (bytes)
+Recovered.: 102/102 hashes, 1/1 salts
+Speed/sec.: - plains, - words
+Progress..: 102/102 (100.00%)
+Running...: --:--:--:--
+Estimated.: --:--:--:--
+{% endprism %}
 
 As seen here, we've successfully cracked all hashes. But how did we do it? Let's delve in further.
 
@@ -61,9 +69,11 @@ As seen here, we've successfully cracked all hashes. But how did we do it? Let's
 
 Looking at our first command, let's break it up into pieces.
 
-    -m 0
-    examples/A0.M0.hash
-    examples/A0.M0.word
+{% prism bash %}
+-m 0
+examples/A0.M0.hash
+examples/A0.M0.word
+{% endprism %}
 
 The first part, *-m 0*, sets the hash to MD5; what *examples/A0.M0.hash* is hashed with.
 
@@ -77,7 +87,9 @@ This time, we will be using a rulesfile. Both the rulesfile and the dictionary a
 
 I'll give you a challenge to crack the passwords, after handing you a command.
 
-    ./hashcat-cli64.bin -m 0 -r ./rules/rulefile ./passfiles/nixtuts-passwords.txt.hash ./dict/dictfile
+{% prism bash %}
+./hashcat-cli64.bin -m 0 -r ./rules/rulefile ./passfiles/nixtuts-passwords.txt.hash ./dict/dictfile
+{% endprism %}
 
 There're multiple choices for a rulefile, available in *rules/*. A rulefile manipulates a string from a dictfile to provide multiple combinations. For example, "password" may be l33tify into "passw0rd".
 
@@ -97,7 +109,24 @@ For lazy people, here's the list: [nixtuts-passwords.txt](/files/HashcatBasics/n
 
 This script generates unsalted MD5 hashes, which are insecure and should never be used to store passwords. The only reason why they are provided here is they are fast to compute.
 
-[genhash.sh](/files/HashcatBasics/genhash.sh)
+{% prism bash %}
+#!/bin/bash
+
+if [[ -z "$1" ]]
+then
+echo "ERROR: No input file specified."
+fi
+
+echo -n > ${1}.hash
+while read line
+do
+echo -n "$line" | md5sum | cut -f1 -d ' ' >> ${1}.hash
+done < "$1"
+
+echo "Exported hashes to ${1}.hash"
+{% endprism %}
+
+You can download the script at [genhash.sh](/files/HashcatBasics/genhash.sh).
 
 ## Now that you've learnt how to crack passwords quickly...
 

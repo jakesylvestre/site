@@ -19,3 +19,5 @@
     {% include js/theme-switcher.js %}
     {% include js/lite-switcher.js %}
 })();
+
+{% include js/prism.js %}
