@@ -45,8 +45,12 @@ And if you want it to automatically build everytime a change is detected:
 $ jekyll server -w
 ```
 
-Finally, make a commit with the new update, create a pull request, and we'll try to add it in.
+Finally, make a commit with the new update (on a new branch first!), create a pull request, and we'll try to add it in.
 If you want to be a contributor, send in a(few) pull request(s), then ask @wei2912.
+
+## Workflow for contributors
+
+Create a new branch for something you wish to do, then make your edits. Once done, merge the branches and do a `git rebase -i` to get your commits arranged neatly. Once that's done, go ahead and do a `git push`.
 
 ## Archives
 
