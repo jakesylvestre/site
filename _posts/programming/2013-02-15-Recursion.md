@@ -9,7 +9,7 @@ tags:
   - recursion
 author: 
   - wei2912
-  - manu-27993
+  - manu
 
 summary: Recursion, while in theory, can be very easy to master, in practice it can be extremely difficult to implement if not learnt well. In this tutorial, we'll try to get you to understand recursion!
 

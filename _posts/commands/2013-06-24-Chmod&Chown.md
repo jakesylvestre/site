@@ -12,7 +12,7 @@ tags:
 author: 
   - wei2912
   - jaffer1979
-  - manu-27993
+  - manu
 
 summary: Learn how to master the two commands that are often associated with file permissions manipulation - chmod and chown.
 

@@ -11,7 +11,7 @@ tags:
   - sysrq
   - commands
 author: 
-  - programmerdams
+  - dams
   - wei2912
   - diabolist
 

@@ -11,7 +11,7 @@ tags:
   - system
 author: 
   - wei2912
-  - Subsentient
+  - subsentient
 
 summary: A minimalist system is a tiny system which can be used for servers. Usually many people use a pre-built system like Debian, Red Hat and many others. Today, we're going to teach you how to build a much tinier system!
 

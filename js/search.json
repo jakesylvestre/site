@@ -2,10 +2,9 @@
 ---
 [
   {% for page in site.posts %}
-  {% if page.status != draft && page.title != null && page.author != null && page.category != null && page.tags != null && page.summary != null && page.url != null %}
+  {% if page.status != draft && page.title != null && page.category != null && page.tags != null && page.summary != null && page.url != null %}
   {
     "title":"{{page.title}}",
-    "authors":[{% for author in page.author %}"{{author}}",{% endfor %} null], 
     "category":"{{page.category}}", 
     "tags":[{% for tag in page.tags %}"{{tag}}",{% endfor %} null],
     "summary":"{{ page.summary | replace:'"','''}}",

@@ -18,12 +18,9 @@ var filterPostsByPropertyValue = function (posts, property, value) {
         var post = posts[i],
             prop = post[property];
 
-        // Last element of tags and authors are null
+        // Last element of tags is null
         if (post.tags[post.tags.length - 1] == null) {
             post.tags.pop();
-        }
-        if (post.authors[post.authors.length - 1] == null) {
-            post.authors.pop();
         }
 
         // The property could be a string, such as a post's category,
@@ -67,7 +64,6 @@ var resultsFound = function (property, value, posts) {
     for (var i = 0; i < posts.length; i++) {
         var post = posts[i];
         var tags = post.tags;
-        var authors = post.authors;
         var category = post.category;
 
         var postid = "#post" + i;
@@ -85,7 +81,6 @@ $(function () {
     var map = {
         'category': getParam('category'),
         'tags': getParam('tags'),
-        'authors': getParam('authors'),
     };
 
     var count = 3; // number of variables in map
@@ -109,6 +104,6 @@ $(function () {
 
     if (count === 3) {
         $("#banner").text("No/invalid parameter(s) was(were) passed so we couldn't return anything. Sorry!");
-        $('#results').append("<p>Valid parameteres: category | tags | authors </p>");
+        $('#results').append("<p>Valid parameteres: category | tags </p>");
     }
 });

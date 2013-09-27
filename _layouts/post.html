@@ -26,8 +26,15 @@
                 <p class="post_date">Posted on {{ page.date | date: "%d %B %Y" }}</p>
                 {% endif %}
 
-                {% if page.author != null %} 
-                <p class="post_author">By: {% for author in page.author %}<a class="button icon tag pill" href="/search.html?authors={{author}}">{{author}}</a> {% endfor %} </p>
+                {% if page.author != null %}
+                <p class="post_author">By: {% for author in page.author %}
+                {% assign author_info = site.authors[author] %}
+                {% if author_info %}
+                <a class="button icon tag pill" href="/authors/#{{author}}">{{author_info.name}}</a> 
+                {% else %}
+                <a class="button-noclick icon tag pill">{{author}}</a>
+                {% endif %}
+                {% endfor %} </p>
                 {% endif %}
 
                 {% if page.tags != null %}
@@ -57,7 +64,7 @@
                 {% if site.related_posts != empty %}
 				<h2 class="related_posts">Related Posts</h2>
                 {% for post in site.related_posts %}
-                <a href="{{ post.url }}">{{post.title }}</a><br />
+                <a href="{{ post.url }}">{{ post.title }}</a><br />
                 {% endfor %}
                 {% endif %}
                 {% endif %}

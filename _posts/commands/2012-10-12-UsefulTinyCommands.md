@@ -9,7 +9,7 @@ tags:
   - commands
 author: 
   - wei2912
-  - manu-27993
+  - manu
 
 summary: Learn how to list hidden files, look at a calender and many more with those pesky tiny commands!
 

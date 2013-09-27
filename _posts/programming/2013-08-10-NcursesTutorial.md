@@ -11,7 +11,7 @@ tags:
   - console
   - codeblocks
 author: 
-  - Paradux
+  - paradux
   - wei2912
 
 summary: Have you ever wanted to make a console application or game in C++? Well, Ncurses is the solution! This short tutorial will teach you how to setup this library on CodeBlocks and will teach you some basic features.

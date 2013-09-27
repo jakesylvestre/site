@@ -9,3 +9,108 @@ exclude: ["README.md", "Gemfile"]
 
 # Excerpts
 excerpt_separator: "<!--more-->"
+
+# Authors
+# Usernames in lowercase. Fill up your actual name/username with capitalization in the "name" field.
+authors:
+  wei2912:
+    name: wei2912
+    role: Owner
+    
+    email: wei2912.supp0rt@gmail.com
+    web: http://wei2912.github.io/
+    github: wei2912
+    
+    bio: I started NixTuts and have been contributing to the project ever since 2012.
+    
+  eyer:
+    name: EyeR
+    role: Co-owner
+    
+    web: http://eyer.armed.me.uk/
+    github: EyeR
+    
+  manu:
+    name: manu
+    role: Co-owner
+    
+    web: http://tsurge.wordpress.com/
+    github: manu-27993
+    
+  d10:
+    name: d10
+    role: JS programmer
+    
+    web: http://d10.github.io/
+    github: d10
+    
+  dams:
+    name: dams
+    role: Learnix Server Owner
+    
+    web: http://dams.insomnia247.nl/
+    github: programmerdams
+    
+  miezel:
+    name: Miezel
+    role: JS programmer & Author
+    
+    github: Mimieam
+    
+  diabolist:
+    name: diabolist
+    role: JS programmer & Author
+    
+    github: diabolist
+  
+  odd0002:
+    name: Odd0002
+    role: JS programmer & Author
+    
+    github: Odd0002
+    
+  subsentient:
+    name: Subsentient
+    role: NixTuts Webhost & Author
+    
+    email: thinkingrodent@gmail.com
+    web: http://universe2.us/
+    github: Subsentient
+  
+  d4rkkn16ht:
+    name: d4rkkn16ht
+    role: Author
+    
+    github: d4rkkn16ht
+    
+  digit:
+    name: Digit
+    role: Author
+    
+    github: Digit
+    
+  impiza:
+    name: impiza
+    role: Author
+    
+    web: http://juz4fun.com/
+    github: impiza
+  
+  mj-meo-dmt:
+    name: MJ-meo-dmt
+    role: Author
+    
+    github: MJ-meo-dmt
+    
+  wgreenhouse:
+    name: wgreenhouse
+    role: Author
+    
+    github: wgreenhouse
+  
+  paradux:
+    name: Paradux
+    role: Author
+    
+    email: jeroen_commando@live.nl
+    github: Paradux

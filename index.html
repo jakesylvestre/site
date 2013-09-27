@@ -49,7 +49,14 @@ body: '<script>var button = $("#kiwiirc-button"); button.click(function(){ $("<i
 	{% endif %}
 
 	{% if post.author != null %}
-	<p class="post_author">By: {% for author in post.author %}<a class="button icon tag pill" href="/search.html?authors={{author}}">{{author}}</a> {% endfor %} </p>
+	<p class="post_author">By: {% for author in post.author %}
+    {% assign author_info = site.authors[author] %}
+    {% if author_info %}
+    <a class="button icon tag pill" href="/authors/#{{author}}">{{author_info.name}}</a> 
+    {% else %}
+    <a class="button-noclick icon tag pill">{{author}}</a>
+    {% endif %}
+    {% endfor %} </p>
 	{% endif %}
 
 	{% if post.tags != null %}

@@ -7,7 +7,7 @@ category: programming
 tags: 
   - programming
 author: 
-  - manu-27993
+  - manu
   - wei2912
 
 summary: Many C/C++ Programming IDEs are not available for download on Linux. Here, we cover the solutions in Linux.

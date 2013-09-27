@@ -8,7 +8,7 @@ tags:
   - networking
   - wireshark
 author: 
-  - EyeR
+  - eyer
   - wei2912
 
 summary: Wireshark is a packet capture utility and network protocol analyzer – It lets you look deep into how networks work, thus you can see what the computer sees.

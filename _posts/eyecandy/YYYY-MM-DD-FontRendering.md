@@ -7,7 +7,7 @@ category: eyecandy
 tags: 
   - eyecandy
 author: 
-  - manu-27993
+  - manu
   - wei2912
 
 summary: Did you ever say "OMG! My fonts look ugly everywhere" while using Linux? Let's put an end to it!
