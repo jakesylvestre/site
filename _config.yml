@@ -1,6 +1,7 @@
 # NixTuts Jekyll configuration
 title: NixTuts
 permalink: /:categories/:title.html
+pygments: true
 
 # Exclude files
 # .files are ignored by default

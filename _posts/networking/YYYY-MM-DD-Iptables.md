@@ -16,7 +16,7 @@ iptables is a kernel-level firewall, essentially this means the firewalling is d
  
 An example of this would be:
 
-{% prism bash %}
+{% highlight bash %}
 Chain INPUT (policy ACCEPT)
 	target     prot opt source               destination
 	fail2ban-SSH  tcp  --  anywhere             anywhere            tcp dpt:ssh
@@ -36,15 +36,15 @@ Chain OUTPUT (policy ACCEPT)
 Chain fail2ban-SSH (1 references)
 	target     prot opt source               destination
 	RETURN     all  --  anywhere             anywhere
-{% endprism %}
+{% endhighlight %}
 
 As you can see, it builds 'tables' from chains, populated by rules.  The chains INPUT, OUTPUT and FORWARD should be self explainitory, and fail2ban has made itself a chain for dealing with SSH auth failures. The rules to these chains easily manipulated.
  
 For example, there is a deviant attempting to brute your system, You can simply define a new rule(depending on your user privileges, may require sudo):
 
-{% prism bash %}
+{% highlight bash %}
 iptables -A INPUT -s 85.17.245.118 -j DROP
-{% endprism %}
+{% endhighlight %}
 
 the '-A' switch tells iptables your intention is to add a rule, another common option is '-D' - remove a rule - clearly, INPUT is the chain you're adding this rule to - Inbound traffic - and output would be outbound traffic. the '-s' switch is source, So all packets 'from' -=- and the '-j' is for 'jump' indicates target it will jump to, in this case drop
  
@@ -54,9 +54,9 @@ Should you ping a system with those ports 'closed', it will return a 'destinatio
  
 You can also do more than filter by IP, Say you wished to allow the above attacker to continue to use other services, yet continue to isolate from your SSH server, then the '--dport' flag will enable you to specify a port:
 
-{% prism bash %}
+{% highlight bash %}
 iptables -A INPUT -s 85.17.245.118 --dport 22 -j DROP
-{% endprism %}
+{% endhighlight %}
 
 Would *only* ignore packets from that IP on port 22 - other useful switches are '-d' destination IP, '-p' protocol ie: tcp  / udp  / icmp, and '-i' allows you to specify interface. Combinations of these will allow you to fabricate rules to cover most senarios.
  
@@ -68,7 +68,7 @@ They use this to actively sniff traffic, amongst other things. For more refernce
  
 Using the commands:
 
-{% prism bash %}
+{% highlight bash %}
 iptables -A INPUT -s 2.16.0.0/13 -j DROP
 iptables -A INPUT -s 2.18.16.0/20 -j DROP
 iptables -A INPUT -s 2.18.32.0/20 -j DROP
@@ -107,6 +107,6 @@ iptables -A INPUT -s 184.84.0.0/14 -j DROP
 iptables -A INPUT -s 209.85.128.0/17 -j DROP
 iptables -A OUTPUT -s 209.85.128.0/17 -j DROP
 iptables -A INPUT -s 217.208.0.0/13 -j DROP
-{% endprism %}
+{% endhighlight %}
 
 We can then prevent being served content from Akamai, instead of the provider we'd expect. Don't worry, it won't harm your ability to browse the sites you choose. Once 'the network' figures out you won't talk to Akamai, it will go and fetch the content from where it should do.

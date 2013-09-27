@@ -22,23 +22,23 @@ Here's a couple of useful commands that we feel are helpful to sysadmins special
 
 ### Cleaning up your screens
 
-{% prism bash %}
+{% highlight bash %}
 tput clear
-{% endprism %}
+{% endhighlight %}
 
 or simply:
 
-{% prism bash %}
+{% highlight bash %}
 clear
-{% endprism %}
+{% endhighlight %}
 
 This clears off everything on your terminal screen. However, if you scroll back, notice the large amount of empty space. In truth, all the clear command does is print out empty lines.
 
 ### Reset your screen
 
-{% prism bash %}
+{% highlight bash %}
 reset
-{% endprism %}
+{% endhighlight %}
 
 This resets everything on your terminal screen. Unlike *clear* it actually *clears off everything* from your terminal screen.
 
@@ -48,15 +48,15 @@ This resets everything on your terminal screen. Unlike *clear* it actually *clea
 
 The format of the command is as such:
 
-{% prism bash %}
+{% highlight bash %}
 cal 12 2024
-{% endprism %}
+{% endhighlight %}
 
 where *12* is the month and *2024* is the year.
 
 Here's some example output:
 
-{% prism bash %}
+{% highlight bash %}
 $ cal 12 2024
    December 2024  
 Su Mo Tu We Th Fr Sa  
@@ -65,13 +65,13 @@ Su Mo Tu We Th Fr Sa
 15 16 17 18 19 20 21  
 22 23 24 25 26 27 28  
 29 30 31  
-{% endprism %}  
+{% endhighlight %}  
 
 ### Displaying both Date and Time
 
-{% prism bash %}
+{% highlight bash %}
 date
-{% endprism %}
+{% endhighlight %}
 
 Self explanatory - shows the date.
 
@@ -81,98 +81,98 @@ Self explanatory - shows the date.
 
 ### Who's logged in?
 
-{% prism bash %}
+{% highlight bash %}
 who
-{% endprism %}
+{% endhighlight %}
 
 spurts out something like this:
 
-{% prism bash %}
+{% highlight bash %}
 bar  tty2 2013-03-19 21:46
 foo  tty8 2013-03-19 20:38 (:0)
 foo  pts/22013-03-19 21:20 (:0.0)
-{% endprism %}
+{% endhighlight %}
 
 It displays the currently logged in users and their terminals.
 
 If you want to remove the unneccessary info and display only the users of the system
 
-{% prism bash %}
+{% highlight bash %}
 who | cut -d " " -f1
-{% endprism %}
+{% endhighlight %}
 
 Which results in:
 
-{% prism bash %}
+{% highlight bash %}
 bar
 foo
 foo
-{% endprism %}
+{% endhighlight %}
 
 To remove the duplicates, you need to pipe the info to uniq.
 
-{% prism bash %}
+{% highlight bash %}
 who | cut -d " " -f1 | uniq
-{% endprism %}
+{% endhighlight %}
 
 Which results in this:
 
-{% prism bash %}
+{% highlight bash %}
 bar
 foo
-{% endprism %}
+{% endhighlight %}
 
 ### And another command:
 
-{% prism bash %}
+{% highlight bash %}
 users
-{% endprism %}
+{% endhighlight %}
 
 This'll give a list of users showing who is currently online. Instead of a vertical list, it outputs:
 
-{% prism bash %}
+{% highlight bash %}
 $ users
 bar foo foo
-{% endprism %}
+{% endhighlight %}
 
 ## Processes
 
-{% prism bash %}
+{% highlight bash %}
 ps
-{% endprism %}
+{% endhighlight %}
 
 This displays the current running processes in your bash session.
 
 For example, before i ran *jekyll*, I had two processes:
 
-{% prism bash %}
+{% highlight bash %}
   PID TTY          TIME CMD
  9683 pts/2    00:00:00 bash
 10545 pts/2    00:00:00 ps
-{% endprism %}
+{% endhighlight %}
 
 After I ran *jekyll* in background, the content changed:
 
-{% prism bash %}
+{% highlight bash %}
   PID TTY          TIME CMD
  9683 pts/2    00:00:00 bash
 10545 pts/2    00:00:00 ps
  4898 pts/100  00:00:00 jekyll
-{% endprism %}
+{% endhighlight %}
 
 ### What about *all* processes?
 
-{% prism bash %}
+{% highlight bash %}
 ps aux
-{% endprism %}
+{% endhighlight %}
 
 I won't show the whole thing here, of course...
 
 To find a process, let's say, *java*...
 
-{% prism bash %}
+{% highlight bash %}
 ps aux | grep "java"
-{% endprism %}
+{% endhighlight %}
 
 <!--more-->
 
@@ -180,39 +180,39 @@ ps aux | grep "java"
 
 ### Locating commands
 
-{% prism bash %}
+{% highlight bash %}
 type <command>
-{% endprism %} 
+{% endhighlight %} 
    
 Example:
 
-{% prism bash %}
+{% highlight bash %}
 type man
-{% endprism %} 
+{% endhighlight %} 
 
 You'll obtain something similar to this:
 
-{% prism bash %}
+{% highlight bash %}
 man is /usr/bin/man
-{% endprism %}
+{% endhighlight %}
 
 ### Finding other files
 
-{% prism bash %}
+{% highlight bash %}
 find /starting/path -name "namehere"
-{% endprism %} 
+{% endhighlight %} 
 
 For example, to try finding foo:
 
-{% prism bash %}
+{% highlight bash %}
 find / -name "foo"
-{% endprism %} 
+{% endhighlight %} 
 
 If you know that "foo" is in the directory "bar", you can try this:
 
-{% prism bash %}
+{% highlight bash %}
 find / -name "bar/foo"
-{% endprism %}
+{% endhighlight %}
 
 ## Variables
 
@@ -222,106 +222,106 @@ The PATH variable is what allows you to easily execute commands without typing u
 
 It shortens stuff like:
 
-{% prism bash %}
+{% highlight bash %}
 /usr/bin/man
-{% endprism %}
+{% endhighlight %}
 
 to just
 
-{% prism bash %}
+{% highlight bash %}
 man
-{% endprism %}
+{% endhighlight %}
 
 In this situation, the PATH variable must have the path:
 
-{% prism bash %}
+{% highlight bash %}
 /usr/bin
-{% endprism %}
+{% endhighlight %}
 
 Each path is seperated by a colon (:).
 
 To find out what's the contents of your PATH variable:
 
-{% prism bash %}
+{% highlight bash %}
 echo $PATH
-{% endprism %}
+{% endhighlight %}
 
 Here's a long one:
 
-{% prism bash %}
+{% highlight bash %}
 /opt/qt5/bin:/usr/lib/x86_64-linux-gnu/razor-xdg-tools:/usr/games:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/scripts:/opt/android-sdk-linux/tools:/opt/android-sdk-linux/platforms:/opt/android-sdk-linux/platform-tools:/home/wei2912/Documents/Programming/Go/bin
-{% endprism %}
+{% endhighlight %}
 
 ### The PWD variable
 
 PWD stands for "print working directory". It prints out your current location:
 
-{% prism bash %}
+{% highlight bash %}
 $ pwd
 /home/foobar
 $ cd ..
 $ pwd
 /home
-{% endprism %}
+{% endhighlight %}
 
 ### Which shell am I using right now?
 
-{% prism bash %}
+{% highlight bash %}
 echo $SHELL
-{% endprism %}
+{% endhighlight %}
 
 As expected we're using Bash:
 
-{% prism bash %}
+{% highlight bash %}
 $ echo $SHELL
 /bin/bash
-{% endprism %}
+{% endhighlight %}
 
 ## Listing files
 
 A command you all should know:
 
-{% prism bash %}
+{% highlight bash %}
 ls
-{% endprism %}
+{% endhighlight %}
 
 An alternative to "ls" would be "dir".
 
-{% prism bash %}
+{% highlight bash %}
 dir
-{% endprism %}
+{% endhighlight %}
 
 But there is a difference between ls and dir. Suppose your working directory has a file called "Sample File". Notice that ls command doesn't show the shell equivalent filename ("Sample\ File") of this file, but it's actual filename ("Sample File") ; whereas, dir command shows it.
 
 To list all files in the working directory including hidden files, you can use:
 
-{% prism bash %}
+{% highlight bash %}
 ls -a
-{% endprism %}
+{% endhighlight %}
 
 And to list all the information:
 
-{% prism bash %}
+{% highlight bash %}
 ls -l
-{% endprism %}
+{% endhighlight %}
 
 If you want some colors (usually enabled by default but sometimes not):
 
-{% prism bash %}
+{% highlight bash %}
 ls --color=always
-{% endprism %}
+{% endhighlight %}
 
 It's good to spice up your terminal!
 
 And if you want to know everything in the directory:
 
-{% prism bash %}
+{% highlight bash %}
 ls -r
-{% endprism %}
+{% endhighlight %}
 
 This enables recursive mode and shows all files & directories.
 
-{% prism bash %}
+{% highlight bash %}
 Example:
 
 $ ls -R files
@@ -361,7 +361,7 @@ files/test7:
 files/test8:
 
 files/test9:
-{% endprism %}
+{% endhighlight %}
 
 ## Basic file manipulation
 
@@ -369,9 +369,9 @@ files/test9:
 
 Here's a great command that you'll probably need in your Linux journey:
 
-{% prism bash %}
+{% highlight bash %}
 touch filename.txt
-{% endprism %}
+{% endhighlight %}
 
 This allows you to create a file if it doesn't already exist.
 
@@ -386,50 +386,50 @@ is supplied.
 
 To remove a file, it's simple:
 
-{% prism bash %}
+{% highlight bash %}
 rm ./file
-{% endprism %}
+{% endhighlight %}
 
 To remove a directory, use:
 
-{% prism bash %}
+{% highlight bash %}
 rm -r ./files
-{% endprism %}
+{% endhighlight %}
 
 Sometimes, many prompts might appear, like in this case:
 
-{% prism bash %}
+{% highlight bash %}
 $ rm -r ./files
 rm: remove write-protected regular empty file `./files/test'?
-{% endprism %}
+{% endhighlight %}
 
 In such cases, you can easily remove all files without confirmation of special cases.
 
-{% prism bash %}
+{% highlight bash %}
 $ rm -rf ./files
 $
-{% endprism %}
+{% endhighlight %}
 
 If you want confirmation of everything you're going through:
 
-{% prism bash %}
+{% highlight bash %}
 $ rm -ri ./files
 rm: descend into directory `./files'? y
 rm: remove write-protected regular empty file `./files/test'? y
 rm: remove directory `./files'? y
-{% endprism %}
+{% endhighlight %}
 
 And, if you want to know what you're removing:
 
-{% prism bash %}
+{% highlight bash %}
 $ rm -rfv ./files
 removed `./files/test'
 removed directory: `./files'
-{% endprism %}
+{% endhighlight %}
 
 The basic procedure of rm is to enter into a directory, look for any files/directories inside, remove files and enter directories till it reaches a dead end, then go out of the directory and remove that directory. Here's a basic example:
 
-{% prism bash %}
+{% highlight bash %}
 $ ls -R files
 files:
 test1  test2  test3  test4  test5  test6  test7  test8  test9
@@ -468,11 +468,11 @@ files/test8:
 
 files/test9:
 
-{% endprism %}
+{% endhighlight %}
 
 Here, you can see the complex hierachy. Now, let's see how rm goes through these files:
 
-{% prism bash %}
+{% highlight bash %}
 $ rm -ri ./files
 rm: descend into directory `./files'? y
 rm: remove directory `./files/test6'? y
@@ -496,7 +496,7 @@ rm: remove directory `./files/test7'? y
 rm: remove directory `./files/test2'? y
 rm: remove directory `./files/test3'? y
 rm: remove directory `./files'? y
-{% endprism %}
+{% endhighlight %}
 
 ### Copying
 

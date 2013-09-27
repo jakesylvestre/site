@@ -53,11 +53,11 @@ The difference lies only in the "option" part of the command.
 
 First, let's create a file in your home directory.
 
-{% prism bash %}
+{% highlight bash %}
 $ touch file
 $ ls -l file
 -rw-r--r-- 1 wei2912 weigrp 0 Jun 24 15:26 file
-{% endprism %}
+{% endhighlight %}
 
 This file was created with the command [touch](/commands/UsefulTinyCommands.html#touch). Following the touch command is the [ls -l](/commands/UsefulTinyCommands.html#listing_files) command which lists out the file attributes.
 
@@ -81,15 +81,15 @@ The File attributes, as shown by ls -l command, gives you these information:
 
 The "option" part in this method can be divided into three parts:
 
-{% prism bash %}
+{% highlight bash %}
 user/group/others action modes
-{% endprism %}
+{% endhighlight %}
 
 so that we can write the syntax for this method as:
 
-{% prism bash %}
+{% highlight bash %}
 chmod user/group/others action modes
-{% endprism %}
+{% endhighlight %}
 
 ### user/group/others
 
@@ -143,17 +143,17 @@ Here's a view of what it looks like:
 
 ### Examples
 
-{% prism bash %}
+{% highlight bash %}
 chmod u+x file  # grants the current user execute permission for the file
 chmod go-wx file # withdraws write and execute permissions from the group and others
 chmod a=rw file  # assigns read and write permissions for all users
-{% endprism %}
+{% endhighlight %}
 
 Remember the output we showed previously using "ls -l"? The 3rd and 4th columns are shown below:
 
-{% prism bash %}
+{% highlight bash %}
 wei2912 weigrp
-{% endprism %}
+{% endhighlight %}
 
 This section means this belongs to user **wei2912** of group **weigrp**. To change this, [chown](/commands/Chmod&Chown.html#chown) is used. This will be covered later.
 
@@ -161,9 +161,9 @@ This section means this belongs to user **wei2912** of group **weigrp**. To chan
 
 A directory's "ls -l" shows this output:
 
-{% prism bash %}
+{% highlight bash %}
 drwx------  2 wei2912 weigrp  4096 Jun 17 18:19 bin
-{% endprism %}
+{% endhighlight %}
 
 What are the permissions of this directory and who owns it?
 
@@ -199,10 +199,10 @@ This is known as **numeric notation**. In this case, 0777 translates to rwxrwxrw
 
 ### Examples
 
-{% prism bash %}
+{% highlight bash %}
 chmod 664 file # rw-rw-r--
 chmod 764 file # rwxrw-r--
-{% endprism %}
+{% endhighlight %}
 
 ### Exercises (again)
 
@@ -227,9 +227,9 @@ For this question, you need to supply two ways:
 
 Also, please note that in chmoding a whole directory, you should use the recursive flag.
 
-{% prism bash %}
+{% highlight bash %}
 chmod -R blah blah blah
-{% endprism %}
+{% endhighlight %}
 
 This means that changes apply to all directories and files contained within. To view which files will be changed, you can try "ls -R file/directory".
 
@@ -248,31 +248,31 @@ File qwerty has permissions `rwxrwx---`
 
 What's the final file permissions after doing:
 
-{% prism bash %}
+{% highlight bash %}
 chmod o+rx qwerty
-{% endprism %}
+{% endhighlight %}
 
 **Answer:**
 
-{% prism bash %}
+{% highlight bash %}
 rwxrwxr-x
-{% endprism %}
+{% endhighlight %}
 
 Also, if file qwerty had permissions `---------`, what'd be the final file permissions?
 
 **Answer:**
 
-{% prism bash %}
+{% highlight bash %}
 ------r-x
-{% endprism %}
+{% endhighlight %}
 
 **Using symbolic notation is relative to the file's permissions.**
 
 Now, let's try with numeric notation.
 
-{% prism bash %}
+{% highlight bash %}
 chmod 775 qwerty
-{% endprism %}
+{% endhighlight %}
 
 What happens to the file permissions if qwerty had file permissions `rwxrwx---` originally?
 
@@ -302,15 +302,15 @@ As you know from above, in Linux, there's a user and a group. chown sets a file 
 
 Here's the syntax:
 
-{% prism bash %}
+{% highlight bash %}
 chown user:group file
-{% endprism %}
+{% endhighlight %}
 
 Just like chmod, chown has a recursive mode used for directories. This means that changes apply to all directories and files contained within. To view which files will be changed, you can try "ls -R file/directory".
 
-{% prism bash %}
+{% highlight bash %}
 chown -R user:group directory
-{% endprism %}
+{% endhighlight %}
 
 That's about it. Chown is rather easy to use once you've mastered the concepts of users and groups.
 
@@ -320,9 +320,9 @@ Set folder "wireshark" to user wireshark and group wireshark. (PS: There's a Wir
 
 **Answer:**
 
-{% prism bash %}
+{% highlight bash %}
 chown -R wireshark:wireshark wireshark/
-{% endprism %}
+{% endhighlight %}
 
 ## Conclusion
 

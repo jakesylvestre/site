@@ -72,26 +72,9 @@ We use a customized version of Modernizr. The current features are selected in t
 
 If you need any more features, consult nixtuts.supp0rt@gmail.com
 
-## Highlight.js
+## Pygments
 
-We use a customized version of Prism.js. The current features are selected in the [customized builder](http://prismjs.com/download.html):
+We use native Pygments, with the folowing themes:
 
-* Markup
-* CSS
-* C-like
-* JavaScript
-* Bash
-* Python
-
-Plugins:
-
-* Line Highlight
-* Line Numbers
-* Autolinker
-
-Themes:
-
-* Twilight (deadcream.css)
-* Okaidia (darkgrey.css)
-
-If you need any more features, consult nixtuts.supp0rt@gmail.com
+* Monokai (deadcream.css)
+* Monokai (darkgrey.css)

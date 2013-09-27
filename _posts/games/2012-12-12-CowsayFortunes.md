@@ -37,9 +37,9 @@ Before you start, you must make sure that you have installed the necessary packa
 
 Be noted that some fortunes and cows are offensive. You should remove them before-hand.
 
-{% prism bash %}
+{% highlight bash %}
 ls /usr/share/cowsay/cows/
-{% endprism %}
+{% endhighlight %}
 
 See anything disturbing? Remove it!
 
@@ -55,15 +55,15 @@ They're disabled in Mint 12 or 13 by default. But it's pretty easy to get them b
 
 Then, run this in the terminal:
 
-{% prism bash %}
+{% highlight bash %}
 gconftool-2 --type boolean --set /desktop/linuxmint/terminal/show_fortunes true
-{% endprism %}
+{% endhighlight %}
 
 If that doesn't work, try using mate's config tool:
 
-{% prism bash %}
+{% highlight bash %}
 mateconftool-2 --type boolean --set /desktop/linuxmint/terminal/show_fortunes true
-{% endprism %}
+{% endhighlight %}
 
 ## And if you aren't...
 
@@ -71,9 +71,9 @@ mateconftool-2 --type boolean --set /desktop/linuxmint/terminal/show_fortunes tr
 
 This option will automatically display a fortune ALONG with a random cowsay creature whenever you open a terminal. Add this to  ~/.bashrc (or the global bashrc file):
 
-{% prism bash %}
+{% highlight bash %}
 cowsay -f $(ls /usr/share/cowsay/cows/ | shuf -n1) $(fortune)
-{% endprism %}
+{% endhighlight %}
 
 Reopen the terminal. You should see your fortunes!
 
@@ -87,7 +87,7 @@ The "fortune" bit is the actual fortune that is outputted via the random animal;
 
 Copy and paste this into ~/.bashrc (or the global bashrc file). Do not wipe out the whole file.
 
-{% prism bash %}
+{% highlight bash %}
 # fortunes!
 function show_fortune {
 	RANGE=3
@@ -111,7 +111,7 @@ function show_fortune {
 }
 
 show_fortune
-{% endprism %}
+{% endhighlight %}
 
 The script generates a random cow, either mooose, tux or koala. Then, it generates a random command, either cowsay or cowthink. Finally, it runs the fortune command and pipes it to the cow command.
 
@@ -125,19 +125,19 @@ There are many cows avaliable. Here are some of them:
 
 There are a lot more "cows" that you can use, though. Run this command to see all of them:
 
-{% prism bash %}
+{% highlight bash %}
 cowsay -l
-{% endprism %}
+{% endhighlight %}
 
 And to list the files in /usr/share/cowsay/cows:
 
-{% prism bash %}
+{% highlight bash %}
 ls /usr/share/cowsay/cows
-{% endprism %}
+{% endhighlight %}
 
 Let's edit the bashrc file. Here's the section which generates the cows.
 
-{% prism bash %}
+{% highlight bash %}
 RANGE=3
 number=$RANDOM
 let "number %= $RANGE"
@@ -146,11 +146,11 @@ case $number in
     1) cow="tux" ;;
     2) cow="koala" ;;
 esac
-{% endprism %}
+{% endhighlight %}
 
 Lets say you want to add the cow, "dragon", to it. Add a new entry under the last one and increase the value of RANGE by 1:
 
-{% prism bash %}
+{% highlight bash %}
 RANGE=4
 number=$RANDOM
 let "number %= $RANGE"
@@ -160,15 +160,15 @@ case $number in
     2) cow="koala" ;;
     3) cow="dragon" ;;
 esac
-{% endprism %}
+{% endhighlight %}
   
 ### Automatic fortunes ONLY
 
 Paste this line into ~/.bashrc
 
-{% prism bash %}
+{% highlight bash %}
 fortune
-{% endprism %}
+{% endhighlight %}
 
 ### On-demand fortunes + cowsay
 
@@ -176,9 +176,9 @@ This is a good idea if you're not bored all the time, but when you are bored, yo
 
 Paste the following line into ~/.bashrc or the global bashrc file. (Note: for the alias, the command should NOT be "fortune" as it is already used).
 
-{% prism bash %}
+{% highlight bash %}
 alias fortunes='cowsay -f $(ls /usr/share/cowsay/cows/ | shuf -n1) $(fortune)'
-{% endprism %}
+{% endhighlight %}
 
 The "alias" acts like a placeholder so when you issue your custom command, it will execute whatever you set that alias to.
 
@@ -192,7 +192,7 @@ Now, to add your own cows - grab a picture. Any picture will do. And now put it 
 
 For example, I have a ASCII version of the ledgenary floppy disk:
 
-{% prism bash %}
+{% highlight bash %}
 .-----------------------------.          
 |  .-----------------------.  |          
 |  |                       |  |          
@@ -204,7 +204,7 @@ For example, I have a ASCII version of the ledgenary floppy disk:
 |    |  |   |        |     |  |                
 |    |  |___|        |     |  |          
 |____|_______________|_____|__|
-{% endprism %}
+{% endhighlight %}
 
 Now that you have one, it's time to make your cow file.
 
@@ -212,9 +212,9 @@ Go to __/usr/share/cowsay/cows__ and create a new file, titled "namehere.cow". I
 
 Then, start off your file with:
 
-{% prism bash %}
+{% highlight bash %}
 $the_cow = <<"EOC";
-{% endprism %}
+{% endhighlight %}
 
 Paste the contents of the ASCII art into the rest of the file. To choose where for the thoughts to be displayed, use $thoughts. Usually it's displayed as an indent of 2 spaces every line, 4 lines.
 
@@ -222,7 +222,7 @@ End off your file with EOC.
 
 Here's an example:
 
-{% prism bash %}
+{% highlight bash %}
 ## Floppy disk
 ## for geeks!
 $the_cow = <<"EOC";
@@ -242,13 +242,13 @@ $thoughts
 |    |  |___|        |     |  |          
 |____|_______________|_____|__|
 EOC
-{% endprism %}
+{% endhighlight %}
 
 Now, test it out with a fortune!
 
-{% prism bash %}
+{% highlight bash %}
 cowsay -f floppy-disk $(fortune)
-{% endprism %}
+{% endhighlight %}
 
 Check for any defects.
 
@@ -258,7 +258,7 @@ We've had a lot of fun with cowsay - back to fortunes, the basis of all of this.
 
 Let's take a look at the fortunes I have.
 
-{% prism bash %}
+{% highlight bash %}
 $ fortune -f
 100.00% /usr/share/games/fortunes
      4.87% husse-moderating
@@ -266,15 +266,15 @@ $ fortune -f
      3.76% husse-funny
     30.53% husse-helping
      2.88% husse-self
-{% endprism %}
+{% endhighlight %}
 
 Here you can see the composition of the fortunes I have.
 
 Here's the complete list:
 
-{% prism bash %}
+{% highlight bash %}
 ls /usr/share/games/fortunes
-{% endprism %}
+{% endhighlight %}
 
 Look at the files without extension ".dat". They are fortunes, seperated by %.
 
@@ -286,7 +286,7 @@ To create your own, start off with a couple of quotes. Name the file appropirate
 
 For example, I created the file "stackoverflow", referring to the programming website. Here's some of what I put:
 
-{% prism bash %}
+{% highlight bash %}
 ## Don't close questions where the user has requested that it not be closed [closed] ##
 The system should search posts for the word "please" in proximity to the phrase "don't close" or "do not close", and if found together disable the close link for the following reasons:
 	
@@ -339,36 +339,36 @@ And another, which I'll admit I haven't actually released into the wild, even th
 -- Jens Roland 
 -- http://stackoverflow.com/questions/184618/what-is-the-best-comment-in-source-code-you-have-ever-encountered/482129#482129
 %
-{% endprism %}
+{% endhighlight %}
 
 By the way, the complete fortune is downloadable at [stackoverflow (a file)](/files/CowsayFortunes/stackoverflow) if you want to examine it.
 
 Now, we're going to convert it into a .dat file.
 
-{% prism bash %}
+{% highlight bash %}
 strfile -c % stackoverflow stackoverflow.dat
-{% endprism %}
+{% endhighlight %}
 
 Example output:
 
-{% prism bash %}
+{% highlight bash %}
 "stackoverflow.dat" created
 There were 24 strings
 Longest string: 6020 bytes
 Shortest string: 343 bytes
-{% endprism %}
+{% endhighlight %}
 
 This gives you somewhat important data. At least, the second line "There were 24 strings". You now have 24 fortunes.
 
 Copy the files over to our directory:
 
-{% prism bash %}
+{% highlight bash %}
 cp ./stackoverflow* /usr/share/games/fortunes/
-{% endprism %}
+{% endhighlight %}
 
 The usage of the wildcard causes [stackoverflow](/files/CowsayFortunes/stackoverflow) (the list) and [stackoverflow.dat](/files/CowsayFortunes/stackoverflow.dat) (the data file) to be copied. Now, check if it was successful:
 
-{% prism bash %}
+{% highlight bash %}
 $ fortune -f
 100.00% /usr/share/games/fortunes
 	21.81% sharp-perl
@@ -379,6 +379,6 @@ $ fortune -f
 	 2.65% husse-funny
 	21.50% husse-helping
 	 2.02% husse-self
-{% endprism %}
+{% endhighlight %}
 
 Now, 3.74% of our fortunes are from stackoverflow!

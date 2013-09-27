@@ -28,18 +28,18 @@ Here's how to use it:
 
 ## To bring the system down and so with a complete poweroff
 
-{% prism bash %}
+{% highlight bash %}
 shutdown -hP now
-{% endprism %}
+{% endhighlight %}
 
 If you're inquisitive, you may like to ask why I've added the -P. it seems redundant when the -h will power the system down for you, right?
 Well.. The -h gives the system the option to just "halt" or do a complete poweroff. So, on some systems, the machine may NOT poweroff completely.
 
 So, how do I do a reboot?
 
-{% prism bash %}
+{% highlight bash %}
 shutdown -hr now
-{% endprism %}
+{% endhighlight %}
 
 Please note: You need the "now" in the command in order to shutdown immediately. Read the man page for more info.
 
@@ -94,39 +94,39 @@ Huh?
 
 Ok. The first think we want to do is to take back control from Xorg.
 
-{% prism bash %}
+{% highlight bash %}
 Alt + SysRq + R
-{% endprism %}
+{% endhighlight %}
 
 You wont notice any changes, but wait a second before hitting the next combination of keys to ensure it executed. Now, we want to stop all running tasks... This will send SIGTERM or Terminate to *all* processes currently running.
 
-{% prism bash %}
+{% highlight bash %}
 Alt + SysRq + E
-{% endprism %}
+{% endhighlight %}
 
 Wait about 5-10 seconds. Now we make sure there are no left over processes by sending SIGKILL or simply Kill _all_ remaining processes.
 
-{% prism bash %}
+{% highlight bash %}
 Alt + SysRq + I
-{% endprism %}
+{% endhighlight %}
 
 Now it is time to Sync our disks to prevent data loss.
 
-{% prism bash %}
+{% highlight bash %}
 Alt + SysRq + S
-{% endprism %}
+{% endhighlight %}
 
 It is now time to prepare our File systems for the reboot by mounting them all to Read-only.
 
-{% prism bash %}
+{% highlight bash %}
 Alt + SysRq + U
-{% endprism %}
+{% endhighlight %}
 
 And finally! Time to shutdown, or reboot.
 
-{% prism bash %}
+{% highlight bash %}
 (shutdown)Alt + SysRq + O  (reboot)Alt + SysRq + B
-{% endprism %}
+{% endhighlight %}
 
 Now, you can press that power on button with confidence and coming back to a error-less boot :-)
 

@@ -88,7 +88,7 @@ Dependencies are what software require to run. All packages that you add must be
 
 Now, move to the directory outside of your source package. I built a script that should tell you how to use the command. This script is to be put in the directory containing the DEB file source. Feel free to use it!
 
-{% prism bash %}
+{% highlight bash %}
 #!/bin/bash
 
 ls
@@ -99,7 +99,7 @@ read package
 echo “Please type the version of the package.”
 read version 
 dpkg -b ./$dir $package-$version.deb
-{% endprism %}
+{% endhighlight %}
 
 There! package-version is just a custom in creating deb packages, they’re simply the name. You can put anything you want, including adjzoighficouazgdiuyagnifdzxagl8m, but whether it is useful to the user it’s up to you.
 
