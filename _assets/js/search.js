@@ -89,7 +89,7 @@ $(function () {
         if (value !== null && type !== null) {
             count--;
 
-            $.getJSON('/js/search.json', function (data) {
+            $.getJSON('/search.json', function (data) {
                 var posts = filterPostsByPropertyValue(data, type, value);
                 if (posts.length === 0) {
                     noResultsFound(type, value);

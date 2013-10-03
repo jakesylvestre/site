@@ -10,6 +10,14 @@ exclude: ["README.md", "Gemfile"]
 # Excerpts
 excerpt_separator: "<!--more-->"
 
+# Jekyll asset pipeline
+asset_pipeline:
+  bundle: true
+  compress: false
+  output_path: assets
+  display_path: nil
+  gzip: true
+
 # Authors
 # Usernames in lowercase. Fill up your actual name/username with capitalization in the "name" field.
 authors:

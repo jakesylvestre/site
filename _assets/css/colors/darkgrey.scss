@@ -1,109 +1,109 @@
 /***** Color Glossary *****/
 
-@black: #000;
-@white: #FFF;
+$black: #000;
+$white: #FFF;
 
-@very-dark-grey: #151515;
-@dark-grey: #878787;
-@light-grey: #D4D4D4;
+$very-dark-grey: #151515;
+$dark-grey: #878787;
+$light-grey: #D4D4D4;
 
-@plain-text: #EAEAEA;
+$plain-text: #EAEAEA;
 
-@bright-green: #B5E85E;
+$bright-green: #B5E85E;
 
-@link: #63C0F5;
-@link-dark: #227799;
+$link: #63C0F5;
+$link-dark: #227799;
 
 /***** End of Color Glossary *****/
 
 .darkgrey {
     h1, h2 {
-        color: @bright-green;
+        color: $bright-green;
     }
     h3, h4, h5, h6 {
-        color: @light-grey;
+        color: $light-grey;
     }
     
     a {
-        color: @link;
+        color: $link;
     }
     p, strong, em {
-        color: @plain-text;
+        color: $plain-text;
     }
     
     blockquote {
-        border-color: @light-grey;
-        background-color: @black;
+        border-color: $light-grey;
+        background-color: $black;
     }
     
     th {
-        border-color: @bright-green;
+        border-color: $bright-green;
     }
     hr {
-        border-color: @bright-green;
+        border-color: $bright-green;
     }
     ul, ol {
-        color: @white;
+        color: $white;
     }
     
     body {
-        background-color: @light-grey;
+        background-color: $light-grey;
     }
     .main {
-        background-color: @very-dark-grey;
-        border-color: @dark-grey;
+        background-color: $very-dark-grey;
+        border-color: $dark-grey;
     }
     
     header {
-        border-color: @bright-green;
+        border-color: $bright-green;
     }
     
     nav, footer {
-        background-color: @light-grey;
+        background-color: $light-grey;
         
         a, #home-link_text {
-            color: @link-dark;
+            color: $link-dark;
         }
         p {
-            color: @black;
+            color: $black;
         }
     }
     
     .postg {
         background-color: #B5E853;
         a {
-            color: @link-dark;
+            color: $link-dark;
         }
         
         h1, h2, h3, h4, h5, h6, p {
-            color: @black;
+            color: $black;
         }
     }
     .post {
-        border-color: @black;
+        border-color: $black;
     }
     
     /* buttons */
     .button, .button-noclick {
-        color: @very-dark-grey;
+        color: $very-dark-grey;
     }
     
     /* rows */
     .row_box {
-        border-color: @black;
+        border-color: $black;
     }
     .row:nth-child(odd) {
-        background-color: @black;
+        background-color: $black;
     }
     
     #lite-switcher {
-        border-color: @dark-grey;
+        border-color: $dark-grey;
     }
     
 /**
  * okaidia theme for JavaScript, CSS and HTML
  * Loosely based on Monokai textmate theme by http://www.monokai.nl/
- * @author ocodia
+ * $author ocodia
  */
 
 code, pre {

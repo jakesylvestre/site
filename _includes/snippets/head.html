@@ -3,19 +3,22 @@
 <meta name="MobileOptimized" content="320" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 
-<!-- 
-css color themes 
-placed at the front to override
--->
-<link rel="stylesheet" type="text/css" href="/css/colors/deadcream.css" media="screen" />
-<link rel="stylesheet" type="text/css" href="/css/colors/darkgrey.css" media="screen" />
-<link rel="stylesheet" type="text/css" href="/css/colors/lite.css" media="screen" />
-
 <link href='http://fonts.googleapis.com/css?family=Inconsolata|Ubuntu:300|Abel' rel='stylesheet' type='text/css' />
-<link rel="stylesheet" type="text/css" href="/css/depend.css" />
-<link rel="stylesheet" type="text/css" href="/css/all.css" />
+
+{% css_asset_tag all %}
+- _assets/css/depend/normalize.css
+- _assets/css/depend/clearfix.css
+- _assets/css/depend/buttons.css
+- _assets/css/all.scss
+- _assets/css/colors/darkgrey.scss
+- _assets/css/colors/deadcream.scss
+- _assets/css/colors/lite.scss
+{% endcss_asset_tag %}
+
+{% javascript_asset_tag all %}
+- _assets/js/depend/jquery.js
+- _assets/js/depend/modernizr.js
+{% endjavascript_asset_tag %}
 
 <!-- support humans.txt! -->
 <link type="text/plain" rel="author" href="/humans.txt" />
-
-<script type="text/javascript" src="/js/depend.js"></script>

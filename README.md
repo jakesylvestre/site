@@ -70,11 +70,7 @@ To keep things neat, please do not use header tag `h1`, or `#`.
 
 ## Modernizr
 
-We use a customized version of Modernizr. The current features are selected in the [customized builder](http://modernizr.com/download/):
-
-* Modernizr.load (yepnope.js)
-
-If you need any more features, consult nixtuts.supp0rt@gmail.com
+We use a customized version of Modernizr. The build link is available at _assets/js/depend/modernizr.js
 
 ## Pygments
 
