@@ -13,7 +13,7 @@ excerpt_separator: "<!--more-->"
 # Jekyll asset pipeline
 asset_pipeline:
   bundle: true
-  compress: false
+  compress: true
   output_path: assets
   display_path: nil
   gzip: true
