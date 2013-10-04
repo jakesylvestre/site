@@ -2,6 +2,7 @@
 title: NixTuts
 permalink: /:categories/:title.html
 pygments: true
+markdown: rdiscount
 
 # Exclude files
 # .files are ignored by default
@@ -16,7 +17,6 @@ asset_pipeline:
   compress: true
   output_path: assets
   display_path: nil
-  gzip: true
 
 # Authors
 # Usernames in lowercase. Fill up your actual name/username with capitalization in the "name" field.
