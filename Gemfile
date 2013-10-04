@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem "jekyll", "1.2.1"
+gem "rdiscount", "2.1.6"
 
 gem "jekyll-asset-pipeline", "0.1.2"
 gem "sass", "3.2.11"
