@@ -8,10 +8,6 @@ env:
   - secure: "YCCh4ZT/2XhrIDRe6LGY7DumdwsZ1g+GVyjCGEzvFoE9acQVttPbIsyi6Y70ayU6pEwUY+h0sMqTy6UXDfZfFH4if9fQnlFV91lv34FZKQE/BYUftnYR7s/9SecVJSmlt9JdhBjF+PzoEzAwWvUFwok/qEXxZ1qmkI6Ih5S+uNA=" # SSH_PORT
   - secure: "EokjSeBOKUnx0pjrXL+8W7+t/XrfHj/Azn/GZ/o9OCllXeuvUrs/0mshpNdoVC88yfkxUsb7K1JDzFYS8eeKMF/JJdIqG8X7WFw1lMlIrvfiHkc3vVJb+RA3dgf2hn6x4Vr765iZwCKLLLEQEs2GFCNGE+A/Xl10QeTv0tmQWRs=" # ENCRYPT_PASS
 
-branches:
-  only:
-  - master
-
 before_install: ./_scripts/before_install.sh
 script: ./_scripts/script.sh
 after_script: ./_scripts/after_script.sh
