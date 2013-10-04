@@ -16,7 +16,7 @@ asset_pipeline:
   bundle: true
   compress: true
   output_path: assets
-  display_path: nil
+  display_path: assets
 
 # Authors
 # Usernames in lowercase. Fill up your actual name/username with capitalization in the "name" field.
