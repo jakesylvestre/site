@@ -36,7 +36,7 @@ module JekyllAssetPipeline
     end
   
     def compress
-      return Closure::Compiler.new.compile(@content)
+      return Closure::Compiler.new(:compilation_level => "SIMPLE_OPTIMIZATIONS").compile(@content)
     end
   end
 end
