@@ -21,7 +21,7 @@ $ git clone https://github.com/nixtuts/site.git
 Next, pull in dependencies by running Bundler (this requires Ruby):
 
 ```bash
-$ bundler install
+$ bundle install
 ```
 
 Now, you can modify to your heart's content.
