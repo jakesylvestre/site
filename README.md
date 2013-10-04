@@ -29,7 +29,8 @@ Now, you can modify to your heart's content.
 To build our site, we have a couple of helpful scripts. Just run:
 
 ```bash
-$ ./_scripts/before_install.sh # get all git submodules
+$ ./_scripts/before_install.sh # prepare for installation of deps
+$ ./_scripts/install.sh # install deps & get submodules
 $ ./_scripts/script.sh # build with jekyll
 $ ./_scripts/after_script.sh # list all files
 ```
