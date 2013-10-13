@@ -81,14 +81,14 @@ The second part, *examples/A0.M0.hash*, is the hashfile and the third part, *exa
 
 ## Let's try to crack a couple of passwords
 
-Download [nixtuts-passwords.txt.hash](/files/HashcatBasics/nixtuts-passwords.txt.hash) and place it in your hashcat directory, underneath *passfiles/*.
+Download [nixtuts-passwords.txt.hash](/files/HashcatBasics/nixtuts-passwords.M0.hash) and place it in your hashcat directory, underneath *passfiles/*.
 
 This time, we will be using a rulesfile. Both the rulesfile and the dictionary are combined together to form a more extensive attack.
 
 I'll give you a challenge to crack the passwords, after handing you a command.
 
 {% highlight bash %}
-./hashcat-cli64.bin -m 0 -r ./rules/rulefile ./passfiles/nixtuts-passwords.txt.hash ./dict/dictfile
+./hashcat-cli64.bin -m 0 -r ./rules/rulefile ./passfiles/nixtuts-passwords.M0.hash ./dict/dictfile
 {% endhighlight %}
 
 There're multiple choices for a rulefile, available in *rules/*. A rulefile manipulates a string from a dictfile to provide multiple combinations. For example, "password" may be l33tify into "passw0rd".
@@ -103,7 +103,7 @@ These provide text files containing strings which may be useful to you when crac
 
 ### Want to know what passwords are inside without cracking them?
 
-For lazy people, here's the list: [nixtuts-passwords.txt](/files/HashcatBasics/nixtuts-passwords.txt).
+For lazy people, here's the list: [nixtuts-passwords.txt](/files/HashcatBasics/nixtuts-passwords).
 
 ### Want to generate your own hashes?
 
@@ -120,7 +120,7 @@ fi
 echo -n > ${1}.hash
 while read line
 do
-echo -n "$line" | md5sum | cut -f1 -d ' ' >> ${1}.hash
+echo -n "$line" | md5sum | cut -f1 -d ' ' >> ${1}.M0.hash
 done < "$1"
 
 echo "Exported hashes to ${1}.hash"
