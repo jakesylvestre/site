@@ -81,7 +81,7 @@ The second part, *examples/A0.M0.hash*, is the hashfile and the third part, *exa
 
 ## Let's try to crack a couple of passwords
 
-Download [nixtuts-passwords.txt.hash](/files/HashcatBasics/nixtuts-passwords.M0.hash) and place it in your hashcat directory, underneath *passfiles/*.
+Download [nixtuts-passwords.M0.hash](/files/HashcatBasics/nixtuts-passwords.M0.hash) and place it in your hashcat directory, underneath *passfiles/*.
 
 This time, we will be using a rulesfile. Both the rulesfile and the dictionary are combined together to form a more extensive attack.
 
@@ -103,7 +103,7 @@ These provide text files containing strings which may be useful to you when crac
 
 ### Want to know what passwords are inside without cracking them?
 
-For lazy people, here's the list: [nixtuts-passwords.txt](/files/HashcatBasics/nixtuts-passwords).
+For lazy people, here's the list: [nixtuts-passwords](/files/HashcatBasics/nixtuts-passwords).
 
 ### Want to generate your own hashes?
 
@@ -117,16 +117,16 @@ then
 echo "ERROR: No input file specified."
 fi
 
-echo -n > ${1}.hash
+echo -n > ${1}.M0.hash
 while read line
 do
 echo -n "$line" | md5sum | cut -f1 -d ' ' >> ${1}.M0.hash
 done < "$1"
 
-echo "Exported hashes to ${1}.hash"
+echo "Exported hashes to ${1}.M0.hash"
 {% endhighlight %}
 
-You can download the script at [genhash.sh](/files/HashcatBasics/genhash.sh).
+Provide the parameter of the filename and it will generate a new file with the hashes inside.
 
 ## Now that you've learnt how to crack passwords quickly...
 
