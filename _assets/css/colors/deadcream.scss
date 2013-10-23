@@ -73,21 +73,9 @@ $green: #37C400;
             color: $dark-cyan;
         }
     }
-    .post {
-        border-color: $white;
-    }
     
-    /* buttons */
     .button, .button-noclick {
         color: $black;
-    }
-    
-    /* rows */
-    .row_box {
-        border-color: $black;
-    }
-    .row:nth-child(odd) {
-        background: $white;
     }
     
     #lite-switcher {

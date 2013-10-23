@@ -36,9 +36,6 @@ $link-dark: #227799;
         background-color: $black;
     }
     
-    th {
-        border-color: $bright-green;
-    }
     hr {
         border-color: $bright-green;
     }
@@ -59,13 +56,13 @@ $link-dark: #227799;
     }
     
     nav, footer {
-        background-color: $light-grey;
+        background-color: $very-dark-grey;
         
         a, #home-link_text {
-            color: $link-dark;
+            color: $bright-green;
         }
         p {
-            color: $black;
+            color: $light-grey;
         }
     }
     
@@ -79,21 +76,9 @@ $link-dark: #227799;
             color: $black;
         }
     }
-    .post {
-        border-color: $black;
-    }
     
-    /* buttons */
     .button, .button-noclick {
         color: $very-dark-grey;
-    }
-    
-    /* rows */
-    .row_box {
-        border-color: $black;
-    }
-    .row:nth-child(odd) {
-        background-color: $black;
     }
     
     #lite-switcher {
