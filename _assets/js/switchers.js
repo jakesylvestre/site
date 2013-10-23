@@ -15,9 +15,7 @@
 
     $('body').append('<div class="lite-switcher-container clearfix"><div id="lite-switcher"></div></div>');
 
-    var button = $('#lite-switcher'),
-        state = false;
-
+    var state = false;
     var cookie = readCookie('lite-switcher')
     if (cookie == null) {
         console.log("lite-switcher cookie does not exist; creating new cookie with state 'false'");
@@ -25,10 +23,9 @@
     } else if (cookie == "true") {
         state = true
     }
-
     $('html').toggleClass('lite', state);
 
-    button.click(function () {
+    $('#lite-switcher').click(function () {
         state = !state; // reverse state
         $('html').toggleClass('lite', state);
 
@@ -37,12 +34,13 @@
     });
 
     var selected = readCookie('theme-switcher');
-
     if (selected == null) {
         selected = 'deadcream';
     } else {
-        $('html').toggleClass(selected, true);
+    	$('html').toggleClass('deadcream', false); // disable default
     }
+    $('html').toggleClass(selected, true);
+    
     var ul = $('nav ul'),
         themes = [{
             id: 'darkgrey',
