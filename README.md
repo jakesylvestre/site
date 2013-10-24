@@ -67,15 +67,8 @@ $ git submodule foreach git pull origin master
 
 ## Headers
 
-To keep things neat, please do not use header tag `h1`, or `#`.
+To keep things neat, please do not use header tag `h1`, or `#` in Markdown..
 
 ## Modernizr
 
-We use a customized version of Modernizr. The build link is available at _assets/js/depend/modernizr.js
-
-## Pygments
-
-We use native Pygments, with the folowing themes:
-
-* Monokai (deadcream.css)
-* Monokai (darkgrey.css)
+We use a customized version of Modernizr. The build link is available at `_assets/js/depend/modernizr.js`. You may customize it to select any features you may require, than update this with a new file.
