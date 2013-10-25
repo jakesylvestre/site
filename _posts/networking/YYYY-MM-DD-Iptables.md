@@ -43,7 +43,7 @@ As you can see, it builds 'tables' from chains, populated by rules.  The chains 
 For example, there is a deviant attempting to brute your system, You can simply define a new rule(depending on your user privileges, may require sudo):
 
 {% highlight bash %}
-iptables -A INPUT -s 85.17.245.118 -j DROP
+$ iptables -A INPUT -s 85.17.245.118 -j DROP
 {% endhighlight %}
 
 the '-A' switch tells iptables your intention is to add a rule, another common option is '-D' - remove a rule - clearly, INPUT is the chain you're adding this rule to - Inbound traffic - and output would be outbound traffic. the '-s' switch is source, So all packets 'from' -=- and the '-j' is for 'jump' indicates target it will jump to, in this case drop
@@ -55,7 +55,7 @@ Should you ping a system with those ports 'closed', it will return a 'destinatio
 You can also do more than filter by IP, Say you wished to allow the above attacker to continue to use other services, yet continue to isolate from your SSH server, then the '--dport' flag will enable you to specify a port:
 
 {% highlight bash %}
-iptables -A INPUT -s 85.17.245.118 --dport 22 -j DROP
+$ iptables -A INPUT -s 85.17.245.118 --dport 22 -j DROP
 {% endhighlight %}
 
 Would *only* ignore packets from that IP on port 22 - other useful switches are '-d' destination IP, '-p' protocol ie: tcp  / udp  / icmp, and '-i' allows you to specify interface. Combinations of these will allow you to fabricate rules to cover most senarios.

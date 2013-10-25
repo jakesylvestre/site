@@ -29,7 +29,7 @@ Here's how to use it:
 ## To bring the system down and so with a complete poweroff
 
 {% highlight bash %}
-shutdown -hP now
+$ shutdown -hP now
 {% endhighlight %}
 
 If you're inquisitive, you may like to ask why I've added the -P. it seems redundant when the -h will power the system down for you, right?
@@ -38,7 +38,7 @@ Well.. The -h gives the system the option to just "halt" or do a complete powero
 So, how do I do a reboot?
 
 {% highlight bash %}
-shutdown -hr now
+$ shutdown -hr now
 {% endhighlight %}
 
 Please note: You need the "now" in the command in order to shutdown immediately. Read the man page for more info.
@@ -55,13 +55,13 @@ The shutdown command is gentler in exiting processes.
 
 Don't panic.
 
-A) "shutdown -c"
+A) `shutdown -c`
 
-B) Get the pid of the shutdown command using "ps | grep shutdown". Kill the process using "kill pid"
+B) Get the pid of the shutdown command using `ps | grep shutdown`. Kill the process using `kill pid`
 
-C) "killall shutdown"
+C) `killall shutdown`
 
-NOTE: This works best if you've set a decent time interval before the shutdown. If you set it to "now", don't bother.
+NOTE: This works best if you've set a decent time interval before the shutdown. If you set it to `now`, don't bother.
 
 ## So, what exactly happens during the shutdown?
 
@@ -77,7 +77,7 @@ Let's just say that a proper shutdown will improve your systems reliability and 
 
 Yes. There is a method in-which is more hands-on but will ensure that your data is safe...
 
-***Note that this is not safer than using the "shutdown" command. It is more risky than using the "shutdown" command and is generally not advised to be used unless in conditions such as the above.***
+***Note that this is not safer than using the `shutdown` command. It is more risky than using the `shutdown` command and generally should not be used unless in situations such as the above.***
 
 Have you ever seen that 'Sys Rq' button on your keyboard (it might be the Print Screen button)? In the Linux kernel, in combination with Alt, it is used to allow the user to perform low-level tasks no matter what state the system is in. It is mostly used to bring a system down without corrupting the filesystem. Heres how we do it.
 

@@ -23,13 +23,13 @@ Here's a couple of useful commands that we feel are helpful to sysadmins special
 ### Cleaning up your screens
 
 {% highlight bash %}
-tput clear
+$ tput clear
 {% endhighlight %}
 
 or simply:
 
 {% highlight bash %}
-clear
+$ clear
 {% endhighlight %}
 
 This clears off everything on your terminal screen. However, if you scroll back, notice the large amount of empty space. In truth, all the clear command does is print out empty lines.
@@ -37,7 +37,7 @@ This clears off everything on your terminal screen. However, if you scroll back,
 ### Reset your screen
 
 {% highlight bash %}
-reset
+$ reset
 {% endhighlight %}
 
 This resets everything on your terminal screen. Unlike *clear* it actually *clears off everything* from your terminal screen.
@@ -49,7 +49,7 @@ This resets everything on your terminal screen. Unlike *clear* it actually *clea
 The format of the command is as such:
 
 {% highlight bash %}
-cal 12 2024
+$ cal 12 2024
 {% endhighlight %}
 
 where *12* is the month and *2024* is the year.
@@ -70,7 +70,7 @@ Su Mo Tu We Th Fr Sa
 ### Displaying both Date and Time
 
 {% highlight bash %}
-date
+$ date
 {% endhighlight %}
 
 Self explanatory - shows the date.
@@ -82,7 +82,7 @@ Self explanatory - shows the date.
 ### Who's logged in?
 
 {% highlight bash %}
-who
+$ who
 {% endhighlight %}
 
 spurts out something like this:
@@ -98,7 +98,7 @@ It displays the currently logged in users and their terminals.
 If you want to remove the unneccessary info and display only the users of the system
 
 {% highlight bash %}
-who | cut -d " " -f1
+$ who | cut -d " " -f1
 {% endhighlight %}
 
 Which results in:
@@ -112,7 +112,7 @@ foo
 To remove the duplicates, you need to pipe the info to uniq.
 
 {% highlight bash %}
-who | cut -d " " -f1 | uniq
+$ who | cut -d " " -f1 | uniq
 {% endhighlight %}
 
 Which results in this:
@@ -125,7 +125,7 @@ foo
 ### And another command:
 
 {% highlight bash %}
-users
+$ users
 {% endhighlight %}
 
 This'll give a list of users showing who is currently online. Instead of a vertical list, it outputs:
@@ -138,7 +138,7 @@ bar foo foo
 ## Processes
 
 {% highlight bash %}
-ps
+$ ps
 {% endhighlight %}
 
 This displays the current running processes in your bash session.
@@ -163,7 +163,7 @@ After I ran *jekyll* in background, the content changed:
 ### What about *all* processes?
 
 {% highlight bash %}
-ps aux
+$ ps aux
 {% endhighlight %}
 
 I won't show the whole thing here, of course...
@@ -171,7 +171,7 @@ I won't show the whole thing here, of course...
 To find a process, let's say, *java*...
 
 {% highlight bash %}
-ps aux | grep "java"
+$ ps aux | grep "java"
 {% endhighlight %}
 
 <!--more-->
@@ -181,37 +181,37 @@ ps aux | grep "java"
 ### Locating commands
 
 {% highlight bash %}
-type <command>
+$ type <command>
 {% endhighlight %} 
    
 Example:
 
 {% highlight bash %}
-type man
+$ type man
 {% endhighlight %} 
 
 You'll obtain something similar to this:
 
 {% highlight bash %}
-man is /usr/bin/man
+$ man is /usr/bin/man
 {% endhighlight %}
 
 ### Finding other files
 
 {% highlight bash %}
-find /starting/path -name "namehere"
+$ find /starting/path -name "namehere"
 {% endhighlight %} 
 
 For example, to try finding foo:
 
 {% highlight bash %}
-find / -name "foo"
+$ find / -name "foo"
 {% endhighlight %} 
 
 If you know that "foo" is in the directory "bar", you can try this:
 
 {% highlight bash %}
-find / -name "bar/foo"
+$ find / -name "bar/foo"
 {% endhighlight %}
 
 ## Variables
@@ -243,7 +243,7 @@ Each path is seperated by a colon (:).
 To find out what's the contents of your PATH variable:
 
 {% highlight bash %}
-echo $PATH
+$ echo $PATH
 {% endhighlight %}
 
 Here's a long one:
@@ -267,10 +267,10 @@ $ pwd
 ### Which shell am I using right now?
 
 {% highlight bash %}
-echo $SHELL
+$ echo $SHELL
 {% endhighlight %}
 
-As expected we're using Bash:
+Most of us will be using bash:
 
 {% highlight bash %}
 $ echo $SHELL
@@ -282,13 +282,13 @@ $ echo $SHELL
 A command you all should know:
 
 {% highlight bash %}
-ls
+$ ls
 {% endhighlight %}
 
 An alternative to "ls" would be "dir".
 
 {% highlight bash %}
-dir
+$ dir
 {% endhighlight %}
 
 But there is a difference between ls and dir. Suppose your working directory has a file called "Sample File". Notice that ls command doesn't show the shell equivalent filename ("Sample\ File") of this file, but it's actual filename ("Sample File") ; whereas, dir command shows it.
@@ -296,19 +296,19 @@ But there is a difference between ls and dir. Suppose your working directory has
 To list all files in the working directory including hidden files, you can use:
 
 {% highlight bash %}
-ls -a
+$ ls -a
 {% endhighlight %}
 
 And to list all the information:
 
 {% highlight bash %}
-ls -l
+$ ls -l
 {% endhighlight %}
 
 If you want some colors (usually enabled by default but sometimes not):
 
 {% highlight bash %}
-ls --color=always
+$ ls --color=always
 {% endhighlight %}
 
 It's good to spice up your terminal!
@@ -316,14 +316,14 @@ It's good to spice up your terminal!
 And if you want to know everything in the directory:
 
 {% highlight bash %}
-ls -r
+$ ls -r
 {% endhighlight %}
 
 This enables recursive mode and shows all files & directories.
 
-{% highlight bash %}
 Example:
 
+{% highlight bash %}
 $ ls -R files
 files:
 test1  test2  test3  test4  test5  test6  test7  test8  test9
@@ -370,30 +370,28 @@ files/test9:
 Here's a great command that you'll probably need in your Linux journey:
 
 {% highlight bash %}
-touch filename.txt
+$ touch filename.txt
 {% endhighlight %}
 
 This allows you to create a file if it doesn't already exist.
 
 This command was originally intended to update timestamps, but many users have made use of its file creation ability. As *touch --help* says...
 
-Update the access and modification times of each FILE to the current time.
-
-A FILE argument that does not exist is created empty, unless -c or -h
-is supplied.
+> Update the access and modification times of each FILE to the current time.
+> A FILE argument that does not exist is created empty, unless -c or -h is supplied.
 
 ### Removing
 
 To remove a file, it's simple:
 
 {% highlight bash %}
-rm ./file
+$ rm ./file
 {% endhighlight %}
 
 To remove a directory, use:
 
 {% highlight bash %}
-rm -r ./files
+$ rm -r ./files
 {% endhighlight %}
 
 Sometimes, many prompts might appear, like in this case:

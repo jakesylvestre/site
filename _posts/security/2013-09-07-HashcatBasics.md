@@ -28,7 +28,7 @@ Let's obtain a copy of Hashcat first. In this tutorial, we'll be using the stand
 Hashcat uses .7z extraction, so to extract it:
 
 {% highlight bash %}
-7z x file.7z
+$ 7z x file.7z
 {% endhighlight %}
 
 Once it's extracted, *cd* into the directory. That's the end of the installation!
@@ -40,13 +40,13 @@ Let's see if Hashcat works.
 Once you're inside the Hashcat directory, execute the following command:
 
 {% highlight bash %}
-./hashcat-cli64.bin -m 0 examples/A0.M0.hash examples/A0.M0.word
+$ ./hashcat-cli64.bin -m 0 examples/A0.M0.hash examples/A0.M0.word
 {% endhighlight %}
 
 If using 32 bit:
 
 {% highlight bash %}
-./hashcat-cli32.bin -m 0 examples/A0.M0.hash examples/A0.M0.word
+$ ./hashcat-cli32.bin -m 0 examples/A0.M0.hash examples/A0.M0.word
 {% endhighlight %}
 
 You'll see a huge jumble of text pop up. The bottom part is what matters:
@@ -88,7 +88,7 @@ This time, we will be using a rulesfile. Both the rulesfile and the dictionary a
 I'll give you a challenge to crack the passwords, after handing you a command.
 
 {% highlight bash %}
-./hashcat-cli64.bin -m 0 -r ./rules/rulefile ./passfiles/nixtuts-passwords.M0.hash ./dict/dictfile
+$ ./hashcat-cli64.bin -m 0 -r ./rules/rulefile ./passfiles/nixtuts-passwords.M0.hash ./dict/dictfile
 {% endhighlight %}
 
 There're multiple choices for a rulefile, available in *rules/*. A rulefile manipulates a string from a dictfile to provide multiple combinations. For example, "password" may be l33tify into "passw0rd".
@@ -130,4 +130,4 @@ Provide the parameter of the filename and it will generate a new file with the h
 
 ## Now that you've learnt how to crack passwords quickly...
 
-Use them wisely to test passwords and enhance them/warn users, but *please do not use them in order to gain access to a system*.
+Use them wisely to test passwords and enhance them/warn users, but *please do not use them for malicious purposes*.

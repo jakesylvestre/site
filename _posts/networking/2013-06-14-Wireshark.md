@@ -24,13 +24,13 @@ If you're lazy, you can search your distribution's repositories. However, note t
 For Red Hat-based systems: 
 
 {% highlight bash %}
-yum install wireshark
+$ yum install wireshark
 {% endhighlight %}
 
 As for Debian-based systems:
 
 {% highlight bash %}
-sudo aptitude install wireshark
+$ sudo aptitude install wireshark
 {% endhighlight %}
 
 Omit the "sudo" if you are logged into the root user.

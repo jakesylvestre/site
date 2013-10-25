@@ -19,7 +19,7 @@ If you do not already have SSHFS installed, then search your distribution’s re
 To use this, simply type:
 
 {% highlight bash %}
-sshfs user@system:remote_mountpoint local_mountpoint
+$ sshfs user@system:remote_mountpoint local_mountpoint
 {% endhighlight %}
 
 For example, we have a VPS, and would like to mount the contents of __/var/www/html__ to a folder in __~/Projects__. As with mounting in folders, it must be empty and created before the procedure.
@@ -27,13 +27,13 @@ For example, we have a VPS, and would like to mount the contents of __/var/www/h
 Assuming it doesn’t already exist, we will call the folder ‘VPS’:
 
 {% highlight bash %}
-mkdir ~/Projects/VPS
+$ mkdir ~/Projects/VPS
 {% endhighlight %}
 
 That should result in the creation of the required folder, then:
 
 {% highlight bash %}
-sshfs root@randomdns.com:/var/www/html ~/Projects/VPS
+$ sshfs root@randomdns.com:/var/www/html ~/Projects/VPS
 {% endhighlight %}
 
 That should prompt for a password/passphrase unless you use a passphrase-less key. The remote system should now be part of the local system.

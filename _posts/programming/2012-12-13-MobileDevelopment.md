@@ -32,7 +32,7 @@ Sometimes you'll be away from your laptop/desktop somewhere, over a friends hous
 
 [Scripting Layer for Android](http://code.google.com/p/android-scripting/), allows you to install your favorite scripting languages, like Python, Perl, Ruby (JRuby), JavaScript... which have access to most of the APIs your Android app would normally use. With this the sky is the limit, and it is even possible to run the interpreters in Terminal IDE without using the SL4A app. This is useful when you are running a script that uses arguments, because you can not give scripts arguments in SL4A. For a good example, I am writing this post in Markdown. Even though it is dead simple to write in, you still make mistakes and it would be nice to view it how others will see it, right?
 
-### Using Perl(or any interrupter) from SL4A in Terminal IDE
+### Using Perl (or any interrupter) from SL4A in Terminal IDE
 
 We are going to use the Markdown.pl script, used to convert your markdown files into HTML, as an example of what can be done.
 
@@ -40,32 +40,32 @@ First, download and unzip Markdown. I have my folder in '/sdcard'. Now assuming 
 
 {% highlight bash %}
 # allow ourselves to execute perl scripts
-/data/data/com.googlecode.perlforandroid/files/perl/perl "$@"
+$ /data/data/com.googlecode.perlforandroid/files/perl/perl "$@"
 {% endhighlight %}
 
 The above allows us to use the Perl interpreter form perlforandroid and execute scripts. Open up your favorite editor and write our little script then give it permissions to execute.
 
 {% highlight bash %}
-vim perl
-chmod +x perl
+$ vim perl
+$ chmod +x perl
 {% endhighlight %}
 
 Now you can move our script to the '~/system/bin' so that we can use it anywhere.
 
 {% highlight bash %}
-mv perl ~/system/bin/
+$ mv perl ~/system/bin/
 {% endhighlight %}
 
 Go ahead and find our Markdown.pl script, and use it on a markdown file:
 
 {% highlight bash %}
-perl Markdown.pl myfile.md
+$ perl Markdown.pl myfile.md
 {% endhighlight %}
 
 You'll see it just spit out text in html... So we just want to redirect it into a file like so:
 
 {% highlight bash %}
-perl Markdown.pl myfile.md > myfile.html
+$ perl Markdown.pl myfile.md > myfile.html
 {% endhighlight %}
 
 Now you can find your file in your filemanager and open it with HTMLViewer  :-)
@@ -83,15 +83,15 @@ One thing you'll want is a way to easily manage your software. Git does this, an
 We will need to use SSH to connect to Git repositories because Terminal IDE doesn't seem to like __https://__. That means creating a public ssh token. We will use 'dropbearkey' to create a password-less pair for our servers. In Terminal IDE run:
 
 {% highlight bash %}
-mkdir ~/.ssh (if you don't already have it)
-dropbearkey -t rsa -f ~/.ssh/id_rsa
+$ mkdir ~/.ssh # if you don't already have it
+$ dropbearkey -t rsa -f ~/.ssh/id_rsa
 {% endhighlight %}
 
 Now we want to print the public token to a file so we can use it:
 
 {% highlight bash %}
-dropbearkey -y -f ~/.ssh/id_rsa > ~/.ssh/id_rsa.pub (open up your text editor and remove the first line: 'Public key portion is:')
-cp ~/.ssh/id_rsa.pub /sdcard/ (copy here so we can find it)
+$ dropbearkey -y -f ~/.ssh/id_rsa > ~/.ssh/id_rsa.pub #open up your text editor and remove the first line: 'Public key portion is:'
+$ cp ~/.ssh/id_rsa.pub /sdcard/ #copy here so we can find it
 {% endhighlight %}
 
 Depending on where your repositories are, you'll need to add your public token accordingly
@@ -119,7 +119,7 @@ The first line has a shebang, indicating the environment. This will be bash, whi
 Now make it executable:
 
 {% highlight bash %}
-chmod 755 ~/bin/ssh-git
+$ chmod 755 ~/bin/ssh-git
 {% endhighlight %}
 
 ... and now append the follow into ~/.bashrc
@@ -142,21 +142,21 @@ export GIT_COMMITTER_EMAIL=$GIT_AUTHOR_EMAIL
 Pick a place to get your project. I decided to use my Removable SDCard, for portability and space.
 
 {% highlight bash %}
-cd /Removable/MicroSD/
-mkdir development && cd development
+$ cd /Removable/MicroSD/
+$ mkdir development && cd development
 {% endhighlight %}
 
-Now! Lets get our project! Because we are going to be using SSH to grab our projects, cloning is going to be a tad different: (You will need to authenticated with Github first! (ssh -T git@github.com))
+Now! Lets get our project! Because we are going to be using SSH to grab our projects, cloning is going to be a tad different: (You will need to authenticated with Github first! `ssh -T git@github.com`)
 
 {% highlight bash %}
-git clone ssh://git@github.com/projectname
+$ git clone ssh://git@github.com/projectname
 {% endhighlight %}
 
 We will need to do a little hack so that we can push and pull form our repositories. It'll complain that we do not have 'git-merge'... so we will create it:
 
 {% highlight bash %}
-cd ~/system/bin
-ln -s git git-merge
+$ cd ~/system/bin
+$ ln -s git git-merge
 {% endhighlight %}
 
-Now, you should be able to push and pull without an issue, and now can work on your projects on the go. Another tool I use besides the editors in Terminal IDE, is Ted. It is simple, free, and does what I need.
+Now, you should be able to push and pull without an issue, and now can work on your projects on the go. If you wish to read more about Git, you can take a look at [Using Git](/programming/UsingGit.html). Another tool I use besides the editors in Terminal IDE, is Ted. It is simple, free, and does what I need.

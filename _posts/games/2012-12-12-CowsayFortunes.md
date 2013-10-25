@@ -38,7 +38,7 @@ Before you start, you must make sure that you have installed the necessary packa
 Be noted that some fortunes and cows are offensive. You should remove them before-hand.
 
 {% highlight bash %}
-ls /usr/share/cowsay/cows/
+$ ls /usr/share/cowsay/cows/
 {% endhighlight %}
 
 See anything disturbing? Remove it!
@@ -56,13 +56,13 @@ They're disabled in Mint 12 or 13 by default. But it's pretty easy to get them b
 Then, run this in the terminal:
 
 {% highlight bash %}
-gconftool-2 --type boolean --set /desktop/linuxmint/terminal/show_fortunes true
+$ gconftool-2 --type boolean --set /desktop/linuxmint/terminal/show_fortunes true
 {% endhighlight %}
 
 If that doesn't work, try using mate's config tool:
 
 {% highlight bash %}
-mateconftool-2 --type boolean --set /desktop/linuxmint/terminal/show_fortunes true
+$ mateconftool-2 --type boolean --set /desktop/linuxmint/terminal/show_fortunes true
 {% endhighlight %}
 
 ## And if you aren't...
@@ -72,7 +72,7 @@ mateconftool-2 --type boolean --set /desktop/linuxmint/terminal/show_fortunes tr
 This option will automatically display a fortune ALONG with a random cowsay creature whenever you open a terminal. Add this to  ~/.bashrc (or the global bashrc file):
 
 {% highlight bash %}
-cowsay -f $(ls /usr/share/cowsay/cows/ | shuf -n1) $(fortune)
+$ cowsay -f $(ls /usr/share/cowsay/cows/ | shuf -n1) $(fortune)
 {% endhighlight %}
 
 Reopen the terminal. You should see your fortunes!
@@ -126,13 +126,13 @@ There are many cows avaliable. Here are some of them:
 There are a lot more "cows" that you can use, though. Run this command to see all of them:
 
 {% highlight bash %}
-cowsay -l
+$ cowsay -l
 {% endhighlight %}
 
 And to list the files in /usr/share/cowsay/cows:
 
 {% highlight bash %}
-ls /usr/share/cowsay/cows
+$ ls /usr/share/cowsay/cows
 {% endhighlight %}
 
 Let's edit the bashrc file. Here's the section which generates the cows.
@@ -167,7 +167,7 @@ esac
 Paste this line into ~/.bashrc
 
 {% highlight bash %}
-fortune
+$ fortune
 {% endhighlight %}
 
 ### On-demand fortunes + cowsay
@@ -177,7 +177,7 @@ This is a good idea if you're not bored all the time, but when you are bored, yo
 Paste the following line into ~/.bashrc or the global bashrc file. (Note: for the alias, the command should NOT be "fortune" as it is already used).
 
 {% highlight bash %}
-alias fortunes='cowsay -f $(ls /usr/share/cowsay/cows/ | shuf -n1) $(fortune)'
+$ alias fortunes='cowsay -f $(ls /usr/share/cowsay/cows/ | shuf -n1) $(fortune)'
 {% endhighlight %}
 
 The "alias" acts like a placeholder so when you issue your custom command, it will execute whatever you set that alias to.
@@ -247,7 +247,7 @@ EOC
 Now, test it out with a fortune!
 
 {% highlight bash %}
-cowsay -f floppy-disk $(fortune)
+$ cowsay -f floppy-disk $(fortune)
 {% endhighlight %}
 
 Check for any defects.
@@ -273,7 +273,7 @@ Here you can see the composition of the fortunes I have.
 Here's the complete list:
 
 {% highlight bash %}
-ls /usr/share/games/fortunes
+$ ls /usr/share/games/fortunes
 {% endhighlight %}
 
 Look at the files without extension ".dat". They are fortunes, seperated by %.
@@ -346,12 +346,7 @@ By the way, the complete fortune is downloadable at [stackoverflow (a file)](/fi
 Now, we're going to convert it into a .dat file.
 
 {% highlight bash %}
-strfile -c % stackoverflow stackoverflow.dat
-{% endhighlight %}
-
-Example output:
-
-{% highlight bash %}
+$ strfile -c % stackoverflow stackoverflow.dat
 "stackoverflow.dat" created
 There were 24 strings
 Longest string: 6020 bytes
@@ -363,7 +358,7 @@ This gives you somewhat important data. At least, the second line "There were 24
 Copy the files over to our directory:
 
 {% highlight bash %}
-cp ./stackoverflow* /usr/share/games/fortunes/
+$ cp ./stackoverflow* /usr/share/games/fortunes/
 {% endhighlight %}
 
 The usage of the wildcard causes [stackoverflow](/files/CowsayFortunes/stackoverflow) (the list) and [stackoverflow.dat](/files/CowsayFortunes/stackoverflow.dat) (the data file) to be copied. Now, check if it was successful:
