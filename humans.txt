@@ -11,6 +11,7 @@
 /* THANKS */
 
     jaffer1979 (https://github.com/jaffer1979) - Helped with the proofreading of http://nixtuts.info/commands/Chmod%26Chown.html
+    clem (https://github.com/clem), project leader of Linux Mint - Interviewed for http://nixtuts.info/programming/UsingGit.html
 
 /* VHOSTS */
 
