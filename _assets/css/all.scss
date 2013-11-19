@@ -94,47 +94,6 @@ header {
     float: left;
 }
 
-.postg {
-    width: 47%;
-    margin: 1%;
-    display: inline-block;
-    
-    border-radius: 12px;
-    text-align: center;
-    
-    h1, h2, h3, h4, h5, h6 {
-        text-transform: capitalize;
-    }
-    
-    a, p {
-        text-transform: none;
-    }
-}
-.postg.expand {
-    width: 97%;
-}
-
-.post {
-    width: 92%;
-    margin: 2%;
-    margin-left: 6%;
-    padding: 2%;
-    float: right;
-    
-    border-radius: 12px;
-    text-align: center;
-    
-    p {
-        margin: 0;
-        padding: 0;
-    }
-    
-    a {
-        text-decoration: underline;
-        font-size: 120%;
-    }
-}
-
 nav, footer {
     padding: 5px 0;
     width: 100%;
@@ -269,7 +228,7 @@ code, pre {
 
 .larger {
     font-size: 125%;
-    font-weight: normal;
+    font-weight: bold;
 }
 
 /* Modernizr stuff */
@@ -346,15 +305,6 @@ code, pre {
         margin-right: 10px; /* leave some spacing */
     }
     
-    /* ultra squeeze removed */
-    
-    .postg, .postg.expand {
-        width: 100%;
-        clear: both;
-        margin: 10px 0 !important;
-        float: right !important;
-    }
-    
     /* to prevent covering the footer */
     footer {
         margin-bottom: 30px;
@@ -416,15 +366,6 @@ code, pre {
         text-align: left;
         width: 100%;
         text-indent: 25px;
-    }
-    
-    /* ultra squeeze removed */
-    
-    .postg.clearfix {
-        width: 100%;
-        clear: both;
-        margin: 10px 0 !important;
-        float: right !important;
     }
 }
 
@@ -513,7 +454,7 @@ code, pre {
     }
     
     /* Hide stuff! */
-    nav, .sidebar, #search, .post_tags, .post_banner, .related_posts, .postg, .postg.expand, #announcements, .book_return, .addthis_toolbox, #disqus_thread  {
+    nav, .sidebar, #search, .post_tags, .post_banner, .related_posts, #announcements, .book_return, .addthis_toolbox, #disqus_thread  {
         display: none;
     }
     

@@ -67,10 +67,8 @@ var resultsFound = function (property, value, posts) {
         var category = post.category;
 
         var postid = "#post" + i;
-        $('#results').append('<div class="postg expand clearfix"><div class="post clearfix" id="post' + i + '" style="border-color: #FFFFFF;"></div></div>');
-
+        $('#results').append('<div class="post clearfix" id="' + postid + '"></div>');
         $(postid).append('<h2><a href="' + post.url + '">' + post.title + '</a></h2> <h3>' + post.date + '</h3>');
-
         $(postid).append('<p>' + post.summary + '</p>');
     }
 };
