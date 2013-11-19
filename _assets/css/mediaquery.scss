@@ -2,6 +2,7 @@
 
 @media screen and (max-width: 480px) {
     /* Mobile interface fixes */
+
     body {
         font-size: medium;
         max-width: 100%;
@@ -66,12 +67,18 @@
     footer {
         margin-bottom: 30px;
     }
+
+    /* Hide stuff! */
+    #sharebuttons  {
+        display: none;
+    }
 }
 
 /* Tablet */
 
 @media screen and (min-width: 481px) and (max-width: 1024px) {
     /* Mobile interface fixes */
+
     body {
         font-size: medium;
         max-width: 100%;
@@ -96,6 +103,7 @@
         position: static;
     }
     
+    /* larger text */
     nav a {
         font-size: 120%;
     }
@@ -109,20 +117,36 @@
     }
     
     nav li {
-        width: 40%;
-        display: inline-block;
-        padding: 1%;
-        margin: 3%;
+        width: 100%;
+        padding: 0;
+        margin: 0;
         
-        /* reset top and bottom */
-        padding-top: 0; padding-bottom: 0;
-        margin-top: 0; margin-bottom: 0;
+        /* put space to make tapping easier */
+        margin-bottom: 10px;
+        
+        display: block;
+        text-align: center;
+    }
+    
+    nav a {
+        padding: 0 10px; /* put space to make tapping easier */
     }
     
     nav a#pull {
-        text-align: left;
-        width: 100%;
-        text-indent: 25px;
+        float: right;
+        padding: 0;
+        margin: 0;
+        margin-right: 10px; /* leave some spacing */
+    }
+    
+    /* to prevent covering the footer */
+    footer {
+        margin-bottom: 30px;
+    }
+
+    /* Hide stuff! */
+    #sharebuttons  {
+        display: none;
     }
 }
 
@@ -211,7 +235,7 @@
     }
     
     /* Hide stuff! */
-    nav, #search, .post_tags, .post_banner, .related_posts, #announcements, .book_return, .addthis_toolbox, #disqus_thread  {
+    nav, .related_posts, #disqus_thread  {
         display: none;
     }
     

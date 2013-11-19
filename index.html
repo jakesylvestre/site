@@ -3,10 +3,6 @@ title: Home
 layout: default
 head: '<meta name="google-site-verification" content="tIKYlqXiYdste3OCdWdRb-Z8y7G6jLEa3yy5XAmh5M4" /> <meta name="wot-verification" content="918bd559834ad18a88b3" /> <meta name="description" content="NixTuts is a site filled with tutorials. We aim to help *nix users, spread knowledge of *nix and help the Open Source/Free Software community!" />'
 ---
-<div class="no-js_hide clearfix">
-  <iframe src="https://kiwiirc.com/client/irc.spotchat.org/?nick=guest|?&theme=relaxed#NixTuts" style="border:0; width:640px; height:480px;"></iframe>
-</div>
-
 <div class="posts clearfix">
   {% for post in paginator.posts %}
   <div class="post clearfix">
@@ -16,7 +12,11 @@ head: '<meta name="google-site-verification" content="tIKYlqXiYdste3OCdWdRb-Z8y7
     <h3>By {% for author in post.author %}
       {% assign author_info = site.authors[author] %}
       {% if author_info %}
-        <a class="post_author" href="/authors/#{{author}}">{{author_info.name}}</a> 
+        {% if author_info.web %}
+          <a class="post_author" href="{{author_info.web}}" rel="nofollow" target="_blank">{{author_info.name}}</a> 
+        {% else %}
+          <a class="post_author" href="{{author_info.github}}" rel="nofollow" target="_blank">{{author_info.name}}</a> 
+        {% endif %}
       {% else %}
         <span class="post_author">{{author}}</span>
       {% endif %}

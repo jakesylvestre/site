@@ -28,10 +28,10 @@ h1, h2, h3, h4, h5, h6 {
 
 a { 
     text-decoration: none;
-    :hover {
-        text-shadow: 0 0 3px;
-        text-decoration: underline;
-    }
+}
+a:hover {
+    text-shadow: 0 0 3px;
+    text-decoration: underline;
 }
 
 section {
@@ -70,8 +70,6 @@ hr {
     border-bottom: 1px dashed;
 }
 
-/* specific */
-
 .main {
     width: 85%;
     min-height: 105%;
@@ -91,7 +89,10 @@ header {
     width: 100%;
     float: left;
     clear: both;
-    font-size: 200%;
+    font-size: 150%;
+    h1, p {
+        margin: 10px;
+    }
 }
 
 .posts {
@@ -126,7 +127,14 @@ nav {
     li {
         list-style: none;
         display: inline;
-        padding: 0 5%;
+        margin-right: 30px;
+        a:hover {
+            text-decoration: none;
+        }
+    }
+
+    #sharebuttons {
+        float: right;
     }
 }
 
@@ -150,32 +158,9 @@ footer span, nav a {
     margin-left: 10px;
 }
 
-#home-link:hover {
-    text-decoration: none;
+.author {
+    height: 10px;
 }
-
-.ss-share {
-    padding-left: 0;
-    list-style: none;
-    li {
-        display: inline;
-        margin-right: 2px;
-    }
-}
-
-[class*="ico-"] {
-    display: inline-block;
-    padding: 16px;
-    background-size: 16px 16px;
-    background-repeat: no-repeat;
-    background-position: 10px center;
-}
-
-.ico-facebook { background-image: url("/img/icons/facebook.ico"); }
-.ico-twitter { background-image: url("/img/icons/twitter.ico"); }
-.ico-google { background-image: url("/img/icons/google.ico"); }
-.ico-rss { background-image: url("/img/icons/rss.ico"); }
-.ico-email { background-image: url("/img/icons/email.ico"); }
 
 code, pre {
 	direction: ltr;
