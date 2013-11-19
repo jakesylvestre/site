@@ -8,26 +8,38 @@ body {
     max-width: 100%;
 }
 
-body { font-size: small; }
+body {
+    font-size: medium;
+}
 
 img, object {
     max-width: 100%;
 }
 
-body, code, pre, samp { font-family: 'Ubuntu Mono', monospace; }
-h1, h2, h3, h4, h5, h6 { font-weight: normal; font-family: Abel, sans-serif; }
-.content { font-family: Ubuntu, sans-serif; }
-
-a { text-decoration: none; }
-a:hover {
-    text-shadow: 0 0 3px;
-    text-decoration: underline;
+body, code, pre, samp {
+    font-family: 'Ubuntu Mono', monospace;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal; font-family: Abel, sans-serif;
+}
+.content {
+    font-family: Ubuntu, sans-serif;
 }
 
-section { margin: 0 0 20px 0; }
+a { 
+    text-decoration: none;
+    :hover {
+        text-shadow: 0 0 3px;
+        text-decoration: underline;
+    }
+}
+
+section {
+    margin: 0 0 20px 0;
+}
 
 blockquote {
-    margin:1.5em 10px;
+    margin: 1.5em 10px;
     padding: 20px;
     padding-left: 1.041666666%; /* closest possible value to 10/960 */
     border-left: 10px solid;
@@ -70,21 +82,16 @@ hr {
 }
 
 .content {
-    width: 73%;
+    width: 98%;
     padding: 1%;
-    float: right;
-}
-
-.sidebar {
-    width: 23%;
-    padding: 1%;
+    float: left;
 }
 
 header {
-    width: 97%;
-    margin: 10px;
-    margin-top: 30px;
+    width: 100%;
+    float: left;
     clear: both;
+    font-size: 200%;
 }
 
 .posts {
@@ -133,13 +140,6 @@ footer span, nav a {
     width: 90%;
 }
 
-#search input[type="search"] {
-    border: 0 none;
-    width: 150px;
-    padding: 6px 15px;
-    border-radius: 20px;
-}
-
 /* Theme Switcher */
 .tile {
     float: right;
@@ -150,24 +150,6 @@ footer span, nav a {
     margin-left: 10px;
 }
 
-/* Lite Switcher */
-#lite-switcher {
-    position: fixed;
-    opacity: 0.8;
-    top: 90%;
-    left: 90%;
-    width: 20px;
-    height: 20px;
-    border-style: solid;
-    border-width: 2px;
-    background-image: url("/img/minus.gif");
-    z-index: 999;
-}
-
-#lite-switcher-container {
-    z-index: 998;
-}
-
 #home-link:hover {
     text-decoration: none;
 }
@@ -175,30 +157,15 @@ footer span, nav a {
 .ss-share {
     padding-left: 0;
     list-style: none;
-}
-
-.ss-share-item {
-    display: inline;
-    margin-right: 1em;
-}
-
-.ss-share-link {
-    /* crude button styles */
-    text-decoration: none;
-    color: #444;
-    font-weight: bold;
-    padding: .5em .75em .5em 35px;
-    background-color: #f5f5f5;
-    border: 1px solid #ccc;
-    border-radius: 2px;
-    
-    :hover, :active, :focus {
-        color: #891434;
+    li {
+        display: inline;
+        margin-right: 2px;
     }
 }
 
 [class*="ico-"] {
     display: inline-block;
+    padding: 16px;
     background-size: 16px 16px;
     background-repeat: no-repeat;
     background-position: 10px center;
@@ -229,238 +196,4 @@ code, pre {
 .larger {
     font-size: 125%;
     font-weight: bold;
-}
-
-/* Modernizr stuff */
-
-.no-js.no-js_hide {
-    display: none;
-}
-
-.no-js .no-js_show {
-    display: block;
-}
-
-/* Mobile */
-
-@media screen and (max-width: 480px) {
-    /* Mobile interface fixes */
-    body {
-        font-size: medium;
-        max-width: 100%;
-    }
-    
-    .sidebar, .content, header {
-        clear: both;
-        position: static;
-        width: 90%;
-        margin: auto 5%;
-    }
-    
-    .posts {
-        width: 100%;
-        margin: 0;
-        padding: 0;
-    }
-    
-    /* Navigation fixes */
-    
-    nav {
-        position: static;
-    }
-    
-    /* larger text */
-    nav a {
-        font-size: 120%;
-    }
-    
-    nav ul {
-        margin: 0;
-        padding: 0;
-        width: 100%;
-        float: left;
-        height: auto;
-    }
-    
-    nav li {
-        width: 100%;
-        padding: 0;
-        margin: 0;
-        
-        /* put space to make tapping easier */
-        margin-bottom: 10px;
-        
-        display: block;
-        text-align: center;
-    }
-    
-    nav a {
-        padding: 0 10px; /* put space to make tapping easier */
-    }
-    
-    nav a#pull {
-        float: right;
-        padding: 0;
-        margin: 0;
-        margin-right: 10px; /* leave some spacing */
-    }
-    
-    /* to prevent covering the footer */
-    footer {
-        margin-bottom: 30px;
-    }
-}
-
-/* Tablet */
-
-@media screen and (min-width: 481px) and (max-width: 1024px) {
-    /* Mobile interface fixes */
-    body {
-        font-size: medium;
-        max-width: 100%;
-    }
-    
-    .sidebar, .content, header {
-        clear: both;
-        position: static;
-        width: 90%;
-        margin: auto 5%;
-    }
-    
-    .posts {
-        width: 100%;
-        margin: 0;
-        padding: 0;
-    }
-    
-    /* Navigation fixes */
-    
-    nav {
-        position: static;
-    }
-    
-    nav a {
-        font-size: 120%;
-    }
-    
-    nav ul {
-        margin: 0;
-        padding: 0;
-        width: 100%;
-        float: left;
-        height: auto;
-    }
-    
-    nav li {
-        width: 40%;
-        display: inline-block;
-        padding: 1%;
-        margin: 3%;
-        
-        /* reset top and bottom */
-        padding-top: 0; padding-bottom: 0;
-        margin-top: 0; margin-bottom: 0;
-    }
-    
-    nav a#pull {
-        text-align: left;
-        width: 100%;
-        text-indent: 25px;
-    }
-}
-
-/* Desktop */
-
-@media screen and (min-width: 1025px) {
-    
-}
-
-/* Printer */
-
-@media print {
-    * {
-        border-style: none !important;
-        background: transparent !important;
-        box-shadow:none !important;
-        color: #000000 !important; /* Black prints faster: h5bp.com/s */
-        text-shadow: none !important;
-    }
-    
-    a[href]:after {
-        content: " (" attr(href) ")";
-    }
-    
-    abbr[title]:after {
-        content: " (" attr(title) ")";
-    }
-    
-    /*
-    * Don't show links for images, or javascript/internal links
-    */
-    
-    .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after {
-        content: "";
-    }
-    
-    pre, blockquote {
-        border: 1px solid #999;
-        page-break-inside: avoid;
-    }
-    
-    thead {
-        display: table-header-group; /* h5bp.com/t */
-    }
-    
-    tr, img {
-        page-break-inside: avoid;
-    }
-    
-    @page {
-        margin: 0.5cm;
-    }
-    
-    p, h2, h3 {
-        orphans: 3;
-        widows: 3;
-    }
-    
-    h2, h3 {
-        page-break-after: avoid;
-    }
-    
-    /* Links are in black - prints fast */
-    a, a:visited {
-        color: #000000;
-        text-decoration: underline;
-    }
-    
-    @page {
-        margin: 0.5cm;
-    }
-    
-    p, h2, h3 {
-        orphans: 3;
-        widows: 3;
-    }
-    
-    h2, h3 {
-        page-break-after: avoid;
-    }
-    
-    /* reset buttons styles */
-    .button, .button-noclick {
-        margin: 0;
-        padding: 0;
-    }
-    
-    /* Hide stuff! */
-    nav, .sidebar, #search, .post_tags, .post_banner, .related_posts, #announcements, .book_return, .addthis_toolbox, #disqus_thread  {
-        display: none;
-    }
-    
-    /* Links are in black - prints fast */
-    a, a:visited {
-        color: #000000;
-        text-decoration: underline;
-    }
 }

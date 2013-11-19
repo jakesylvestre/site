@@ -1,23 +1,13 @@
 ---
 layout: post
-status: draft
 
 title: Mobile Development
 category: programming
-tags: 
-  - mobile
-  - android
-  - tablet
-  - programming
-  - sl4a
-  - perl
 author: 
   - diabolist
   - wei2912
 
 summary: Get started on developing from your tablet, using nothing more then a Tablet (Asus TF700T Transformer).
-
-location: _posts/programming/2012-12-13-MobileDevelopment.md
 ---
 
 I (diabolist) bought a Transformer Tablet and its keyboard attachment, as a cool product and hopefully a nice tool. The idea is to be able to development, modify, even test code in a mobile environment. It is far from perfect, but with patience you can get tools needed to begin development.

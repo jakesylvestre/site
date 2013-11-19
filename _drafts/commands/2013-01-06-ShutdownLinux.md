@@ -1,23 +1,14 @@
 ---
 layout: post
-status: draft
 
 title: Shutting Down Linux
 category: commands
-tags: 
-  - shutdown
-  - reboot
-  - poweroff
-  - sysrq
-  - commands
 author: 
   - dams
   - wei2912
   - diabolist
 
-summary: Shutting down Linux isn't as simple as pushing a switch. Learn how to shutdown Linux properly.
-
-location: _posts/generic-linux/2013-01-06-ShutdownLinux.md
+summary: Shutting down Linux isn't as simple as pushing a switch. Learn how to shutdown Linux properly from the terminal.
 ---
 
 There's halt, shutdown, reboot, poweroff. So which one should you use?

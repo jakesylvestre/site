@@ -1,7 +1,5 @@
 ---
 category: generic-linux
-
-location: _posts/generic-linux/YYYY-MM-DD-Filesystems.md
 ---
 
 STUFF ABOUT FILESYSTEMS

@@ -1,0 +1,13 @@
+{% if paginator.total_pages > 1 %}
+<div class="pagination border" style="font-size: 150%;">
+  {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo; Prev</a>
+  {% else %}
+     <span>&laquo; Newer Posts</span>
+  {% endif %}
+
+  {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older Posts &raquo;</a>
+  {% endif %}
+</div>
+{% endif %}
