@@ -18,7 +18,21 @@ Firstly, fork our repository on Git, and clone your copy of it:
 $ git clone https://github.com/nixtuts/site.git
 ```
 
-Next, pull in dependencies by running Bundler (this requires Ruby):
+You'll need to install some packages.
+
+For Debian, execute this:
+
+```bash
+$ sudo apt-get install ruby1.9-dev bundler python-pygments
+```
+
+For Fedora, execute this:
+
+```bash
+$ sudo yum install ruby-devel rubygem-bundler python-pygments
+```
+
+Next, pull in dependencies by running Bundler:
 
 ```bash
 $ bundle install
@@ -26,15 +40,13 @@ $ bundle install
 
 Now, you can modify to your heart's content.
 
-To build our site, we have a couple of helpful scripts. Just run:
+To build our site, just run:
 
 ```bash
-$ ./_scripts/before_install.sh # prepare for installation of deps
-$ ./_scripts/install.sh # install deps & get submodules
-$ ./_scripts/script.sh # build with jekyll
-$ ./_scripts/after_script.sh # list all files
+$ git submodule update --init --recursive
+$ jekyll build
 ```
-These scripts are meant for our Travis-Ci build system, but they can be used for you to test them out as well. The files are now in `_site` and you can view them. If you wish to get a webserver up instead, execute this:
+The files are now in `_site` and you can view them. If you wish to get a webserver up instead, execute this:
 
 ```bash
 $ jekyll server
