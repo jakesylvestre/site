@@ -1,81 +1,58 @@
 ---
 ---
 <!DOCTYPE html>
-<html class="no-js deadcream" lang="en">
-    <head>
-        <title>{{ page.title }} - NixTuts</title>
-        {% include snippets/head.html %}
-    </head>
+<html class="no-js" lang="en">
+  <head>
+    <title>{{ page.title }} - NixTuts</title>
+    {% include snippets/head.html %}
+  </head>
 
-    <body>
-		<nav class="clearfix" role="navigation">
-			{% include snippets/nav.html %} 
-        </nav>
+  <body>
+  <nav class="clearfix" role="navigation">
+    {% include snippets/nav.html %} 
+  </nav>
 
-        <div class="main clearfix" role="main">
-            <header class="clearfix" role="banner">
-                {% include snippets/header.html %}
-                {% include snippets/searchbar.html %}
-            </header>
+  <div class="main clearfix" role="main">
+  <div class="content clearfix" role="article">
 
-            <div class="content clearfix" role="article">
-                <h1 class="post_title">{{page.title}}</h1>
-                
-                <div class="metadata clearfix">
-                <p class="post_date">Posted on {{ page.date | date: "%d %B %Y" }}</p>
-                
-                <p class="post_author">By: {% for author in page.author %}
-                {% assign author_info = site.authors[author] %}
-                {% if author_info %}
-                <a class="button icon tag pill" href="/authors/#{{author}}">{{author_info.name}}</a> 
-                {% else %}
-                <a class="button-noclick icon tag pill">{{author}}</a>
-                {% endif %}
-                {% endfor %} </p>
+    <header class="clearfix" role="header">
+      {% include snippets/header.html %} 
+    </header>
 
-                <p class="post_tags">Tags: {% for tag in page.tags %}<a class="button icon tag pill" href="/search.html?tags={{tag}}">{{tag}}</a> {% endfor %} </p>
+    <div class="post clearfix">
+      <h1><a href="{{page.url}}">{{page.title}}</a></h1>
+      <h3>Filed under <span class="post_category">{{page.category}}</span></h3>
+      <h3 class="post_date">{{ page.date | date: "%d %B %Y" }}</h3>
+      <h3>By {% for author in page.author %}
+        {% assign author_info = site.authors[author] %}
+        {% if author_info %}
+          <a class="post_author" href="/about/#author_{{author}}">{{author_info.name}}</a> 
+        {% else %}
+          <span class="post_author">{{author}}</span>
+        {% endif %}
+      {% endfor %}</h3>
 
-                {% if page.status == 'draft' %}
-                <p class="warn post_banner">This tutorial is a draft and pending validation. You may see weird formatting/incomplete content.</p>
-                {% endif %}
+      {% if page.summary != null %}
+        <p class="larger">{{ page.summary }}</p>
+      {% endif %}
 
-                {% include snippets/sharebuttons.html %}
-                </div>
+      {{ content }}
 
-                {% if page.img != null %}
-                <img src="{{page.img}}" alt="{{page.title}}" /><br />
-                {% endif %}
-
-                {% if page.summary != null %}
-                <strong style="font-size: 150%; font-weight: normal;">{{ page.summary }}</strong>
-                {% endif %}
-
-                {{ content }}
-
-                {% if site.related_posts != empty %}
-				<h2 class="related_posts">Related Posts</h2>
-                {% for post in site.related_posts %}
-                <a href="{{ post.url }}">{{ post.title }}</a><br />
-                {% endfor %}
-                {% endif %}
-                
-                {% if page.location != empty %}
-                <p class="prose_io larger">Spot a mistake? Edit this page at <a href="http://prose.io/#nixtuts/site/edit/master/{{page.location}}" target="_blank">prose.io</a>.</p>
-                {% endif %}
-                
-                {% include snippets/sharebuttons.html %}
-                {% include snippets/after-post.html %}
-            </div>
-
-            <div class="sidebar clearfix">
-                {% include snippets/sidebar.html %}
-            </div>  
-        </div>
+      {% if site.related_posts != empty %}
+        <h2 class="related_posts">Related Posts</h2>
+        {% for post in site.related_posts %}
+          <a href="{{ post.url }}">{{ post.title }}</a><br />
+        {% endfor %}
+      {% endif %}
         
-        <footer>
-            {% include snippets/footer.html %}
-        </footer>
-
-        {% include snippets/after.html %}
-    </body>
+      {% include snippets/sharebuttons.html %}
+      {% include snippets/after-post.html %}
+      </div>
+  </div>
+  </div>
+    
+    <footer>
+      {% include snippets/footer.html %}
+    </footer>
+  </body>
 </html>

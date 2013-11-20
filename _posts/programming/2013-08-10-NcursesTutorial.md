@@ -1,22 +1,13 @@
 ---
 layout: post
-status: draft
 
 title: Ncurses Tutorial
 category: programming
-tags: 
-  - programming
-  - c++
-  - ncurses
-  - console
-  - codeblocks
 author: 
   - paradux
   - wei2912
 
 summary: Have you ever wanted to make a console application or game in C++? Well, Ncurses is the solution! This short tutorial will teach you how to setup this library on CodeBlocks and will teach you some basic features.
-
-location: _posts/programming/2013-08-10-NcursesTutorial.md
 ---
 
 This tutorial will consist of 2 parts:

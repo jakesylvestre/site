@@ -1,22 +1,14 @@
 ---
 layout: post
-status: post
 
 title: Using chmod and chown
 category: commands
-tags: 
-  - bash
-  - commands
-  - chmod
-  - chown
 author: 
   - wei2912
   - jaffer1979
   - manu
 
 summary: Learn how to master the two commands that are often associated with file permissions manipulation - chmod and chown.
-
-location: _posts/commands/2013-06-24-Chmod&Chown.md
 ---
 
 This was originally a class at [http://piratepad.net/NixTuts-LinuxCmdLine-9psZK](http://piratepad.net/NixTuts-LinuxCmdLine-9psZK), so feel free to visit it if you want to experience something more interactive.

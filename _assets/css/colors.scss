@@ -16,74 +16,62 @@ $link-dark: #227799;
 
 /***** End of Color Glossary *****/
 
-.darkgrey {
-    h1, h2 {
+h1, h2 {
+    color: $bright-green;
+}
+h3, h4, h5, h6 {
+    color: $light-grey;
+}
+    
+a {
+    color: $link;
+}
+p, span, strong, em {
+    color: $plain-text;
+}
+    
+blockquote {
+    border-color: $light-grey;
+    background-color: $black;
+}
+    
+hr {
+    border-color: $bright-green;
+}
+ul, ol {
+    color: $white;
+}
+
+body {
+    background-color: $light-grey;
+}
+.main {
+    background-color: $very-dark-grey;
+    border-color: $dark-grey;
+}
+
+header {
+    border-color: $bright-green;
+}
+
+nav, footer {
+    background-color: $very-dark-grey;
+    
+    a, #home-link_text {
         color: $bright-green;
     }
-    h3, h4, h5, h6 {
+    p {
         color: $light-grey;
     }
-    
-    a {
-        color: $link;
-    }
-    p, strong, em {
-        color: $plain-text;
-    }
-    
-    blockquote {
-        border-color: $light-grey;
-        background-color: $black;
-    }
-    
-    hr {
-        border-color: $bright-green;
-    }
-    ul, ol {
-        color: $white;
-    }
-    
-    body {
-        background-color: $light-grey;
-    }
-    .main {
-        background-color: $very-dark-grey;
-        border-color: $dark-grey;
-    }
-    
-    header {
-        border-color: $bright-green;
-    }
-    
-    nav, footer {
-        background-color: $very-dark-grey;
-        
-        a, #home-link_text {
-            color: $bright-green;
-        }
-        p {
-            color: $light-grey;
-        }
-    }
-    
-    .postg {
-        background-color: #B5E853;
-        a {
-            color: $link-dark;
-        }
-        
-        h1, h2, h3, h4, h5, h6, p {
-            color: $black;
-        }
-    }
-    
-    .button, .button-noclick {
-        color: $very-dark-grey;
-    }
-    
-    #lite-switcher {
-        border-color: $dark-grey;
-    }
+}
+
+.author {
+    font-style: bold;
+}
+
+.post_category, .post_date, .post_author {
+    color: $bright-green;
+}
     
 /**
  * okaidia theme for JavaScript, CSS and HTML
@@ -174,4 +162,3 @@ pre {
 .vg { color: #f8f8f2 } /* Name.Variable.Global */
 .vi { color: #f8f8f2 } /* Name.Variable.Instance */
 .il { color: #ae81ff } /* Literal.Number.Integer.Long */
-}

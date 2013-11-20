@@ -1,20 +1,12 @@
 ---
 layout: post
-status: draft
 
 title: Hashcat Basics
 category: security
-tags: 
-  - security
-  - hashcat
-  - cracking
-  - password
 author: 
   - wei2912
 
 summary: Hashcat is a nifty tool for testing out passwords. In this tutorial, we'll give you a guide through the basics of Hashcat.
-
-location: _posts/security/2013-09-07_HashcatBasics.md
 ---
 
 ***Before we start, I'd like to warn you that attempting to break into any system is illegal. The content provided is meant only for educational purposes.***

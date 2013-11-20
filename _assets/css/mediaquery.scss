@@ -1,0 +1,247 @@
+/* Mobile */
+
+@media screen and (max-width: 480px) {
+    /* Mobile interface fixes */
+
+    body {
+        font-size: medium;
+        max-width: 100%;
+    }
+    
+    .content, header {
+        clear: both;
+        position: static;
+        width: 90%;
+        margin: auto 5%;
+    }
+    
+    .posts {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    
+    /* Navigation fixes */
+    
+    nav {
+        position: static;
+    }
+    
+    /* larger text */
+    nav a {
+        font-size: 120%;
+    }
+    
+    nav ul {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        float: left;
+        height: auto;
+    }
+    
+    nav li {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        
+        /* put space to make tapping easier */
+        margin-bottom: 10px;
+        
+        display: block;
+        text-align: center;
+    }
+    
+    nav a {
+        padding: 0 10px; /* put space to make tapping easier */
+    }
+    
+    nav a#pull {
+        float: right;
+        padding: 0;
+        margin: 0;
+        margin-right: 10px; /* leave some spacing */
+    }
+    
+    /* to prevent covering the footer */
+    footer {
+        margin-bottom: 30px;
+    }
+
+    /* Hide stuff! */
+    #sharebuttons  {
+        display: none;
+    }
+}
+
+/* Tablet */
+
+@media screen and (min-width: 481px) and (max-width: 1024px) {
+    /* Mobile interface fixes */
+
+    body {
+        font-size: medium;
+        max-width: 100%;
+    }
+    
+    .content, header {
+        clear: both;
+        position: static;
+        width: 90%;
+        margin: auto 5%;
+    }
+    
+    .posts {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    
+    /* Navigation fixes */
+    
+    nav {
+        position: static;
+    }
+    
+    /* larger text */
+    nav a {
+        font-size: 120%;
+    }
+    
+    nav ul {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        float: left;
+        height: auto;
+    }
+    
+    nav li {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        
+        /* put space to make tapping easier */
+        margin-bottom: 10px;
+        
+        display: block;
+        text-align: center;
+    }
+    
+    nav a {
+        padding: 0 10px; /* put space to make tapping easier */
+    }
+    
+    nav a#pull {
+        float: right;
+        padding: 0;
+        margin: 0;
+        margin-right: 10px; /* leave some spacing */
+    }
+    
+    /* to prevent covering the footer */
+    footer {
+        margin-bottom: 30px;
+    }
+
+    /* Hide stuff! */
+    #sharebuttons  {
+        display: none;
+    }
+}
+
+/* Desktop */
+
+@media screen and (min-width: 1025px) {
+    
+}
+
+/* Printer */
+
+@media print {
+    * {
+        border-style: none !important;
+        background: transparent !important;
+        box-shadow:none !important;
+        color: #000000 !important; /* Black prints faster: h5bp.com/s */
+        text-shadow: none !important;
+    }
+    
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+    
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+    
+    /*
+    * Don't show links for images, or javascript/internal links
+    */
+    
+    .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after {
+        content: "";
+    }
+    
+    pre, blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+    
+    thead {
+        display: table-header-group; /* h5bp.com/t */
+    }
+    
+    tr, img {
+        page-break-inside: avoid;
+    }
+    
+    @page {
+        margin: 0.5cm;
+    }
+    
+    p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+    }
+    
+    h2, h3 {
+        page-break-after: avoid;
+    }
+    
+    /* Links are in black - prints fast */
+    a, a:visited {
+        color: #000000;
+        text-decoration: underline;
+    }
+    
+    @page {
+        margin: 0.5cm;
+    }
+    
+    p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+    }
+    
+    h2, h3 {
+        page-break-after: avoid;
+    }
+    
+    /* reset buttons styles */
+    .button, .button-noclick {
+        margin: 0;
+        padding: 0;
+    }
+    
+    /* Hide stuff! */
+    nav, .related_posts, #disqus_thread  {
+        display: none;
+    }
+    
+    /* Links are in black - prints fast */
+    a, a:visited {
+        color: #000000;
+        text-decoration: underline;
+    }
+}

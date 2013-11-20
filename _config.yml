@@ -11,6 +11,10 @@ exclude: ["README.md", "Gemfile"]
 # Excerpts
 excerpt_separator: "<!--more-->"
 
+# Pagination
+paginate: 5
+paginate_path: "page:num"
+
 # Jekyll asset pipeline
 asset_pipeline:
   bundle: true

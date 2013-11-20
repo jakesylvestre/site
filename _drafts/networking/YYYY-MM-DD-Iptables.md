@@ -2,8 +2,6 @@
 author: eyer
 summary: EyeR throw in a summary here :)
 category: networking
-
-location: _posts/networking/YYYY-MM-DD-Iptables.md
 ---
 
 To start, what is iptables?
