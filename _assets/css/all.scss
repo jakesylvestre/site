@@ -165,7 +165,6 @@ footer span, nav a {
 code, pre {
 	direction: ltr;
 	text-align: left;
-	white-space: pre;
 	word-spacing: normal;
 	
 	-moz-tab-size: 4;
@@ -176,6 +175,8 @@ code, pre {
 	-moz-hyphens: none;
 	-ms-hyphens: none;
 	hyphens: none;
+
+    white-space: pre-wrap;
 }
 
 .larger {
