@@ -1,4 +1,4 @@
-# [NixTuts](http://nixtuts.info) [![NixTuts IRC channel](https://kiwiirc.com/buttons/irc.spotchat.org/NixTuts.png)](https://kiwiirc.com/client/irc.spotchat.org/?nick=kiwi_guest|?#NixTuts) [![Build Status](https://travis-ci.org/nixtuts/site.png?branch=master)](https://travis-ci.org/nixtuts/site)
+# [NixTuts](http://nixtuts.info) [![NixTuts IRC channel](http://b.adge.me/:IRC-%23nixtuts-blue.svg)](https://kiwiirc.com/client/irc.spotchat.org/?nick=kiwi_guest|?#NixTuts) [![Build Status](http://b.adge.me/travis/nixtuts/site/master.svg)](https://travis-ci.org/nixtuts/site)
 
 NixTuts is a site filled with tutorials. We aim to help *nix users, spread knowledge of *nix and help the Open Source/Free Software community!
 
