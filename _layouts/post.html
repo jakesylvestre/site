@@ -8,46 +8,44 @@
   </head>
 
   <body>
-    <nav class="clearfix" role="navigation">
+    <nav role="navigation">
       {% include snippets/nav.html %} 
     </nav>
 
-    <div class="main clearfix" role="main">
-      <header class="clearfix" role="header">
+    <div class="main" role="main">
+      <header role="header">
         {% include snippets/header.html %} 
       </header>
 
-      <div class="content clearfix" role="article">
-        <div class="post clearfix">
-          <h1><a href="{{page.url}}">{{page.title}}</a></h1>
-          <h3>Filed under <span class="post_category">{{page.category}}</span></h3>
-          <h3 class="post_date">{{ page.date | date: "%d %B %Y" }}</h3>
-          <h3>By {% for author in page.author %}
-            {% assign author_info = site.authors[author] %}
-            {% if author_info %}
-              <a class="post_author" href="/about/#author_{{author}}">{{author_info.name}}</a> 
-            {% else %}
-              <span class="post_author">{{author}}</span>
-            {% endif %}
-          {% endfor %}</h3>
-
-          {% if page.summary != null %}
-            <p class="larger">{{ page.summary }}</p>
+      <div class="content" role="article">
+        <h1><a href="{{page.url}}">{{page.title}}</a></h1>
+        <h3>Filed under <span class="post_category">{{page.category}}</span></h3>
+        <h3 class="post_date">{{ page.date | date: "%d %B %Y" }}</h3>
+        <h3>By {% for author in page.author %}
+          {% assign author_info = site.authors[author] %}
+          {% if author_info %}
+            <a class="post_author" href="/about/#author_{{author}}">{{author_info.name}}</a> 
+          {% else %}
+            <span class="post_author">{{author}}</span>
           {% endif %}
+        {% endfor %}</h3>
 
-          {{ content }}
+        {% if page.summary != null %}
+          <p class="larger">{{ page.summary }}</p>
+        {% endif %}
 
-          {% if site.related_posts != empty %}
-            <h2 class="related_posts">Related Posts</h2>
-            {% for post in site.related_posts %}
-              <a href="{{ post.url }}">{{ post.title }}</a><br />
-            {% endfor %}
-          {% endif %}
-          
-          <br>
+        {{ content }}
 
-          {% include snippets/after-post.html %}
-        </div>
+        {% if site.related_posts != empty %}
+          <h2 class="related_posts">Related Posts</h2>
+          {% for post in site.related_posts %}
+            <a href="{{ post.url }}">{{ post.title }}</a><br />
+          {% endfor %}
+        {% endif %}
+        
+        <br>
+
+        {% include snippets/after-post.html %}
       </div>
     </div>
     

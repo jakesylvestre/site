@@ -3,34 +3,30 @@ title: Home
 layout: default
 head: '<meta name="google-site-verification" content="tIKYlqXiYdste3OCdWdRb-Z8y7G6jLEa3yy5XAmh5M4" /> <meta name="wot-verification" content="918bd559834ad18a88b3" /> <meta name="description" content="NixTuts is a site filled with tutorials. We aim to help *nix users, spread knowledge of *nix and help the Open Source/Free Software community!" />'
 ---
-<div class="posts clearfix">
-  {% for post in paginator.posts %}
-  <div class="post clearfix">
-    <h1><a href="{{post.url}}">{{post.title}}</a></h1>
-    <h3>Filed under <span class="post_category">{{post.category}}</span></h3>
-    <h3 class="post_date">{{ post.date | date: "%d %B %Y" }}</h3>
-    <h3>By {% for author in post.author %}
-      {% assign author_info = site.authors[author] %}
-      {% if author_info %}
-        {% if author_info.web %}
-          <a class="post_author" href="{{author_info.web}}" rel="nofollow" target="_blank">{{author_info.name}}</a> 
-        {% else %}
-          <a class="post_author" href="{{author_info.github}}" rel="nofollow" target="_blank">{{author_info.name}}</a> 
-        {% endif %}
+{% for post in paginator.posts %}
+  <h1><a href="{{post.url}}">{{post.title}}</a></h1>
+  <h3>Filed under <span class="post_category">{{post.category}}</span></h3>
+  <h3 class="post_date">{{ post.date | date: "%d %B %Y" }}</h3>
+  <h3>By {% for author in post.author %}
+    {% assign author_info = site.authors[author] %}
+    {% if author_info %}
+      {% if author_info.web %}
+        <a class="post_author" href="{{author_info.web}}" rel="nofollow" target="_blank">{{author_info.name}}</a> 
       {% else %}
-        <span class="post_author">{{author}}</span>
+        <a class="post_author" href="{{author_info.github}}" rel="nofollow" target="_blank">{{author_info.name}}</a> 
       {% endif %}
-    {% endfor %}</h3>
-
-    {% if post.summary != null %}
-      <p class="larger">{{ post.summary }}</p>
+    {% else %}
+      <span class="post_author">{{author}}</span>
     {% endif %}
+  {% endfor %}</h3>
 
-    {{ post.excerpt }}
+  {% if post.summary != null %}
+    <p class="larger">{{ post.summary }}</p>
+  {% endif %}
 
-    <p class="larger">Read more at <a href="{{post.url}}">{{post.title}}</a></p>
-  </div>
-  <hr>
-  {% endfor %}
-  {% include snippets/pagination.html %}
-</div>
+  {{ post.excerpt }}
+
+  <p class="larger">Read more at <a href="{{post.url}}">{{post.title}}</a>.</p>
+<hr>
+{% endfor %}
+{% include snippets/pagination.html %}

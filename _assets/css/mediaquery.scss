@@ -1,153 +1,113 @@
-/* Mobile */
+/* ==========================================================================
+   Mobile
+   ========================================================================== */
 
 @media screen and (max-width: 480px) {
-    /* Mobile interface fixes */
+  /* Decrease font size */
+  
+  body {
+    font-size: small;
+    max-width: 100%;
+  }
+  
+  .content, header {
+    clear: both;
+    position: static;
+    width: 90%;
+    margin: auto 5%;
+  }
+  
+  /* List navigation */
 
-    body {
-        font-size: small;
-        max-width: 100%;
-    }
-    
-    .content, header {
-        clear: both;
-        position: static;
-        width: 90%;
-        margin: auto 5%;
-    }
-    
-    .posts {
-        width: 100%;
-        margin: 0;
-        padding: 0;
-    }
-    
-    /* Navigation fixes */
-    
-    nav {
-        position: static;
-    }
-    
-    /* larger text */
-    nav a {
-        font-size: 120%;
-    }
-    
-    nav ul {
-        margin: 0;
-        padding: 0;
-        width: 100%;
-        float: left;
-        height: auto;
-    }
-    
-    nav li {
-        width: 100%;
-        padding: 0;
-        margin: 0;
-        
-        /* put space to make tapping easier */
-        margin-bottom: 10px;
-        
-        display: block;
-        text-align: center;
-    }
-    
-    nav a {
-        padding: 0 10px; /* put space to make tapping easier */
-    }
-    
-    nav a#pull {
-        float: right;
-        padding: 0;
-        margin: 0;
-        margin-right: 10px; /* leave some spacing */
-    }
-    
-    /* to prevent covering the footer */
-    footer {
-        margin-bottom: 30px;
+  nav {
+    position: static;
+
+    ul {
+      margin: 0;
+      padding: 0;
+      width: 100%;
     }
 
-    /* Hide stuff! */
-    #sharebuttons  {
-        display: none;
+    li {
+      width: 100%;
+      padding: 0;
+      margin: 0;
+      
+      /* put space at the bottom of each link to make tapping easier */
+      margin-bottom: 10px;
+      
+      display: block;
+      text-align: center;
     }
+  }
+
+  /* to prevent covering the footer */
+  footer {
+      margin-bottom: 30px;
+  }
+
+  /* Hide social buttons. */
+  #sharebuttons {
+      display: none;
+  }
 }
 
 /* Tablet */
 
 @media screen and (min-width: 481px) and (max-width: 1024px) {
-    /* Mobile interface fixes */
+  /* Mobile interface fixes */
 
-    body {
-        font-size: small;
-        max-width: 100%;
-    }
-    
-    .content, header {
-        clear: both;
-        position: static;
-        width: 90%;
-        margin: auto 5%;
-    }
-    
-    .posts {
-        width: 100%;
-        margin: 0;
-        padding: 0;
-    }
-    
-    /* Navigation fixes */
-    
-    nav {
-        position: static;
-    }
-    
-    /* larger text */
-    nav a {
-        font-size: 120%;
-    }
-    
-    nav ul {
-        margin: 0;
-        padding: 0;
-        width: 100%;
-        float: left;
-        height: auto;
-    }
-    
-    nav li {
-        width: 100%;
-        padding: 0;
-        margin: 0;
-        
-        /* put space to make tapping easier */
-        margin-bottom: 10px;
-        
-        display: block;
-        text-align: center;
-    }
-    
-    nav a {
-        padding: 0 10px; /* put space to make tapping easier */
-    }
-    
-    nav a#pull {
-        float: right;
-        padding: 0;
-        margin: 0;
-        margin-right: 10px; /* leave some spacing */
-    }
-    
-    /* to prevent covering the footer */
-    footer {
-        margin-bottom: 30px;
+  body {
+      font-size: small;
+      max-width: 100%;
+  }
+  
+  .content, header {
+      clear: both;
+      position: static;
+      width: 90%;
+      margin: auto 5%;
+  }
+  
+  .posts {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+  }
+  
+  /* List navigation */
+
+  nav {
+    position: static;
+
+    ul {
+      margin: 0;
+      padding: 0;
+      width: 100%;
     }
 
-    /* Hide stuff! */
-    #sharebuttons  {
-        display: none;
+    li {
+      width: 100%;
+      padding: 0;
+      margin: 0;
+      
+      /* put space at the bottom of each link to make tapping easier */
+      margin-bottom: 10px;
+      
+      display: block;
+      text-align: center;
     }
+  }
+  
+  /* to prevent covering the footer */
+  footer {
+    margin-bottom: 30px;
+  }
+
+  /* Hide stuff! */
+  #sharebuttons  {
+    display: none;
+  }
 }
 
 /* Desktop */
