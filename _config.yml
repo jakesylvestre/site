@@ -17,10 +17,7 @@ paginate_path: "page:num"
 
 # Jekyll asset pipeline
 asset_pipeline:
-  bundle: true
-  compress: true
-  output_path: assets
-  display_path: assets
+  gzip: true
 
 # Authors
 # Usernames in lowercase. Fill up your actual name/username with capitalization in the "name" field.

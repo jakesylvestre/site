@@ -1,8 +1,8 @@
-require 'jekyll_asset_pipeline'
+require 'japr'
 
-module JekyllAssetPipeline
+module JAPR
   # SASS preprocessor
-  class SassConverter < JekyllAssetPipeline::Converter
+  class SassConverter < JAPR::Converter
     require 'sass'
 
     def self.filetype
@@ -15,7 +15,7 @@ module JekyllAssetPipeline
   end
 
   # CSS -> Yahoo YUI compressor
-  class CssCompressor < JekyllAssetPipeline::Compressor
+  class CssCompressor < JAPR::Compressor
     require 'yui/compressor'
 
     def self.filetype
@@ -28,7 +28,7 @@ module JekyllAssetPipeline
   end
 
   # JS -> Google Closure Compiler compressor
-  class JavaScriptCompressor < JekyllAssetPipeline::Compressor
+  class JavaScriptCompressor < JAPR::Compressor
     require 'closure-compiler'
   
     def self.filetype
