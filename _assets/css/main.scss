@@ -59,27 +59,6 @@ a:active, a:hover {
    Typography
    ========================================================================== */
 
-@font-face {
-  font-family: 'Abel';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Abel'), local('Abel-Regular'), url(https://themes.googleusercontent.com/static/fonts/abel/v4/EAqh528fFdbUek8UOky4sA.woff) format('woff');
-}
-
-@font-face {
-  font-family: 'Ubuntu Light';
-  font-style: normal;
-  font-weight: 300;
-  src: local('Ubuntu Light'), local('Ubuntu-Light'), url(https://themes.googleusercontent.com/static/fonts/ubuntu/v5/_aijTyevf54tkVDLy-dlnD8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
-}
-
-@font-face {
-  font-family: 'Ubuntu Mono';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Ubuntu Mono'), local('UbuntuMono-Regular'), url(https://themes.googleusercontent.com/static/fonts/ubuntumono/v4/ViZhet7Ak-LRXZMXzuAfkYbN6UDyHWBl620a-IRfuBk.woff) format('woff');
-}
-
 $sans-font: 'Ubuntu Light', sans-serif; /* Sans-serif */
 $mono-font: 'Ubuntu Mono', monospace, serif; /* Monospace */
 $head-font: Abel, sans-serif; /* Heading */
