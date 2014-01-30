@@ -5,6 +5,9 @@
   <head>
     <title>{{ page.title }} - NixTuts</title>
     {% include snippets/head.html %}
+    {% if page.head %}
+      {{ page.head }}
+    {% endif %}
   </head>
 
   <body>
@@ -52,5 +55,11 @@
     <footer>
       {% include snippets/footer.html %}
     </footer>
+
+    {% if page.body %}
+      {{ page.body }}
+    {% endif %}
+
+    {% include snippets/after-page.html %}
   </body>
 </html>
