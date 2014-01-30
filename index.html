@@ -13,7 +13,7 @@ head: '<meta name="google-site-verification" content="tIKYlqXiYdste3OCdWdRb-Z8y7
       {% if author_info.web %}
         <a class="post_author" href="{{author_info.web}}" rel="nofollow" target="_blank">{{author_info.name}}</a> 
       {% else %}
-        <a class="post_author" href="{{author_info.github}}" rel="nofollow" target="_blank">{{author_info.name}}</a> 
+        <a class="post_author" href="https://github.com/{{author_info.github}}" rel="nofollow" target="_blank">{{author_info.name}}</a> 
       {% endif %}
     {% else %}
       <span class="post_author">{{author}}</span>
