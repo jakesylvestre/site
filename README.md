@@ -2,6 +2,12 @@
 
 NixTuts is a site filled with tutorials. We aim to help *nix users, spread knowledge of *nix and help the Open Source/Free Software community!
 
+## Donations
+
+![Litecoin Donations](http://i.imgur.com/nblF32M.png)
+
+Thank you for your donations!
+
 ## Build System
 
 We use Travis-Ci to build and push to our server automatically whenever someone pushes to Git.
